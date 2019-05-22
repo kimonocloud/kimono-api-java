@@ -28,7 +28,7 @@ import java.time.OffsetDateTime;
 /**
  * TenantInfoLicense
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-20T10:02:08.701-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-21T21:18:40.423-06:00[America/Denver]")
 public class TenantInfoLicense {
   public static final String SERIALIZED_NAME_VALID_TO = "valid_to";
   @SerializedName(SERIALIZED_NAME_VALID_TO)

@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**findCourse**](RosteringApi.md#findCourse) | **GET** /rostering/courses/{id} | Find a Course by $sys.id
 [**findLEA**](RosteringApi.md#findLEA) | **GET** /rostering/leas/{id} | Find an LEA-type Org by $sys.id
-[**findOrg**](RosteringApi.md#findOrg) | **GET** /rostering/orgs/{id} | Find an Org by $sys.id
+[**findOrg**](RosteringApi.md#findOrg) | **GET** /rostering/orgs/{org_id} | Find an Org by $sys.id
 [**findPerson**](RosteringApi.md#findPerson) | **GET** /rostering/persons/{id} | Find a Person by $sys.id
 [**findSection**](RosteringApi.md#findSection) | **GET** /rostering/sections/{id} | Find a Section by $sys.id
 [**findTerm**](RosteringApi.md#findTerm) | **GET** /rostering/terms/{id} | Find a Term by $sys.id
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 <a name="findOrg"></a>
 # **findOrg**
-> Org findOrg(id)
+> Org findOrg(orgId)
 
 Find an Org by $sys.id
 
@@ -153,9 +153,9 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
-java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the object
+java.util.UUID orgId = new java.util.UUID(); // java.util.UUID | $sys.id of the object
 try {
-    Org result = apiInstance.findOrg(id);
+    Org result = apiInstance.findOrg(orgId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#findOrg");
@@ -167,7 +167,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**java.util.UUID**](.md)| $sys.id of the object |
+ **orgId** | [**java.util.UUID**](.md)| $sys.id of the object |
 
 ### Return type
 

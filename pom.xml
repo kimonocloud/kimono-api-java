@@ -6,6 +6,7 @@
 	<version>2.0-SNAPSHOT</version>
   	<packaging>pom</packaging>
 		<modules>
+			<!-- The individual Kimono API modules -->
 			<module>broker</module>
 			<module>grades</module>
 			<module>interop</module>
@@ -15,5 +16,9 @@
 
 			<!-- Single JAR that exports all of the above -->
 			<module>kimono-api</module>
+
+			<!-- Also include OneRoster when building Java wrappers -->
+			<module>oneroster</module>
+
 		</modules>
 </project>
