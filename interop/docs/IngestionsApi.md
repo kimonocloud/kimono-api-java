@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 <a name="createIngestion"></a>
 # **createIngestion**
-> Ingestion createIngestion(ingestion)
+> IngestionResponse createIngestion(ingestion)
 
 Create an Ingestion
 
@@ -89,7 +89,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 IngestionsApi apiInstance = new IngestionsApi();
 Ingestion ingestion = new Ingestion(); // Ingestion | Ingestion to create
 try {
-    Ingestion result = apiInstance.createIngestion(ingestion);
+    IngestionResponse result = apiInstance.createIngestion(ingestion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IngestionsApi#createIngestion");
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Ingestion**](Ingestion.md)
+[**IngestionResponse**](IngestionResponse.md)
 
 ### Authorization
 
@@ -113,12 +113,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="findIngestion"></a>
 # **findIngestion**
-> Ingestion findIngestion(id)
+> IngestionResponse findIngestion(id)
 
 Find an Ingestion by id
 
@@ -141,7 +141,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 IngestionsApi apiInstance = new IngestionsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Ingestion to find
 try {
-    Ingestion result = apiInstance.findIngestion(id);
+    IngestionResponse result = apiInstance.findIngestion(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IngestionsApi#findIngestion");
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Ingestion**](Ingestion.md)
+[**IngestionResponse**](IngestionResponse.md)
 
 ### Authorization
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 <a name="listIngestions"></a>
 # **listIngestions**
-> java.util.List&lt;Ingestion&gt; listIngestions()
+> IngestionsResponse listIngestions()
 
 List Ingestions
 
@@ -194,7 +194,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 IngestionsApi apiInstance = new IngestionsApi();
 try {
-    java.util.List<Ingestion> result = apiInstance.listIngestions();
+    IngestionsResponse result = apiInstance.listIngestions();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IngestionsApi#listIngestions");
@@ -207,7 +207,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**java.util.List&lt;Ingestion&gt;**](Ingestion.md)
+[**IngestionsResponse**](IngestionsResponse.md)
 
 ### Authorization
 

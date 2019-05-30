@@ -8,9 +8,7 @@
 
 * `COLLECTION` (value: `"collection"`)
 
-* `BULK_LOAD_IMMEDIATE` (value: `"bulk_load_immediate"`)
-
-* `BULK_LOAD_PROGRESSIVE` (value: `"bulk_load_progressive"`)
+* `BULK_LOAD` (value: `"bulk_load"`)
 
 * `EVENT_BUNDLE` (value: `"event_bundle"`)
 

@@ -33,9 +33,7 @@ public enum IngestionType {
   
   COLLECTION("collection"),
   
-  BULK_LOAD_IMMEDIATE("bulk_load_immediate"),
-  
-  BULK_LOAD_PROGRESSIVE("bulk_load_progressive"),
+  BULK_LOAD("bulk_load"),
   
   EVENT_BUNDLE("event_bundle"),
   

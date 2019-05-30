@@ -13,7 +13,9 @@
 
 package kimono.api.v2.interopdata;
 
-import kimono.api.v2.interopdata.ApiException;
+import org.junit.Ignore;
+import org.junit.Test;
+
 import kimono.api.v2.interopdata.model.Course;
 import kimono.api.v2.interopdata.model.CoursesResponse;
 import kimono.api.v2.interopdata.model.Org;
@@ -24,8 +26,6 @@ import kimono.api.v2.interopdata.model.Section;
 import kimono.api.v2.interopdata.model.SectionsResponse;
 import kimono.api.v2.interopdata.model.Term;
 import kimono.api.v2.interopdata.model.TermsResponse;
-import org.junit.Test;
-import org.junit.Ignore;
 
 
 /**
@@ -80,7 +80,7 @@ public class RosteringApiTest {
     @Test
     public void findOrgTest() throws ApiException {
         java.util.UUID id = null;
-        Org response = api.findOrg(id);
+        Org response = api.findOrg(id).getData();
 
         // TODO: test validations
     }

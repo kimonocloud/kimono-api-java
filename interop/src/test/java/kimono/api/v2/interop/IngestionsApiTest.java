@@ -13,10 +13,12 @@
 
 package kimono.api.v2.interop;
 
-import kimono.api.v2.interop.ApiException;
-import kimono.api.v2.interop.model.Ingestion;
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
+
+import kimono.api.v2.interop.model.Ingestion;
+import kimono.api.v2.interop.model.IngestionResponse;
+import kimono.api.v2.interop.model.IngestionsResponse;
 
 
 /**
@@ -55,7 +57,7 @@ public class IngestionsApiTest {
     @Test
     public void createIngestionTest() throws ApiException {
         Ingestion ingestion = null;
-        Ingestion response = api.createIngestion(ingestion);
+        Ingestion response = api.createIngestion(ingestion).getData();
 
         // TODO: test validations
     }
@@ -71,7 +73,8 @@ public class IngestionsApiTest {
     @Test
     public void findIngestionTest() throws ApiException {
         java.util.UUID id = null;
-        Ingestion response = api.findIngestion(id);
+        IngestionResponse response = api.findIngestion(id);
+        Ingestion ing = response.getData();
 
         // TODO: test validations
     }
@@ -86,9 +89,10 @@ public class IngestionsApiTest {
      */
     @Test
     public void listIngestionsTest() throws ApiException {
-        java.util.List<Ingestion> response = api.listIngestions();
-
-        // TODO: test validations
+        IngestionsResponse response = api.listIngestions();
+        response.getData().forEach(ing->{
+        	
+        });
     }
     
 }

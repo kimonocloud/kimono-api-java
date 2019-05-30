@@ -25,9 +25,18 @@ Create a Data Model
 ### Example
 ```java
 // Import classes:
+//import kimono.api.v2.broker.ApiClient;
 //import kimono.api.v2.broker.ApiException;
+//import kimono.api.v2.broker.Configuration;
+//import kimono.api.v2.broker.auth.*;
 //import kimono.api.v2.broker.VocabularyApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure HTTP basic authorization: BasicAuth
+HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
+BasicAuth.setUsername("YOUR USERNAME");
+BasicAuth.setPassword("YOUR PASSWORD");
 
 VocabularyApi apiInstance = new VocabularyApi();
 try {
@@ -48,7 +57,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -64,9 +73,18 @@ Delete a Data Model
 ### Example
 ```java
 // Import classes:
+//import kimono.api.v2.broker.ApiClient;
 //import kimono.api.v2.broker.ApiException;
+//import kimono.api.v2.broker.Configuration;
+//import kimono.api.v2.broker.auth.*;
 //import kimono.api.v2.broker.VocabularyApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure HTTP basic authorization: BasicAuth
+HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
+BasicAuth.setUsername("YOUR USERNAME");
+BasicAuth.setPassword("YOUR PASSWORD");
 
 VocabularyApi apiInstance = new VocabularyApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Model
@@ -90,7 +108,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -106,9 +124,18 @@ Get a Data Model by id
 ### Example
 ```java
 // Import classes:
+//import kimono.api.v2.broker.ApiClient;
 //import kimono.api.v2.broker.ApiException;
+//import kimono.api.v2.broker.Configuration;
+//import kimono.api.v2.broker.auth.*;
 //import kimono.api.v2.broker.VocabularyApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure HTTP basic authorization: BasicAuth
+HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
+BasicAuth.setUsername("YOUR USERNAME");
+BasicAuth.setPassword("YOUR PASSWORD");
 
 VocabularyApi apiInstance = new VocabularyApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Model to find
@@ -133,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -149,9 +176,18 @@ Get a Data Model by id
 ### Example
 ```java
 // Import classes:
+//import kimono.api.v2.broker.ApiClient;
 //import kimono.api.v2.broker.ApiException;
+//import kimono.api.v2.broker.Configuration;
+//import kimono.api.v2.broker.auth.*;
 //import kimono.api.v2.broker.VocabularyApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure HTTP basic authorization: BasicAuth
+HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
+BasicAuth.setUsername("YOUR USERNAME");
+BasicAuth.setPassword("YOUR PASSWORD");
 
 VocabularyApi apiInstance = new VocabularyApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Model to find
@@ -176,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -194,9 +230,18 @@ Get a list of all defined Data Models
 ### Example
 ```java
 // Import classes:
+//import kimono.api.v2.broker.ApiClient;
 //import kimono.api.v2.broker.ApiException;
+//import kimono.api.v2.broker.Configuration;
+//import kimono.api.v2.broker.auth.*;
 //import kimono.api.v2.broker.VocabularyApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure HTTP basic authorization: BasicAuth
+HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
+BasicAuth.setUsername("YOUR USERNAME");
+BasicAuth.setPassword("YOUR PASSWORD");
 
 VocabularyApi apiInstance = new VocabularyApi();
 try {
@@ -217,7 +262,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -235,9 +280,18 @@ Get a list of all defined Vocabularies
 ### Example
 ```java
 // Import classes:
+//import kimono.api.v2.broker.ApiClient;
 //import kimono.api.v2.broker.ApiException;
+//import kimono.api.v2.broker.Configuration;
+//import kimono.api.v2.broker.auth.*;
 //import kimono.api.v2.broker.VocabularyApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure HTTP basic authorization: BasicAuth
+HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
+BasicAuth.setUsername("YOUR USERNAME");
+BasicAuth.setPassword("YOUR PASSWORD");
 
 VocabularyApi apiInstance = new VocabularyApi();
 try {
@@ -258,7 +312,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -274,9 +328,18 @@ Update the properties of a Data Model
 ### Example
 ```java
 // Import classes:
+//import kimono.api.v2.broker.ApiClient;
 //import kimono.api.v2.broker.ApiException;
+//import kimono.api.v2.broker.Configuration;
+//import kimono.api.v2.broker.auth.*;
 //import kimono.api.v2.broker.VocabularyApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure HTTP basic authorization: BasicAuth
+HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
+BasicAuth.setUsername("YOUR USERNAME");
+BasicAuth.setPassword("YOUR PASSWORD");
 
 VocabularyApi apiInstance = new VocabularyApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Model
@@ -301,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -317,9 +380,18 @@ Update the properties of a Data Model
 ### Example
 ```java
 // Import classes:
+//import kimono.api.v2.broker.ApiClient;
 //import kimono.api.v2.broker.ApiException;
+//import kimono.api.v2.broker.Configuration;
+//import kimono.api.v2.broker.auth.*;
 //import kimono.api.v2.broker.VocabularyApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure HTTP basic authorization: BasicAuth
+HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
+BasicAuth.setUsername("YOUR USERNAME");
+BasicAuth.setPassword("YOUR PASSWORD");
 
 VocabularyApi apiInstance = new VocabularyApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Model
@@ -344,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

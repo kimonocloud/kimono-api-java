@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import kimono.api.v2.interop.model.Error;
+import kimono.api.v2.interop.model.ErrorType;
 import kimono.api.v2.interop.model.Integration;
 import kimono.api.v2.interop.model.IntegrationVersion;
 import kimono.api.v2.interop.model.IntegrationVersionsResponse;
@@ -81,7 +81,7 @@ public class IntegrationsApi {
         }
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);

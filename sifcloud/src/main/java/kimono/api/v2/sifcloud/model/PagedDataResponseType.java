@@ -28,7 +28,7 @@ import kimono.api.v2.sifcloud.model.PagedDataResponseTypePaging;
 /**
  * PagedDataResponseType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-21T21:19:38.790-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-29T19:12:27.646-06:00[America/Denver]")
 public class PagedDataResponseType {
   public static final String SERIALIZED_NAME_PAGING = "paging";
   @SerializedName(SERIALIZED_NAME_PAGING)

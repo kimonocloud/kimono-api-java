@@ -28,6 +28,8 @@ import java.io.IOException;
 
 
 import kimono.api.v2.interop.model.Ingestion;
+import kimono.api.v2.interop.model.IngestionResponse;
+import kimono.api.v2.interop.model.IngestionsResponse;
 
 import java.lang.reflect.Type;
 
@@ -199,7 +201,7 @@ public class IngestionsApi {
         }
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -238,11 +240,11 @@ public class IngestionsApi {
      * Create an Ingestion
      * Create an Ingestion. Use the resulting session_token to send Load messages containing raw data to be transformed by the Ingestion Pipeline.
      * @param ingestion Ingestion to create (required)
-     * @return Ingestion
+     * @return IngestionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Ingestion createIngestion(Ingestion ingestion) throws ApiException {
-        ApiResponse<Ingestion> resp = createIngestionWithHttpInfo(ingestion);
+    public IngestionResponse createIngestion(Ingestion ingestion) throws ApiException {
+        ApiResponse<IngestionResponse> resp = createIngestionWithHttpInfo(ingestion);
         return resp.getData();
     }
 
@@ -250,12 +252,12 @@ public class IngestionsApi {
      * Create an Ingestion
      * Create an Ingestion. Use the resulting session_token to send Load messages containing raw data to be transformed by the Ingestion Pipeline.
      * @param ingestion Ingestion to create (required)
-     * @return ApiResponse&lt;Ingestion&gt;
+     * @return ApiResponse&lt;IngestionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Ingestion> createIngestionWithHttpInfo(Ingestion ingestion) throws ApiException {
+    public ApiResponse<IngestionResponse> createIngestionWithHttpInfo(Ingestion ingestion) throws ApiException {
         com.squareup.okhttp.Call call = createIngestionValidateBeforeCall(ingestion, null, null);
-        Type localVarReturnType = new TypeToken<Ingestion>(){}.getType();
+        Type localVarReturnType = new TypeToken<IngestionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -267,7 +269,7 @@ public class IngestionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createIngestionAsync(Ingestion ingestion, final ApiCallback<Ingestion> callback) throws ApiException {
+    public com.squareup.okhttp.Call createIngestionAsync(Ingestion ingestion, final ApiCallback<IngestionResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -289,7 +291,7 @@ public class IngestionsApi {
         }
 
         com.squareup.okhttp.Call call = createIngestionValidateBeforeCall(ingestion, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Ingestion>(){}.getType();
+        Type localVarReturnType = new TypeToken<IngestionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -360,11 +362,11 @@ public class IngestionsApi {
      * Find an Ingestion by id
      * 
      * @param id id of the Ingestion to find (required)
-     * @return Ingestion
+     * @return IngestionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Ingestion findIngestion(java.util.UUID id) throws ApiException {
-        ApiResponse<Ingestion> resp = findIngestionWithHttpInfo(id);
+    public IngestionResponse findIngestion(java.util.UUID id) throws ApiException {
+        ApiResponse<IngestionResponse> resp = findIngestionWithHttpInfo(id);
         return resp.getData();
     }
 
@@ -372,12 +374,12 @@ public class IngestionsApi {
      * Find an Ingestion by id
      * 
      * @param id id of the Ingestion to find (required)
-     * @return ApiResponse&lt;Ingestion&gt;
+     * @return ApiResponse&lt;IngestionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Ingestion> findIngestionWithHttpInfo(java.util.UUID id) throws ApiException {
+    public ApiResponse<IngestionResponse> findIngestionWithHttpInfo(java.util.UUID id) throws ApiException {
         com.squareup.okhttp.Call call = findIngestionValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<Ingestion>(){}.getType();
+        Type localVarReturnType = new TypeToken<IngestionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -389,7 +391,7 @@ public class IngestionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call findIngestionAsync(java.util.UUID id, final ApiCallback<Ingestion> callback) throws ApiException {
+    public com.squareup.okhttp.Call findIngestionAsync(java.util.UUID id, final ApiCallback<IngestionResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -411,7 +413,7 @@ public class IngestionsApi {
         }
 
         com.squareup.okhttp.Call call = findIngestionValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Ingestion>(){}.getType();
+        Type localVarReturnType = new TypeToken<IngestionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -474,23 +476,23 @@ public class IngestionsApi {
     /**
      * List Ingestions
      * Get a list of Ingestions. By default only incomplete Ingestions from the Ingestion Queue are returned.
-     * @return java.util.List&lt;Ingestion&gt;
+     * @return IngestionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public java.util.List<Ingestion> listIngestions() throws ApiException {
-        ApiResponse<java.util.List<Ingestion>> resp = listIngestionsWithHttpInfo();
+    public IngestionsResponse listIngestions() throws ApiException {
+        ApiResponse<IngestionsResponse> resp = listIngestionsWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * List Ingestions
      * Get a list of Ingestions. By default only incomplete Ingestions from the Ingestion Queue are returned.
-     * @return ApiResponse&lt;java.util.List&lt;Ingestion&gt;&gt;
+     * @return ApiResponse&lt;IngestionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<java.util.List<Ingestion>> listIngestionsWithHttpInfo() throws ApiException {
+    public ApiResponse<IngestionsResponse> listIngestionsWithHttpInfo() throws ApiException {
         com.squareup.okhttp.Call call = listIngestionsValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<java.util.List<Ingestion>>(){}.getType();
+        Type localVarReturnType = new TypeToken<IngestionsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -501,7 +503,7 @@ public class IngestionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listIngestionsAsync(final ApiCallback<java.util.List<Ingestion>> callback) throws ApiException {
+    public com.squareup.okhttp.Call listIngestionsAsync(final ApiCallback<IngestionsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -523,7 +525,7 @@ public class IngestionsApi {
         }
 
         com.squareup.okhttp.Call call = listIngestionsValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<java.util.List<Ingestion>>(){}.getType();
+        Type localVarReturnType = new TypeToken<IngestionsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

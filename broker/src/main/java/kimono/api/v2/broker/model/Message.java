@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Message
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-21T21:18:37.173-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-29T19:12:26.671-06:00[America/Denver]")
 public class Message {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -37,11 +37,6 @@ public class Message {
   @SerializedName(SERIALIZED_NAME_DATA)
   private Object data = null;
 
-  public Message id(java.util.UUID id) {
-    this.id = id;
-    return this;
-  }
-
    /**
    * Get id
    * @return id
@@ -49,10 +44,6 @@ public class Message {
   @ApiModelProperty(value = "")
   public java.util.UUID getId() {
     return id;
-  }
-
-  public void setId(java.util.UUID id) {
-    this.id = id;
   }
 
   public Message data(Object data) {

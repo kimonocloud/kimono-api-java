@@ -18,7 +18,7 @@ import kimono.api.v2.sifcloud.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-21T21:19:38.790-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-29T19:12:27.646-06:00[America/Denver]")
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;

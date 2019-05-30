@@ -30,6 +30,7 @@ import java.io.IOException;
 import kimono.api.v2.interopdata.model.Course;
 import kimono.api.v2.interopdata.model.CoursesResponse;
 import kimono.api.v2.interopdata.model.Org;
+import kimono.api.v2.interopdata.model.OrgResponse;
 import kimono.api.v2.interopdata.model.OrgsResponse;
 import kimono.api.v2.interopdata.model.Person;
 import kimono.api.v2.interopdata.model.PersonsResponse;
@@ -305,18 +306,18 @@ public class RosteringApi {
     }
     /**
      * Build call for findOrg
-     * @param orgId $sys.id of the object (required)
+     * @param id $sys.id of the object (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call findOrgCall(java.util.UUID orgId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call findOrgCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/rostering/orgs/{org_id}"
-            .replaceAll("\\{" + "org_id" + "\\}", apiClient.escapeString(orgId.toString()));
+        String localVarPath = "/rostering/orgs/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
@@ -353,15 +354,15 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call findOrgValidateBeforeCall(java.util.UUID orgId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call findOrgValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'orgId' is set
-        if (orgId == null) {
-            throw new ApiException("Missing the required parameter 'orgId' when calling findOrg(Async)");
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling findOrg(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = findOrgCall(orgId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = findOrgCall(id, progressListener, progressRequestListener);
         return call;
 
     }
@@ -369,37 +370,37 @@ public class RosteringApi {
     /**
      * Find an Org by $sys.id
      * 
-     * @param orgId $sys.id of the object (required)
-     * @return Org
+     * @param id $sys.id of the object (required)
+     * @return OrgResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Org findOrg(java.util.UUID orgId) throws ApiException {
-        ApiResponse<Org> resp = findOrgWithHttpInfo(orgId);
+    public OrgResponse findOrg(java.util.UUID id) throws ApiException {
+        ApiResponse<OrgResponse> resp = findOrgWithHttpInfo(id);
         return resp.getData();
     }
 
     /**
      * Find an Org by $sys.id
      * 
-     * @param orgId $sys.id of the object (required)
-     * @return ApiResponse&lt;Org&gt;
+     * @param id $sys.id of the object (required)
+     * @return ApiResponse&lt;OrgResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Org> findOrgWithHttpInfo(java.util.UUID orgId) throws ApiException {
-        com.squareup.okhttp.Call call = findOrgValidateBeforeCall(orgId, null, null);
-        Type localVarReturnType = new TypeToken<Org>(){}.getType();
+    public ApiResponse<OrgResponse> findOrgWithHttpInfo(java.util.UUID id) throws ApiException {
+        com.squareup.okhttp.Call call = findOrgValidateBeforeCall(id, null, null);
+        Type localVarReturnType = new TypeToken<OrgResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Find an Org by $sys.id (asynchronously)
      * 
-     * @param orgId $sys.id of the object (required)
+     * @param id $sys.id of the object (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call findOrgAsync(java.util.UUID orgId, final ApiCallback<Org> callback) throws ApiException {
+    public com.squareup.okhttp.Call findOrgAsync(java.util.UUID id, final ApiCallback<OrgResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -420,8 +421,8 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = findOrgValidateBeforeCall(orgId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Org>(){}.getType();
+        com.squareup.okhttp.Call call = findOrgValidateBeforeCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<OrgResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

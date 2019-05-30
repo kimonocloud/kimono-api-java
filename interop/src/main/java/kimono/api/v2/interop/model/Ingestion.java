@@ -31,15 +31,11 @@ import kimono.api.v2.interop.model.IngestionType;
 /**
  * Ingestion
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-21T21:18:40.423-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-29T19:12:27.084-06:00[America/Denver]")
 public class Ingestion extends BaseResourceType {
-  public static final String SERIALIZED_NAME_ACTOR_ID = "actor_id";
-  @SerializedName(SERIALIZED_NAME_ACTOR_ID)
-  private java.util.UUID actorId;
-
-  public static final String SERIALIZED_NAME_CONNECTOR_ID = "connector_id";
-  @SerializedName(SERIALIZED_NAME_CONNECTOR_ID)
-  private java.util.UUID connectorId;
+  public static final String SERIALIZED_NAME_TENANT_ID = "tenant_id";
+  @SerializedName(SERIALIZED_NAME_TENANT_ID)
+  private java.util.UUID tenantId;
 
   public static final String SERIALIZED_NAME_SESSION_TOKEN = "session_token";
   @SerializedName(SERIALIZED_NAME_SESSION_TOKEN)
@@ -57,40 +53,22 @@ public class Ingestion extends BaseResourceType {
   @SerializedName(SERIALIZED_NAME_STATE)
   private IngestionState state = null;
 
-  public Ingestion actorId(java.util.UUID actorId) {
-    this.actorId = actorId;
+  public Ingestion tenantId(java.util.UUID tenantId) {
+    this.tenantId = tenantId;
     return this;
   }
 
    /**
-   * Get actorId
-   * @return actorId
+   * Get tenantId
+   * @return tenantId
   **/
   @ApiModelProperty(value = "")
-  public java.util.UUID getActorId() {
-    return actorId;
+  public java.util.UUID getTenantId() {
+    return tenantId;
   }
 
-  public void setActorId(java.util.UUID actorId) {
-    this.actorId = actorId;
-  }
-
-  public Ingestion connectorId(java.util.UUID connectorId) {
-    this.connectorId = connectorId;
-    return this;
-  }
-
-   /**
-   * Get connectorId
-   * @return connectorId
-  **/
-  @ApiModelProperty(value = "")
-  public java.util.UUID getConnectorId() {
-    return connectorId;
-  }
-
-  public void setConnectorId(java.util.UUID connectorId) {
-    this.connectorId = connectorId;
+  public void setTenantId(java.util.UUID tenantId) {
+    this.tenantId = tenantId;
   }
 
   public Ingestion sessionToken(String sessionToken) {
@@ -183,8 +161,7 @@ public class Ingestion extends BaseResourceType {
       return false;
     }
     Ingestion ingestion = (Ingestion) o;
-    return Objects.equals(this.actorId, ingestion.actorId) &&
-        Objects.equals(this.connectorId, ingestion.connectorId) &&
+    return Objects.equals(this.tenantId, ingestion.tenantId) &&
         Objects.equals(this.sessionToken, ingestion.sessionToken) &&
         Objects.equals(this.type, ingestion.type) &&
         Objects.equals(this.topics, ingestion.topics) &&
@@ -194,7 +171,7 @@ public class Ingestion extends BaseResourceType {
 
   @Override
   public int hashCode() {
-    return Objects.hash(actorId, connectorId, sessionToken, type, topics, state, super.hashCode());
+    return Objects.hash(tenantId, sessionToken, type, topics, state, super.hashCode());
   }
 
 
@@ -203,8 +180,7 @@ public class Ingestion extends BaseResourceType {
     StringBuilder sb = new StringBuilder();
     sb.append("class Ingestion {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    actorId: ").append(toIndentedString(actorId)).append("\n");
-    sb.append("    connectorId: ").append(toIndentedString(connectorId)).append("\n");
+    sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
     sb.append("    sessionToken: ").append(toIndentedString(sessionToken)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    topics: ").append(toIndentedString(topics)).append("\n");
