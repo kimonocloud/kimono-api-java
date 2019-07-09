@@ -2,7 +2,7 @@
 
 Broker API
 - API version: 2.0
-  - Build date: 2019-05-20T10:02:08.278-06:00[America/Denver]
+  - Build date: 2019-06-18T15:32:02.619-06:00[America/Denver]
 
 Broker APIs provide access to Kimono Broker resources and operations
 
@@ -75,21 +75,28 @@ Please follow the [installation](#installation) instruction and execute the foll
 import kimono.api.v2.broker.*;
 import kimono.api.v2.broker.auth.*;
 import kimono.api.v2.broker.model.*;
-import kimono.api.v2.broker.VocabularyApi;
+import kimono.api.v2.broker.MessagesApi;
 
 import java.io.File;
 import java.util.*;
 
-public class VocabularyApiExample {
+public class MessagesApiExample {
 
     public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
         
-        VocabularyApi apiInstance = new VocabularyApi();
+        // Configure HTTP basic authorization: BasicAuth
+        HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
+        BasicAuth.setUsername("YOUR USERNAME");
+        BasicAuth.setPassword("YOUR PASSWORD");
+
+        MessagesApi apiInstance = new MessagesApi();
+        java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Message to acknowledge
+        MessageAck messageAck = new MessageAck(); // MessageAck | Parameters describing how to acknowledge the Message
         try {
-            ModelsResponse result = apiInstance.createModel();
-            System.out.println(result);
+            apiInstance.acknowledgeMessage(id, messageAck);
         } catch (ApiException e) {
-            System.err.println("Exception when calling VocabularyApi#createModel");
+            System.err.println("Exception when calling MessagesApi#acknowledgeMessage");
             e.printStackTrace();
         }
     }
@@ -103,6 +110,9 @@ All URIs are relative to *http://localhost:5021/v2/broker*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*MessagesApi* | [**acknowledgeMessage**](docs/MessagesApi.md#acknowledgeMessage) | **PUT** /messages/{id}/ack | Acknowledge Message
+*MessagesApi* | [**listMessages**](docs/MessagesApi.md#listMessages) | **GET** /messages | List Messages
+*MessagesApi* | [**sendMessage**](docs/MessagesApi.md#sendMessage) | **POST** /messages | Send Message
 *VocabularyApi* | [**createModel**](docs/VocabularyApi.md#createModel) | **POST** /models | Create Data Models
 *VocabularyApi* | [**deleteModel**](docs/VocabularyApi.md#deleteModel) | **DELETE** /models/{id} | Delete a Data Model
 *VocabularyApi* | [**findModel**](docs/VocabularyApi.md#findModel) | **GET** /models/{id} | Get a Data Model by id
@@ -116,21 +126,32 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [BaseResourceType](docs/BaseResourceType.md)
- - [Error](docs/Error.md)
+ - [ErrorType](docs/ErrorType.md)
  - [Message](docs/Message.md)
  - [MessageAck](docs/MessageAck.md)
  - [Model](docs/Model.md)
  - [ModelsResponse](docs/ModelsResponse.md)
  - [PagedDataResponseType](docs/PagedDataResponseType.md)
  - [PagedDataResponseTypePaging](docs/PagedDataResponseTypePaging.md)
+ - [SingleObjectResponseType](docs/SingleObjectResponseType.md)
  - [Vocabulary](docs/Vocabulary.md)
  - [VocabularysResponse](docs/VocabularysResponse.md)
 
 
 ## Documentation for Authorization
 
-All endpoints do not require authorization.
 Authentication schemes defined for the API:
+### BasicAuth
+
+- **Type**: HTTP basic authentication
+
+### OAuth2
+
+- **Type**: OAuth
+- **Flow**: application
+- **Authorization URL**: 
+- **Scopes**: N/A
+
 
 ## Recommendation
 

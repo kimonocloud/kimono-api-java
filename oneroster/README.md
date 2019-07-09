@@ -2,7 +2,7 @@
 
 OneRoster 1.1
 - API version: 2.0
-  - Build date: 2019-05-20T10:02:09.693-06:00[America/Denver]
+  - Build date: 2019-06-18T15:32:04.179-06:00[America/Denver]
 
 OneRoster 1.1. API
 

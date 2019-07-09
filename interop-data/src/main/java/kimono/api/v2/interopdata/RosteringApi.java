@@ -794,12 +794,14 @@ public class RosteringApi {
     }
     /**
      * Build call for listCourses
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listCoursesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listCoursesCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -807,6 +809,14 @@ public class RosteringApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -840,10 +850,10 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listCoursesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listCoursesValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listCoursesCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listCoursesCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -851,22 +861,26 @@ public class RosteringApi {
     /**
      * List all Courses
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return CoursesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CoursesResponse listCourses() throws ApiException {
-        ApiResponse<CoursesResponse> resp = listCoursesWithHttpInfo();
+    public CoursesResponse listCourses(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<CoursesResponse> resp = listCoursesWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List all Courses
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;CoursesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CoursesResponse> listCoursesWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listCoursesValidateBeforeCall(null, null);
+    public ApiResponse<CoursesResponse> listCoursesWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listCoursesValidateBeforeCall(page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<CoursesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -874,11 +888,13 @@ public class RosteringApi {
     /**
      * List all Courses (asynchronously)
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listCoursesAsync(final ApiCallback<CoursesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listCoursesAsync(Integer page, Integer pageSize, final ApiCallback<CoursesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -899,7 +915,7 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listCoursesValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listCoursesValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CoursesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -907,12 +923,14 @@ public class RosteringApi {
     /**
      * Build call for listCoursesForOrg
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listCoursesForOrgCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listCoursesForOrgCall(java.util.UUID id, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -921,6 +939,14 @@ public class RosteringApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -954,7 +980,7 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listCoursesForOrgValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listCoursesForOrgValidateBeforeCall(java.util.UUID id, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -962,7 +988,7 @@ public class RosteringApi {
         }
         
 
-        com.squareup.okhttp.Call call = listCoursesForOrgCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listCoursesForOrgCall(id, page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -971,11 +997,13 @@ public class RosteringApi {
      * List Courses that belong to an Org
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return CoursesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CoursesResponse listCoursesForOrg(java.util.UUID id) throws ApiException {
-        ApiResponse<CoursesResponse> resp = listCoursesForOrgWithHttpInfo(id);
+    public CoursesResponse listCoursesForOrg(java.util.UUID id, Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<CoursesResponse> resp = listCoursesForOrgWithHttpInfo(id, page, pageSize);
         return resp.getData();
     }
 
@@ -983,11 +1011,13 @@ public class RosteringApi {
      * List Courses that belong to an Org
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;CoursesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CoursesResponse> listCoursesForOrgWithHttpInfo(java.util.UUID id) throws ApiException {
-        com.squareup.okhttp.Call call = listCoursesForOrgValidateBeforeCall(id, null, null);
+    public ApiResponse<CoursesResponse> listCoursesForOrgWithHttpInfo(java.util.UUID id, Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listCoursesForOrgValidateBeforeCall(id, page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<CoursesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -996,11 +1026,13 @@ public class RosteringApi {
      * List Courses that belong to an Org (asynchronously)
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listCoursesForOrgAsync(java.util.UUID id, final ApiCallback<CoursesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listCoursesForOrgAsync(java.util.UUID id, Integer page, Integer pageSize, final ApiCallback<CoursesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1021,19 +1053,21 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listCoursesForOrgValidateBeforeCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listCoursesForOrgValidateBeforeCall(id, page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CoursesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for listLEAs
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listLEAsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listLEAsCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1041,6 +1075,14 @@ public class RosteringApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -1074,10 +1116,10 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listLEAsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listLEAsValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listLEAsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listLEAsCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1085,22 +1127,26 @@ public class RosteringApi {
     /**
      * List all LEA-type Orgs
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return OrgsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public OrgsResponse listLEAs() throws ApiException {
-        ApiResponse<OrgsResponse> resp = listLEAsWithHttpInfo();
+    public OrgsResponse listLEAs(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<OrgsResponse> resp = listLEAsWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List all LEA-type Orgs
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;OrgsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<OrgsResponse> listLEAsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listLEAsValidateBeforeCall(null, null);
+    public ApiResponse<OrgsResponse> listLEAsWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listLEAsValidateBeforeCall(page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<OrgsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1108,11 +1154,13 @@ public class RosteringApi {
     /**
      * List all LEA-type Orgs (asynchronously)
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listLEAsAsync(final ApiCallback<OrgsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listLEAsAsync(Integer page, Integer pageSize, final ApiCallback<OrgsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1133,19 +1181,21 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listLEAsValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listLEAsValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<OrgsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for listOrgs
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listOrgsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listOrgsCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1153,6 +1203,14 @@ public class RosteringApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -1186,10 +1244,10 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listOrgsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listOrgsValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listOrgsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listOrgsCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1197,22 +1255,26 @@ public class RosteringApi {
     /**
      * List all Orgs
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return OrgsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public OrgsResponse listOrgs() throws ApiException {
-        ApiResponse<OrgsResponse> resp = listOrgsWithHttpInfo();
+    public OrgsResponse listOrgs(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<OrgsResponse> resp = listOrgsWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List all Orgs
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;OrgsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<OrgsResponse> listOrgsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listOrgsValidateBeforeCall(null, null);
+    public ApiResponse<OrgsResponse> listOrgsWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listOrgsValidateBeforeCall(page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<OrgsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1220,11 +1282,13 @@ public class RosteringApi {
     /**
      * List all Orgs (asynchronously)
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listOrgsAsync(final ApiCallback<OrgsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listOrgsAsync(Integer page, Integer pageSize, final ApiCallback<OrgsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1245,19 +1309,21 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listOrgsValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listOrgsValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<OrgsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for listPersons
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listPersonsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listPersonsCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1265,6 +1331,14 @@ public class RosteringApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -1298,10 +1372,10 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listPersonsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listPersonsValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listPersonsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listPersonsCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1309,22 +1383,26 @@ public class RosteringApi {
     /**
      * Get all Persons
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return PersonsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PersonsResponse listPersons() throws ApiException {
-        ApiResponse<PersonsResponse> resp = listPersonsWithHttpInfo();
+    public PersonsResponse listPersons(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<PersonsResponse> resp = listPersonsWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * Get all Persons
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;PersonsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PersonsResponse> listPersonsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listPersonsValidateBeforeCall(null, null);
+    public ApiResponse<PersonsResponse> listPersonsWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listPersonsValidateBeforeCall(page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<PersonsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1332,11 +1410,13 @@ public class RosteringApi {
     /**
      * Get all Persons (asynchronously)
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listPersonsAsync(final ApiCallback<PersonsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listPersonsAsync(Integer page, Integer pageSize, final ApiCallback<PersonsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1357,19 +1437,21 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listPersonsValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listPersonsValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PersonsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for listSchools
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listSchoolsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listSchoolsCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1377,6 +1459,14 @@ public class RosteringApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -1410,10 +1500,10 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listSchoolsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listSchoolsValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listSchoolsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listSchoolsCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1421,22 +1511,26 @@ public class RosteringApi {
     /**
      * List all School-type Orgs
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return OrgsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public OrgsResponse listSchools() throws ApiException {
-        ApiResponse<OrgsResponse> resp = listSchoolsWithHttpInfo();
+    public OrgsResponse listSchools(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<OrgsResponse> resp = listSchoolsWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List all School-type Orgs
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;OrgsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<OrgsResponse> listSchoolsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listSchoolsValidateBeforeCall(null, null);
+    public ApiResponse<OrgsResponse> listSchoolsWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listSchoolsValidateBeforeCall(page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<OrgsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1444,11 +1538,13 @@ public class RosteringApi {
     /**
      * List all School-type Orgs (asynchronously)
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listSchoolsAsync(final ApiCallback<OrgsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listSchoolsAsync(Integer page, Integer pageSize, final ApiCallback<OrgsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1469,19 +1565,21 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listSchoolsValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listSchoolsValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<OrgsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for listSections
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listSectionsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listSectionsCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1489,6 +1587,14 @@ public class RosteringApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -1522,10 +1628,10 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listSectionsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listSectionsValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listSectionsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listSectionsCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1533,22 +1639,26 @@ public class RosteringApi {
     /**
      * List all Sections
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return SectionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SectionsResponse listSections() throws ApiException {
-        ApiResponse<SectionsResponse> resp = listSectionsWithHttpInfo();
+    public SectionsResponse listSections(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<SectionsResponse> resp = listSectionsWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List all Sections
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;SectionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SectionsResponse> listSectionsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listSectionsValidateBeforeCall(null, null);
+    public ApiResponse<SectionsResponse> listSectionsWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listSectionsValidateBeforeCall(page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<SectionsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1556,11 +1666,13 @@ public class RosteringApi {
     /**
      * List all Sections (asynchronously)
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listSectionsAsync(final ApiCallback<SectionsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listSectionsAsync(Integer page, Integer pageSize, final ApiCallback<SectionsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1581,7 +1693,7 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listSectionsValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listSectionsValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SectionsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1589,12 +1701,14 @@ public class RosteringApi {
     /**
      * Build call for listSectionsForOrg
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listSectionsForOrgCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listSectionsForOrgCall(java.util.UUID id, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1603,6 +1717,14 @@ public class RosteringApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -1636,7 +1758,7 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listSectionsForOrgValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listSectionsForOrgValidateBeforeCall(java.util.UUID id, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -1644,7 +1766,7 @@ public class RosteringApi {
         }
         
 
-        com.squareup.okhttp.Call call = listSectionsForOrgCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listSectionsForOrgCall(id, page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1653,11 +1775,13 @@ public class RosteringApi {
      * List Sections that belong to an Org
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return SectionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SectionsResponse listSectionsForOrg(java.util.UUID id) throws ApiException {
-        ApiResponse<SectionsResponse> resp = listSectionsForOrgWithHttpInfo(id);
+    public SectionsResponse listSectionsForOrg(java.util.UUID id, Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<SectionsResponse> resp = listSectionsForOrgWithHttpInfo(id, page, pageSize);
         return resp.getData();
     }
 
@@ -1665,11 +1789,13 @@ public class RosteringApi {
      * List Sections that belong to an Org
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;SectionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SectionsResponse> listSectionsForOrgWithHttpInfo(java.util.UUID id) throws ApiException {
-        com.squareup.okhttp.Call call = listSectionsForOrgValidateBeforeCall(id, null, null);
+    public ApiResponse<SectionsResponse> listSectionsForOrgWithHttpInfo(java.util.UUID id, Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listSectionsForOrgValidateBeforeCall(id, page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<SectionsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1678,11 +1804,13 @@ public class RosteringApi {
      * List Sections that belong to an Org (asynchronously)
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listSectionsForOrgAsync(java.util.UUID id, final ApiCallback<SectionsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listSectionsForOrgAsync(java.util.UUID id, Integer page, Integer pageSize, final ApiCallback<SectionsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1703,19 +1831,21 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listSectionsForOrgValidateBeforeCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listSectionsForOrgValidateBeforeCall(id, page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SectionsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for listStudents
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listStudentsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listStudentsCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1723,6 +1853,14 @@ public class RosteringApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -1756,10 +1894,10 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listStudentsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listStudentsValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listStudentsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listStudentsCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1767,22 +1905,26 @@ public class RosteringApi {
     /**
      * List all Student-type Persons
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return PersonsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PersonsResponse listStudents() throws ApiException {
-        ApiResponse<PersonsResponse> resp = listStudentsWithHttpInfo();
+    public PersonsResponse listStudents(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<PersonsResponse> resp = listStudentsWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List all Student-type Persons
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;PersonsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PersonsResponse> listStudentsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listStudentsValidateBeforeCall(null, null);
+    public ApiResponse<PersonsResponse> listStudentsWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listStudentsValidateBeforeCall(page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<PersonsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1790,11 +1932,13 @@ public class RosteringApi {
     /**
      * List all Student-type Persons (asynchronously)
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listStudentsAsync(final ApiCallback<PersonsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listStudentsAsync(Integer page, Integer pageSize, final ApiCallback<PersonsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1815,7 +1959,7 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listStudentsValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listStudentsValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PersonsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1823,12 +1967,14 @@ public class RosteringApi {
     /**
      * Build call for listStudentsForOrg
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listStudentsForOrgCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listStudentsForOrgCall(java.util.UUID id, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1837,6 +1983,14 @@ public class RosteringApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -1870,7 +2024,7 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listStudentsForOrgValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listStudentsForOrgValidateBeforeCall(java.util.UUID id, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -1878,7 +2032,7 @@ public class RosteringApi {
         }
         
 
-        com.squareup.okhttp.Call call = listStudentsForOrgCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listStudentsForOrgCall(id, page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1887,11 +2041,13 @@ public class RosteringApi {
      * List Students that are members of an Org
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return PersonsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PersonsResponse listStudentsForOrg(java.util.UUID id) throws ApiException {
-        ApiResponse<PersonsResponse> resp = listStudentsForOrgWithHttpInfo(id);
+    public PersonsResponse listStudentsForOrg(java.util.UUID id, Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<PersonsResponse> resp = listStudentsForOrgWithHttpInfo(id, page, pageSize);
         return resp.getData();
     }
 
@@ -1899,11 +2055,13 @@ public class RosteringApi {
      * List Students that are members of an Org
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;PersonsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PersonsResponse> listStudentsForOrgWithHttpInfo(java.util.UUID id) throws ApiException {
-        com.squareup.okhttp.Call call = listStudentsForOrgValidateBeforeCall(id, null, null);
+    public ApiResponse<PersonsResponse> listStudentsForOrgWithHttpInfo(java.util.UUID id, Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listStudentsForOrgValidateBeforeCall(id, page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<PersonsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1912,11 +2070,13 @@ public class RosteringApi {
      * List Students that are members of an Org (asynchronously)
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listStudentsForOrgAsync(java.util.UUID id, final ApiCallback<PersonsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listStudentsForOrgAsync(java.util.UUID id, Integer page, Integer pageSize, final ApiCallback<PersonsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1937,19 +2097,21 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listStudentsForOrgValidateBeforeCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listStudentsForOrgValidateBeforeCall(id, page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PersonsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for listTeachers
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listTeachersCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listTeachersCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -1957,6 +2119,14 @@ public class RosteringApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -1990,10 +2160,10 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listTeachersValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listTeachersValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listTeachersCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listTeachersCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2001,22 +2171,26 @@ public class RosteringApi {
     /**
      * List all Teacher-type Persons
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return PersonsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PersonsResponse listTeachers() throws ApiException {
-        ApiResponse<PersonsResponse> resp = listTeachersWithHttpInfo();
+    public PersonsResponse listTeachers(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<PersonsResponse> resp = listTeachersWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List all Teacher-type Persons
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;PersonsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PersonsResponse> listTeachersWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listTeachersValidateBeforeCall(null, null);
+    public ApiResponse<PersonsResponse> listTeachersWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listTeachersValidateBeforeCall(page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<PersonsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2024,11 +2198,13 @@ public class RosteringApi {
     /**
      * List all Teacher-type Persons (asynchronously)
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listTeachersAsync(final ApiCallback<PersonsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listTeachersAsync(Integer page, Integer pageSize, final ApiCallback<PersonsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2049,7 +2225,7 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listTeachersValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listTeachersValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PersonsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2057,12 +2233,14 @@ public class RosteringApi {
     /**
      * Build call for listTeachersForOrg
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listTeachersForOrgCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listTeachersForOrgCall(java.util.UUID id, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -2071,6 +2249,14 @@ public class RosteringApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -2104,7 +2290,7 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listTeachersForOrgValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listTeachersForOrgValidateBeforeCall(java.util.UUID id, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -2112,7 +2298,7 @@ public class RosteringApi {
         }
         
 
-        com.squareup.okhttp.Call call = listTeachersForOrgCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listTeachersForOrgCall(id, page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2121,11 +2307,13 @@ public class RosteringApi {
      * List Teachers that are members of an Org
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return PersonsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PersonsResponse listTeachersForOrg(java.util.UUID id) throws ApiException {
-        ApiResponse<PersonsResponse> resp = listTeachersForOrgWithHttpInfo(id);
+    public PersonsResponse listTeachersForOrg(java.util.UUID id, Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<PersonsResponse> resp = listTeachersForOrgWithHttpInfo(id, page, pageSize);
         return resp.getData();
     }
 
@@ -2133,11 +2321,13 @@ public class RosteringApi {
      * List Teachers that are members of an Org
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;PersonsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PersonsResponse> listTeachersForOrgWithHttpInfo(java.util.UUID id) throws ApiException {
-        com.squareup.okhttp.Call call = listTeachersForOrgValidateBeforeCall(id, null, null);
+    public ApiResponse<PersonsResponse> listTeachersForOrgWithHttpInfo(java.util.UUID id, Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listTeachersForOrgValidateBeforeCall(id, page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<PersonsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2146,11 +2336,13 @@ public class RosteringApi {
      * List Teachers that are members of an Org (asynchronously)
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listTeachersForOrgAsync(java.util.UUID id, final ApiCallback<PersonsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listTeachersForOrgAsync(java.util.UUID id, Integer page, Integer pageSize, final ApiCallback<PersonsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2171,19 +2363,21 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listTeachersForOrgValidateBeforeCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listTeachersForOrgValidateBeforeCall(id, page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PersonsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for listTerms
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listTermsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listTermsCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -2191,6 +2385,14 @@ public class RosteringApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -2224,10 +2426,10 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listTermsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listTermsValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listTermsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listTermsCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2235,22 +2437,26 @@ public class RosteringApi {
     /**
      * List all Terms
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return TermsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TermsResponse listTerms() throws ApiException {
-        ApiResponse<TermsResponse> resp = listTermsWithHttpInfo();
+    public TermsResponse listTerms(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<TermsResponse> resp = listTermsWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List all Terms
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;TermsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TermsResponse> listTermsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listTermsValidateBeforeCall(null, null);
+    public ApiResponse<TermsResponse> listTermsWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listTermsValidateBeforeCall(page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<TermsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2258,11 +2464,13 @@ public class RosteringApi {
     /**
      * List all Terms (asynchronously)
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listTermsAsync(final ApiCallback<TermsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listTermsAsync(Integer page, Integer pageSize, final ApiCallback<TermsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2283,7 +2491,7 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listTermsValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listTermsValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TermsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -2291,12 +2499,14 @@ public class RosteringApi {
     /**
      * Build call for listTermsForOrg
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listTermsForOrgCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listTermsForOrgCall(java.util.UUID id, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -2305,6 +2515,14 @@ public class RosteringApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -2338,7 +2556,7 @@ public class RosteringApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listTermsForOrgValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listTermsForOrgValidateBeforeCall(java.util.UUID id, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
@@ -2346,7 +2564,7 @@ public class RosteringApi {
         }
         
 
-        com.squareup.okhttp.Call call = listTermsForOrgCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listTermsForOrgCall(id, page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2355,11 +2573,13 @@ public class RosteringApi {
      * List Terms that belong to an Org
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return TermsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TermsResponse listTermsForOrg(java.util.UUID id) throws ApiException {
-        ApiResponse<TermsResponse> resp = listTermsForOrgWithHttpInfo(id);
+    public TermsResponse listTermsForOrg(java.util.UUID id, Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<TermsResponse> resp = listTermsForOrgWithHttpInfo(id, page, pageSize);
         return resp.getData();
     }
 
@@ -2367,11 +2587,13 @@ public class RosteringApi {
      * List Terms that belong to an Org
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;TermsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TermsResponse> listTermsForOrgWithHttpInfo(java.util.UUID id) throws ApiException {
-        com.squareup.okhttp.Call call = listTermsForOrgValidateBeforeCall(id, null, null);
+    public ApiResponse<TermsResponse> listTermsForOrgWithHttpInfo(java.util.UUID id, Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listTermsForOrgValidateBeforeCall(id, page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<TermsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2380,11 +2602,13 @@ public class RosteringApi {
      * List Terms that belong to an Org (asynchronously)
      * 
      * @param id $sys.id of the Org (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listTermsForOrgAsync(java.util.UUID id, final ApiCallback<TermsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listTermsForOrgAsync(java.util.UUID id, Integer page, Integer pageSize, final ApiCallback<TermsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2405,7 +2629,7 @@ public class RosteringApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listTermsForOrgValidateBeforeCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listTermsForOrgValidateBeforeCall(id, page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TermsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

@@ -2,7 +2,7 @@
 
 Grades Exchange API
 - API version: 2.0
-  - Build date: 2019-05-20T10:02:09.473-06:00[America/Denver]
+  - Build date: 2019-06-18T15:32:03.953-06:00[America/Denver]
 
 Use the Grades Exchange APIs to implement a Grades Producer or Grades Consumer client application and to manage Exchanges between producers and consumers.
 

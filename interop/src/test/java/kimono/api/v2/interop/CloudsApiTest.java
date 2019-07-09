@@ -13,10 +13,13 @@
 
 package kimono.api.v2.interop;
 
-import kimono.api.v2.interop.ApiException;
-import kimono.api.v2.interop.model.Cloud;
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
+
+import kimono.api.v2.interop.model.ActorsResponse;
+import kimono.api.v2.interop.model.Cloud;
+import kimono.api.v2.interop.model.CloudResponse;
+import kimono.api.v2.interop.model.CloudsResponse;
 
 
 /**
@@ -29,6 +32,70 @@ public class CloudsApiTest {
 
     
     /**
+     * Create an Interop Cloud
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createCloudTest() throws ApiException {
+        Cloud cloud = null;
+        CloudResponse response = api.createCloud(cloud);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Delete an Interop Cloud
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteCloudTest() throws ApiException {
+        java.util.UUID id = null;
+        api.deleteCloud(id);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Find an Interop Cloud
+     *
+     * Find an Interop Cloud by identifier
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void findCloudTest() throws ApiException {
+        java.util.UUID id = null;
+        CloudResponse response = api.findCloud(id);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List all Actors in an Interop Cloud
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listActorsByCloudTest() throws ApiException {
+        java.util.UUID id = null;
+        ActorsResponse response = api.listActorsByCloud(id,null, null);
+
+        // TODO: test validations
+    }
+    
+    /**
      * List Interop Clouds
      *
      * Get a list of Interop Clouds for accounts visible to you.
@@ -38,7 +105,7 @@ public class CloudsApiTest {
      */
     @Test
     public void listCloudsTest() throws ApiException {
-        java.util.List<Cloud> response = api.listClouds();
+        CloudsResponse response = api.listClouds(null, null);
 
         // TODO: test validations
     }

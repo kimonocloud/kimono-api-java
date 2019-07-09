@@ -13,10 +13,10 @@
 
 package kimono.api.v2.interop;
 
-import kimono.api.v2.interop.ApiException;
-import kimono.api.v2.interop.model.Actor;
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
+
+import kimono.api.v2.interop.model.ActorsResponse;
 
 
 /**
@@ -38,7 +38,7 @@ public class ActorsApiTest {
      */
     @Test
     public void listActorsTest() throws ApiException {
-        java.util.List<Actor> response = api.listActors();
+        ActorsResponse response = api.listActors(null, null);
 
         // TODO: test validations
     }

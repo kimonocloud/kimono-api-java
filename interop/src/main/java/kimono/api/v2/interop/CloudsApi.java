@@ -27,7 +27,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import kimono.api.v2.interop.model.ActorsResponse;
 import kimono.api.v2.interop.model.Cloud;
+import kimono.api.v2.interop.model.CloudResponse;
+import kimono.api.v2.interop.model.CloudsResponse;
+import kimono.api.v2.interop.model.ErrorType;
 
 import java.lang.reflect.Type;
 
@@ -51,17 +55,258 @@ public class CloudsApi {
     }
 
     /**
-     * Build call for listClouds
+     * Build call for createCloud
+     * @param cloud Cloud to create (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listCloudsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = new Object();
+    public com.squareup.okhttp.Call createCloudCall(Cloud cloud, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = cloud;
 
         // create path and map variables
         String localVarPath = "/clouds";
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createCloudValidateBeforeCall(Cloud cloud, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'cloud' is set
+        if (cloud == null) {
+            throw new ApiException("Missing the required parameter 'cloud' when calling createCloud(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createCloudCall(cloud, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create an Interop Cloud
+     * 
+     * @param cloud Cloud to create (required)
+     * @return CloudResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CloudResponse createCloud(Cloud cloud) throws ApiException {
+        ApiResponse<CloudResponse> resp = createCloudWithHttpInfo(cloud);
+        return resp.getData();
+    }
+
+    /**
+     * Create an Interop Cloud
+     * 
+     * @param cloud Cloud to create (required)
+     * @return ApiResponse&lt;CloudResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CloudResponse> createCloudWithHttpInfo(Cloud cloud) throws ApiException {
+        com.squareup.okhttp.Call call = createCloudValidateBeforeCall(cloud, null, null);
+        Type localVarReturnType = new TypeToken<CloudResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create an Interop Cloud (asynchronously)
+     * 
+     * @param cloud Cloud to create (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createCloudAsync(Cloud cloud, final ApiCallback<CloudResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createCloudValidateBeforeCall(cloud, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for deleteCloud
+     * @param id id of the Cloud to delete (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call deleteCloudCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/clouds/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call deleteCloudValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling deleteCloud(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = deleteCloudCall(id, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Delete an Interop Cloud
+     * 
+     * @param id id of the Cloud to delete (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void deleteCloud(java.util.UUID id) throws ApiException {
+        deleteCloudWithHttpInfo(id);
+    }
+
+    /**
+     * Delete an Interop Cloud
+     * 
+     * @param id id of the Cloud to delete (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> deleteCloudWithHttpInfo(java.util.UUID id) throws ApiException {
+        com.squareup.okhttp.Call call = deleteCloudValidateBeforeCall(id, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Delete an Interop Cloud (asynchronously)
+     * 
+     * @param id id of the Cloud to delete (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call deleteCloudAsync(java.util.UUID id, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = deleteCloudValidateBeforeCall(id, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
+     * Build call for findCloud
+     * @param id id of the object (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call findCloudCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/clouds/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
@@ -98,45 +343,53 @@ public class CloudsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listCloudsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call findCloudValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling findCloud(Async)");
+        }
         
 
-        com.squareup.okhttp.Call call = listCloudsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = findCloudCall(id, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * List Interop Clouds
-     * Get a list of Interop Clouds for accounts visible to you.
-     * @return java.util.List&lt;Cloud&gt;
+     * Find an Interop Cloud
+     * Find an Interop Cloud by identifier
+     * @param id id of the object (required)
+     * @return CloudResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public java.util.List<Cloud> listClouds() throws ApiException {
-        ApiResponse<java.util.List<Cloud>> resp = listCloudsWithHttpInfo();
+    public CloudResponse findCloud(java.util.UUID id) throws ApiException {
+        ApiResponse<CloudResponse> resp = findCloudWithHttpInfo(id);
         return resp.getData();
     }
 
     /**
-     * List Interop Clouds
-     * Get a list of Interop Clouds for accounts visible to you.
-     * @return ApiResponse&lt;java.util.List&lt;Cloud&gt;&gt;
+     * Find an Interop Cloud
+     * Find an Interop Cloud by identifier
+     * @param id id of the object (required)
+     * @return ApiResponse&lt;CloudResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<java.util.List<Cloud>> listCloudsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listCloudsValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<java.util.List<Cloud>>(){}.getType();
+    public ApiResponse<CloudResponse> findCloudWithHttpInfo(java.util.UUID id) throws ApiException {
+        com.squareup.okhttp.Call call = findCloudValidateBeforeCall(id, null, null);
+        Type localVarReturnType = new TypeToken<CloudResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * List Interop Clouds (asynchronously)
-     * Get a list of Interop Clouds for accounts visible to you.
+     * Find an Interop Cloud (asynchronously)
+     * Find an Interop Cloud by identifier
+     * @param id id of the object (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listCloudsAsync(final ApiCallback<java.util.List<Cloud>> callback) throws ApiException {
+    public com.squareup.okhttp.Call findCloudAsync(java.util.UUID id, final ApiCallback<CloudResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -157,8 +410,426 @@ public class CloudsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listCloudsValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<java.util.List<Cloud>>(){}.getType();
+        com.squareup.okhttp.Call call = findCloudValidateBeforeCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CloudResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for listActorsByCloud
+     * @param id id of the object (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call listActorsByCloudCall(java.util.UUID id, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/clouds/{id}/actors"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call listActorsByCloudValidateBeforeCall(java.util.UUID id, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling listActorsByCloud(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = listActorsByCloudCall(id, page, pageSize, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * List all Actors in an Interop Cloud
+     * 
+     * @param id id of the object (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ActorsResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ActorsResponse listActorsByCloud(java.util.UUID id, Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<ActorsResponse> resp = listActorsByCloudWithHttpInfo(id, page, pageSize);
+        return resp.getData();
+    }
+
+    /**
+     * List all Actors in an Interop Cloud
+     * 
+     * @param id id of the object (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ApiResponse&lt;ActorsResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ActorsResponse> listActorsByCloudWithHttpInfo(java.util.UUID id, Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listActorsByCloudValidateBeforeCall(id, page, pageSize, null, null);
+        Type localVarReturnType = new TypeToken<ActorsResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * List all Actors in an Interop Cloud (asynchronously)
+     * 
+     * @param id id of the object (required)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call listActorsByCloudAsync(java.util.UUID id, Integer page, Integer pageSize, final ApiCallback<ActorsResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = listActorsByCloudValidateBeforeCall(id, page, pageSize, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ActorsResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for listClouds
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call listCloudsCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/clouds";
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call listCloudsValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = listCloudsCall(page, pageSize, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * List Interop Clouds
+     * Get a list of Interop Clouds for accounts visible to you.
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return CloudsResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CloudsResponse listClouds(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<CloudsResponse> resp = listCloudsWithHttpInfo(page, pageSize);
+        return resp.getData();
+    }
+
+    /**
+     * List Interop Clouds
+     * Get a list of Interop Clouds for accounts visible to you.
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ApiResponse&lt;CloudsResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CloudsResponse> listCloudsWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listCloudsValidateBeforeCall(page, pageSize, null, null);
+        Type localVarReturnType = new TypeToken<CloudsResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * List Interop Clouds (asynchronously)
+     * Get a list of Interop Clouds for accounts visible to you.
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call listCloudsAsync(Integer page, Integer pageSize, final ApiCallback<CloudsResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = listCloudsValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CloudsResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for searchClouds
+     * @param generation List all Clouds of a matching generation (optional)
+     * @param userdata List all Clouds with matching userdata (optional)
+     * @param name List all Clouds with a matching name (optional)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call searchCloudsCall(Integer generation, String userdata, String name, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/clouds/search";
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (generation != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("generation", generation));
+        }
+
+        if (userdata != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("userdata", userdata));
+        }
+
+        if (name != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("name", name));
+        }
+
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call searchCloudsValidateBeforeCall(Integer generation, String userdata, String name, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = searchCloudsCall(generation, userdata, name, page, pageSize, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Search Interop Clouds
+     * Get a list of Interop Clouds matching the search criteria.
+     * @param generation List all Clouds of a matching generation (optional)
+     * @param userdata List all Clouds with matching userdata (optional)
+     * @param name List all Clouds with a matching name (optional)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return CloudsResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CloudsResponse searchClouds(Integer generation, String userdata, String name, Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<CloudsResponse> resp = searchCloudsWithHttpInfo(generation, userdata, name, page, pageSize);
+        return resp.getData();
+    }
+
+    /**
+     * Search Interop Clouds
+     * Get a list of Interop Clouds matching the search criteria.
+     * @param generation List all Clouds of a matching generation (optional)
+     * @param userdata List all Clouds with matching userdata (optional)
+     * @param name List all Clouds with a matching name (optional)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ApiResponse&lt;CloudsResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CloudsResponse> searchCloudsWithHttpInfo(Integer generation, String userdata, String name, Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = searchCloudsValidateBeforeCall(generation, userdata, name, page, pageSize, null, null);
+        Type localVarReturnType = new TypeToken<CloudsResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Search Interop Clouds (asynchronously)
+     * Get a list of Interop Clouds matching the search criteria.
+     * @param generation List all Clouds of a matching generation (optional)
+     * @param userdata List all Clouds with matching userdata (optional)
+     * @param name List all Clouds with a matching name (optional)
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call searchCloudsAsync(Integer generation, String userdata, String name, Integer page, Integer pageSize, final ApiCallback<CloudsResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = searchCloudsValidateBeforeCall(generation, userdata, name, page, pageSize, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CloudsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

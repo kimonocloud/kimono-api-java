@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import kimono.api.v2.grades.model.Exchange;
+import kimono.api.v2.grades.model.ExchangesResponse;
 
 import java.lang.reflect.Type;
 
@@ -52,12 +52,14 @@ public class GradesExchangeApi {
 
     /**
      * Build call for listExchanges
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listExchangesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listExchangesCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -65,6 +67,14 @@ public class GradesExchangeApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -98,10 +108,10 @@ public class GradesExchangeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listExchangesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listExchangesValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listExchangesCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listExchangesCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -109,34 +119,40 @@ public class GradesExchangeApi {
     /**
      * List Grades Exchanges
      * Get a list of Grades Exchanges
-     * @return java.util.List&lt;Exchange&gt;
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ExchangesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public java.util.List<Exchange> listExchanges() throws ApiException {
-        ApiResponse<java.util.List<Exchange>> resp = listExchangesWithHttpInfo();
+    public ExchangesResponse listExchanges(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<ExchangesResponse> resp = listExchangesWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List Grades Exchanges
      * Get a list of Grades Exchanges
-     * @return ApiResponse&lt;java.util.List&lt;Exchange&gt;&gt;
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ApiResponse&lt;ExchangesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<java.util.List<Exchange>> listExchangesWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listExchangesValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<java.util.List<Exchange>>(){}.getType();
+    public ApiResponse<ExchangesResponse> listExchangesWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listExchangesValidateBeforeCall(page, pageSize, null, null);
+        Type localVarReturnType = new TypeToken<ExchangesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * List Grades Exchanges (asynchronously)
      * Get a list of Grades Exchanges
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listExchangesAsync(final ApiCallback<java.util.List<Exchange>> callback) throws ApiException {
+    public com.squareup.okhttp.Call listExchangesAsync(Integer page, Integer pageSize, final ApiCallback<ExchangesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -157,8 +173,8 @@ public class GradesExchangeApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listExchangesValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<java.util.List<Exchange>>(){}.getType();
+        com.squareup.okhttp.Call call = listExchangesValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ExchangesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

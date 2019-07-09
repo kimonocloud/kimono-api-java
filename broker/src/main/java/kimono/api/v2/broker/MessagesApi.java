@@ -27,8 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import kimono.api.v2.broker.model.ErrorType;
 import kimono.api.v2.broker.model.Message;
 import kimono.api.v2.broker.model.MessageAck;
+import kimono.api.v2.broker.model.MessageResponse;
 
 import java.lang.reflect.Type;
 
@@ -175,12 +177,14 @@ public class MessagesApi {
     }
     /**
      * Build call for listMessages
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listMessagesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listMessagesCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -188,6 +192,14 @@ public class MessagesApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -221,10 +233,10 @@ public class MessagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listMessagesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listMessagesValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listMessagesCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listMessagesCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -232,22 +244,26 @@ public class MessagesApi {
     /**
      * List Messages
      * Get the next batch of Messages for the authenticated actor. The number of Messages returned is determined by Kimono and may change from time to time. See [Messages](doc:broker-api-messages) for details.
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return java.util.List&lt;Message&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public java.util.List<Message> listMessages() throws ApiException {
-        ApiResponse<java.util.List<Message>> resp = listMessagesWithHttpInfo();
+    public java.util.List<Message> listMessages(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<java.util.List<Message>> resp = listMessagesWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List Messages
      * Get the next batch of Messages for the authenticated actor. The number of Messages returned is determined by Kimono and may change from time to time. See [Messages](doc:broker-api-messages) for details.
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;java.util.List&lt;Message&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<java.util.List<Message>> listMessagesWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listMessagesValidateBeforeCall(null, null);
+    public ApiResponse<java.util.List<Message>> listMessagesWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listMessagesValidateBeforeCall(page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<java.util.List<Message>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -255,11 +271,13 @@ public class MessagesApi {
     /**
      * List Messages (asynchronously)
      * Get the next batch of Messages for the authenticated actor. The number of Messages returned is determined by Kimono and may change from time to time. See [Messages](doc:broker-api-messages) for details.
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listMessagesAsync(final ApiCallback<java.util.List<Message>> callback) throws ApiException {
+    public com.squareup.okhttp.Call listMessagesAsync(Integer page, Integer pageSize, final ApiCallback<java.util.List<Message>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -280,7 +298,7 @@ public class MessagesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listMessagesValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listMessagesValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<java.util.List<Message>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -351,11 +369,11 @@ public class MessagesApi {
      * Send Message
      * Send a Message
      * @param message The JSON-encoded Message to send (required)
-     * @return Message
+     * @return MessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Message sendMessage(Message message) throws ApiException {
-        ApiResponse<Message> resp = sendMessageWithHttpInfo(message);
+    public MessageResponse sendMessage(Message message) throws ApiException {
+        ApiResponse<MessageResponse> resp = sendMessageWithHttpInfo(message);
         return resp.getData();
     }
 
@@ -363,12 +381,12 @@ public class MessagesApi {
      * Send Message
      * Send a Message
      * @param message The JSON-encoded Message to send (required)
-     * @return ApiResponse&lt;Message&gt;
+     * @return ApiResponse&lt;MessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Message> sendMessageWithHttpInfo(Message message) throws ApiException {
+    public ApiResponse<MessageResponse> sendMessageWithHttpInfo(Message message) throws ApiException {
         com.squareup.okhttp.Call call = sendMessageValidateBeforeCall(message, null, null);
-        Type localVarReturnType = new TypeToken<Message>(){}.getType();
+        Type localVarReturnType = new TypeToken<MessageResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -380,7 +398,7 @@ public class MessagesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call sendMessageAsync(Message message, final ApiCallback<Message> callback) throws ApiException {
+    public com.squareup.okhttp.Call sendMessageAsync(Message message, final ApiCallback<MessageResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -402,7 +420,7 @@ public class MessagesApi {
         }
 
         com.squareup.okhttp.Call call = sendMessageValidateBeforeCall(message, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Message>(){}.getType();
+        Type localVarReturnType = new TypeToken<MessageResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

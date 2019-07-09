@@ -65,7 +65,7 @@ null (empty response body)
 
 <a name="listTasks"></a>
 # **listTasks**
-> java.util.List&lt;Task&gt; listTasks()
+> TasksResponse listTasks(page, pageSize)
 
 List Tasks
 
@@ -88,8 +88,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 TasksApi apiInstance = new TasksApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    java.util.List<Task> result = apiInstance.listTasks();
+    TasksResponse result = apiInstance.listTasks(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TasksApi#listTasks");
@@ -98,11 +100,15 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
-[**java.util.List&lt;Task&gt;**](Task.md)
+[**TasksResponse**](TasksResponse.md)
 
 ### Authorization
 

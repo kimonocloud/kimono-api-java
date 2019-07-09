@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 
 <a name="listCourses"></a>
 # **listCourses**
-> CoursesResponse listCourses()
+> CoursesResponse listCourses(page, pageSize)
 
 List all Courses
 
@@ -361,8 +361,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    CoursesResponse result = apiInstance.listCourses();
+    CoursesResponse result = apiInstance.listCourses(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#listCourses");
@@ -371,7 +373,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -388,7 +394,7 @@ This endpoint does not need any parameter.
 
 <a name="listCoursesForOrg"></a>
 # **listCoursesForOrg**
-> CoursesResponse listCoursesForOrg(id)
+> CoursesResponse listCoursesForOrg(id, page, pageSize)
 
 List Courses that belong to an Org
 
@@ -410,8 +416,10 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    CoursesResponse result = apiInstance.listCoursesForOrg(id);
+    CoursesResponse result = apiInstance.listCoursesForOrg(id, page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#listCoursesForOrg");
@@ -424,6 +432,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| $sys.id of the Org |
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -440,7 +450,7 @@ Name | Type | Description  | Notes
 
 <a name="listLEAs"></a>
 # **listLEAs**
-> OrgsResponse listLEAs()
+> OrgsResponse listLEAs(page, pageSize)
 
 List all LEA-type Orgs
 
@@ -461,8 +471,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    OrgsResponse result = apiInstance.listLEAs();
+    OrgsResponse result = apiInstance.listLEAs(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#listLEAs");
@@ -471,7 +483,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -488,7 +504,7 @@ This endpoint does not need any parameter.
 
 <a name="listOrgs"></a>
 # **listOrgs**
-> OrgsResponse listOrgs()
+> OrgsResponse listOrgs(page, pageSize)
 
 List all Orgs
 
@@ -509,8 +525,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    OrgsResponse result = apiInstance.listOrgs();
+    OrgsResponse result = apiInstance.listOrgs(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#listOrgs");
@@ -519,7 +537,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -536,7 +558,7 @@ This endpoint does not need any parameter.
 
 <a name="listPersons"></a>
 # **listPersons**
-> PersonsResponse listPersons()
+> PersonsResponse listPersons(page, pageSize)
 
 Get all Persons
 
@@ -557,8 +579,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    PersonsResponse result = apiInstance.listPersons();
+    PersonsResponse result = apiInstance.listPersons(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#listPersons");
@@ -567,7 +591,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -584,7 +612,7 @@ This endpoint does not need any parameter.
 
 <a name="listSchools"></a>
 # **listSchools**
-> OrgsResponse listSchools()
+> OrgsResponse listSchools(page, pageSize)
 
 List all School-type Orgs
 
@@ -605,8 +633,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    OrgsResponse result = apiInstance.listSchools();
+    OrgsResponse result = apiInstance.listSchools(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#listSchools");
@@ -615,7 +645,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -632,7 +666,7 @@ This endpoint does not need any parameter.
 
 <a name="listSections"></a>
 # **listSections**
-> SectionsResponse listSections()
+> SectionsResponse listSections(page, pageSize)
 
 List all Sections
 
@@ -653,8 +687,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    SectionsResponse result = apiInstance.listSections();
+    SectionsResponse result = apiInstance.listSections(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#listSections");
@@ -663,7 +699,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -680,7 +720,7 @@ This endpoint does not need any parameter.
 
 <a name="listSectionsForOrg"></a>
 # **listSectionsForOrg**
-> SectionsResponse listSectionsForOrg(id)
+> SectionsResponse listSectionsForOrg(id, page, pageSize)
 
 List Sections that belong to an Org
 
@@ -702,8 +742,10 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    SectionsResponse result = apiInstance.listSectionsForOrg(id);
+    SectionsResponse result = apiInstance.listSectionsForOrg(id, page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#listSectionsForOrg");
@@ -716,6 +758,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| $sys.id of the Org |
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -732,7 +776,7 @@ Name | Type | Description  | Notes
 
 <a name="listStudents"></a>
 # **listStudents**
-> PersonsResponse listStudents()
+> PersonsResponse listStudents(page, pageSize)
 
 List all Student-type Persons
 
@@ -753,8 +797,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    PersonsResponse result = apiInstance.listStudents();
+    PersonsResponse result = apiInstance.listStudents(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#listStudents");
@@ -763,7 +809,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -780,7 +830,7 @@ This endpoint does not need any parameter.
 
 <a name="listStudentsForOrg"></a>
 # **listStudentsForOrg**
-> PersonsResponse listStudentsForOrg(id)
+> PersonsResponse listStudentsForOrg(id, page, pageSize)
 
 List Students that are members of an Org
 
@@ -802,8 +852,10 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    PersonsResponse result = apiInstance.listStudentsForOrg(id);
+    PersonsResponse result = apiInstance.listStudentsForOrg(id, page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#listStudentsForOrg");
@@ -816,6 +868,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| $sys.id of the Org |
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -832,7 +886,7 @@ Name | Type | Description  | Notes
 
 <a name="listTeachers"></a>
 # **listTeachers**
-> PersonsResponse listTeachers()
+> PersonsResponse listTeachers(page, pageSize)
 
 List all Teacher-type Persons
 
@@ -853,8 +907,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    PersonsResponse result = apiInstance.listTeachers();
+    PersonsResponse result = apiInstance.listTeachers(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#listTeachers");
@@ -863,7 +919,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -880,7 +940,7 @@ This endpoint does not need any parameter.
 
 <a name="listTeachersForOrg"></a>
 # **listTeachersForOrg**
-> PersonsResponse listTeachersForOrg(id)
+> PersonsResponse listTeachersForOrg(id, page, pageSize)
 
 List Teachers that are members of an Org
 
@@ -902,8 +962,10 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    PersonsResponse result = apiInstance.listTeachersForOrg(id);
+    PersonsResponse result = apiInstance.listTeachersForOrg(id, page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#listTeachersForOrg");
@@ -916,6 +978,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| $sys.id of the Org |
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -932,7 +996,7 @@ Name | Type | Description  | Notes
 
 <a name="listTerms"></a>
 # **listTerms**
-> TermsResponse listTerms()
+> TermsResponse listTerms(page, pageSize)
 
 List all Terms
 
@@ -953,8 +1017,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    TermsResponse result = apiInstance.listTerms();
+    TermsResponse result = apiInstance.listTerms(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#listTerms");
@@ -963,7 +1029,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -980,7 +1050,7 @@ This endpoint does not need any parameter.
 
 <a name="listTermsForOrg"></a>
 # **listTermsForOrg**
-> TermsResponse listTermsForOrg(id)
+> TermsResponse listTermsForOrg(id, page, pageSize)
 
 List Terms that belong to an Org
 
@@ -1002,8 +1072,10 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    TermsResponse result = apiInstance.listTermsForOrg(id);
+    TermsResponse result = apiInstance.listTermsForOrg(id, page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RosteringApi#listTermsForOrg");
@@ -1016,6 +1088,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| $sys.id of the Org |
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 

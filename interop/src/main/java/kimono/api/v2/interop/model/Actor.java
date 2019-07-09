@@ -24,16 +24,21 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
-import kimono.api.v2.interop.model.BaseResourceType;
+import kimono.api.v2.interop.model.ActorType;
+import kimono.api.v2.interop.model.BaseAccountResourceType;
 
 /**
  * Actor
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-29T19:12:27.084-06:00[America/Denver]")
-public class Actor extends BaseResourceType {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T11:13:45.386-06:00[America/Denver]")
+public class Actor extends BaseAccountResourceType {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  private ActorType type = null;
 
   public Actor name(String name) {
     this.name = name;
@@ -53,6 +58,24 @@ public class Actor extends BaseResourceType {
     this.name = name;
   }
 
+  public Actor type(ActorType type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @ApiModelProperty(value = "")
+  public ActorType getType() {
+    return type;
+  }
+
+  public void setType(ActorType type) {
+    this.type = type;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -64,12 +87,13 @@ public class Actor extends BaseResourceType {
     }
     Actor actor = (Actor) o;
     return Objects.equals(this.name, actor.name) &&
+        Objects.equals(this.type, actor.type) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, super.hashCode());
+    return Objects.hash(name, type, super.hashCode());
   }
 
 
@@ -79,6 +103,7 @@ public class Actor extends BaseResourceType {
     sb.append("class Actor {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

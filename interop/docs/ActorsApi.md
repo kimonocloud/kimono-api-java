@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="listActors"></a>
 # **listActors**
-> java.util.List&lt;Actor&gt; listActors()
+> ActorsResponse listActors(page, pageSize)
 
 List Actors
 
@@ -32,8 +32,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 ActorsApi apiInstance = new ActorsApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    java.util.List<Actor> result = apiInstance.listActors();
+    ActorsResponse result = apiInstance.listActors(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ActorsApi#listActors");
@@ -42,11 +44,15 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
-[**java.util.List&lt;Actor&gt;**](Actor.md)
+[**ActorsResponse**](ActorsResponse.md)
 
 ### Authorization
 

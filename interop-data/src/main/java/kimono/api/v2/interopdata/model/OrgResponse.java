@@ -23,13 +23,14 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import kimono.api.v2.interopdata.model.ErrorType;
 import kimono.api.v2.interopdata.model.Org;
 import kimono.api.v2.interopdata.model.SingleObjectResponseType;
 
 /**
  * OrgResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-29T19:12:27.329-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T11:13:45.641-06:00[America/Denver]")
 public class OrgResponse extends SingleObjectResponseType {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)

@@ -28,7 +28,7 @@ import kimono.api.v2.interop.model.CloudEnvRefType;
 /**
  * CloudRefType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-29T19:12:27.084-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T11:13:45.386-06:00[America/Denver]")
 public class CloudRefType {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -37,6 +37,10 @@ public class CloudRefType {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_GENERATION = "generation";
+  @SerializedName(SERIALIZED_NAME_GENERATION)
+  private Integer generation;
 
   public static final String SERIALIZED_NAME_ENV = "env";
   @SerializedName(SERIALIZED_NAME_ENV)
@@ -78,6 +82,24 @@ public class CloudRefType {
     this.name = name;
   }
 
+  public CloudRefType generation(Integer generation) {
+    this.generation = generation;
+    return this;
+  }
+
+   /**
+   * Get generation
+   * @return generation
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getGeneration() {
+    return generation;
+  }
+
+  public void setGeneration(Integer generation) {
+    this.generation = generation;
+  }
+
   public CloudRefType env(CloudEnvRefType env) {
     this.env = env;
     return this;
@@ -108,12 +130,13 @@ public class CloudRefType {
     CloudRefType cloudRefType = (CloudRefType) o;
     return Objects.equals(this.id, cloudRefType.id) &&
         Objects.equals(this.name, cloudRefType.name) &&
+        Objects.equals(this.generation, cloudRefType.generation) &&
         Objects.equals(this.env, cloudRefType.env);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, env);
+    return Objects.hash(id, name, generation, env);
   }
 
 
@@ -124,6 +147,7 @@ public class CloudRefType {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    generation: ").append(toIndentedString(generation)).append("\n");
     sb.append("    env: ").append(toIndentedString(env)).append("\n");
     sb.append("}");
     return sb.toString();

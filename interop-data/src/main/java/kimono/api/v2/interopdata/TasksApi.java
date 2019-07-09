@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import kimono.api.v2.interopdata.model.Task;
 import kimono.api.v2.interopdata.model.TaskAck;
+import kimono.api.v2.interopdata.model.TasksResponse;
 
 import java.lang.reflect.Type;
 
@@ -175,12 +175,14 @@ public class TasksApi {
     }
     /**
      * Build call for listTasks
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listTasksCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listTasksCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -188,6 +190,14 @@ public class TasksApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -221,10 +231,10 @@ public class TasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listTasksValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listTasksValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listTasksCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listTasksCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -232,34 +242,40 @@ public class TasksApi {
     /**
      * List Tasks
      * Get the next batch of Tasks for the authenticated actor. The number of Tasks returned is determined by Kimono and may change from time to time. See [Tasks](doc:interop-data-api-tasks) for details.
-     * @return java.util.List&lt;Task&gt;
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return TasksResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public java.util.List<Task> listTasks() throws ApiException {
-        ApiResponse<java.util.List<Task>> resp = listTasksWithHttpInfo();
+    public TasksResponse listTasks(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<TasksResponse> resp = listTasksWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List Tasks
      * Get the next batch of Tasks for the authenticated actor. The number of Tasks returned is determined by Kimono and may change from time to time. See [Tasks](doc:interop-data-api-tasks) for details.
-     * @return ApiResponse&lt;java.util.List&lt;Task&gt;&gt;
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ApiResponse&lt;TasksResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<java.util.List<Task>> listTasksWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listTasksValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<java.util.List<Task>>(){}.getType();
+    public ApiResponse<TasksResponse> listTasksWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listTasksValidateBeforeCall(page, pageSize, null, null);
+        Type localVarReturnType = new TypeToken<TasksResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * List Tasks (asynchronously)
      * Get the next batch of Tasks for the authenticated actor. The number of Tasks returned is determined by Kimono and may change from time to time. See [Tasks](doc:interop-data-api-tasks) for details.
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listTasksAsync(final ApiCallback<java.util.List<Task>> callback) throws ApiException {
+    public com.squareup.okhttp.Call listTasksAsync(Integer page, Integer pageSize, final ApiCallback<TasksResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -280,8 +296,8 @@ public class TasksApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listTasksValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<java.util.List<Task>>(){}.getType();
+        com.squareup.okhttp.Call call = listTasksValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<TasksResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

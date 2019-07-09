@@ -13,11 +13,11 @@
 
 package kimono.api.v2.interopdata;
 
-import kimono.api.v2.interopdata.ApiException;
-import kimono.api.v2.interopdata.model.Task;
-import kimono.api.v2.interopdata.model.TaskAck;
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
+
+import kimono.api.v2.interopdata.model.TaskAck;
+import kimono.api.v2.interopdata.model.TasksResponse;
 
 
 /**
@@ -56,7 +56,7 @@ public class TasksApiTest {
      */
     @Test
     public void listTasksTest() throws ApiException {
-        java.util.List<Task> response = api.listTasks();
+        TasksResponse response = api.listTasks(null, null);
 
         // TODO: test validations
     }

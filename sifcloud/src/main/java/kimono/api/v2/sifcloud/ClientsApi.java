@@ -27,7 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import kimono.api.v2.sifcloud.model.ErrorType;
 import kimono.api.v2.sifcloud.model.SIFClient;
+import kimono.api.v2.sifcloud.model.SIFClientResponse;
+import kimono.api.v2.sifcloud.model.SIFClientsResponse;
 
 import java.lang.reflect.Type;
 
@@ -51,17 +54,140 @@ public class ClientsApi {
     }
 
     /**
-     * Build call for listClients
+     * Build call for createClient
+     * @param siFClient SIF Client to create (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listClientsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = new Object();
+    public com.squareup.okhttp.Call createClientCall(SIFClient siFClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = siFClient;
 
         // create path and map variables
         String localVarPath = "/clients";
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createClientValidateBeforeCall(SIFClient siFClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'siFClient' is set
+        if (siFClient == null) {
+            throw new ApiException("Missing the required parameter 'siFClient' when calling createClient(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createClientCall(siFClient, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create a SIF Client
+     * 
+     * @param siFClient SIF Client to create (required)
+     * @return SIFClientResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SIFClientResponse createClient(SIFClient siFClient) throws ApiException {
+        ApiResponse<SIFClientResponse> resp = createClientWithHttpInfo(siFClient);
+        return resp.getData();
+    }
+
+    /**
+     * Create a SIF Client
+     * 
+     * @param siFClient SIF Client to create (required)
+     * @return ApiResponse&lt;SIFClientResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SIFClientResponse> createClientWithHttpInfo(SIFClient siFClient) throws ApiException {
+        com.squareup.okhttp.Call call = createClientValidateBeforeCall(siFClient, null, null);
+        Type localVarReturnType = new TypeToken<SIFClientResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create a SIF Client (asynchronously)
+     * 
+     * @param siFClient SIF Client to create (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createClientAsync(SIFClient siFClient, final ApiCallback<SIFClientResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createClientValidateBeforeCall(siFClient, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<SIFClientResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for findClient
+     * @param id id of the object (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call findClientCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/clients/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
@@ -98,45 +224,53 @@ public class ClientsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listClientsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call findClientValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling findClient(Async)");
+        }
         
 
-        com.squareup.okhttp.Call call = listClientsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = findClientCall(id, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Get SIF Clients
-     * Get a list of &#x60;SIFClient&#x60;s
-     * @return java.util.List&lt;SIFClient&gt;
+     * Find a &#x60;SIFClient&#x60;
+     * 
+     * @param id id of the object (required)
+     * @return SIFClientResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public java.util.List<SIFClient> listClients() throws ApiException {
-        ApiResponse<java.util.List<SIFClient>> resp = listClientsWithHttpInfo();
+    public SIFClientResponse findClient(java.util.UUID id) throws ApiException {
+        ApiResponse<SIFClientResponse> resp = findClientWithHttpInfo(id);
         return resp.getData();
     }
 
     /**
-     * Get SIF Clients
-     * Get a list of &#x60;SIFClient&#x60;s
-     * @return ApiResponse&lt;java.util.List&lt;SIFClient&gt;&gt;
+     * Find a &#x60;SIFClient&#x60;
+     * 
+     * @param id id of the object (required)
+     * @return ApiResponse&lt;SIFClientResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<java.util.List<SIFClient>> listClientsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listClientsValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<java.util.List<SIFClient>>(){}.getType();
+    public ApiResponse<SIFClientResponse> findClientWithHttpInfo(java.util.UUID id) throws ApiException {
+        com.squareup.okhttp.Call call = findClientValidateBeforeCall(id, null, null);
+        Type localVarReturnType = new TypeToken<SIFClientResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get SIF Clients (asynchronously)
-     * Get a list of &#x60;SIFClient&#x60;s
+     * Find a &#x60;SIFClient&#x60; (asynchronously)
+     * 
+     * @param id id of the object (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listClientsAsync(final ApiCallback<java.util.List<SIFClient>> callback) throws ApiException {
+    public com.squareup.okhttp.Call findClientAsync(java.util.UUID id, final ApiCallback<SIFClientResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -157,8 +291,136 @@ public class ClientsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listClientsValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<java.util.List<SIFClient>>(){}.getType();
+        com.squareup.okhttp.Call call = findClientValidateBeforeCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<SIFClientResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for listClients
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call listClientsCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/clients";
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call listClientsValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = listClientsCall(page, pageSize, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get SIF Clients
+     * Get a list of &#x60;SIFClient&#x60;s
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return SIFClientsResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SIFClientsResponse listClients(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<SIFClientsResponse> resp = listClientsWithHttpInfo(page, pageSize);
+        return resp.getData();
+    }
+
+    /**
+     * Get SIF Clients
+     * Get a list of &#x60;SIFClient&#x60;s
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ApiResponse&lt;SIFClientsResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SIFClientsResponse> listClientsWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listClientsValidateBeforeCall(page, pageSize, null, null);
+        Type localVarReturnType = new TypeToken<SIFClientsResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get SIF Clients (asynchronously)
+     * Get a list of &#x60;SIFClient&#x60;s
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call listClientsAsync(Integer page, Integer pageSize, final ApiCallback<SIFClientsResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = listClientsValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<SIFClientsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

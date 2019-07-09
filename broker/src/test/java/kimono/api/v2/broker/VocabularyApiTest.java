@@ -13,12 +13,12 @@
 
 package kimono.api.v2.broker;
 
-import kimono.api.v2.broker.ApiException;
+import org.junit.Ignore;
+import org.junit.Test;
+
 import kimono.api.v2.broker.model.Model;
 import kimono.api.v2.broker.model.ModelsResponse;
 import kimono.api.v2.broker.model.VocabularysResponse;
-import org.junit.Test;
-import org.junit.Ignore;
 
 
 /**
@@ -103,7 +103,7 @@ public class VocabularyApiTest {
      */
     @Test
     public void listModelsTest() throws ApiException {
-        ModelsResponse response = api.listModels();
+        ModelsResponse response = api.listModels(null, null);
 
         // TODO: test validations
     }
@@ -118,7 +118,7 @@ public class VocabularyApiTest {
      */
     @Test
     public void listVocabulariesTest() throws ApiException {
-        VocabularysResponse response = api.listVocabularies();
+        VocabularysResponse response = api.listVocabularies(null, null);
 
         // TODO: test validations
     }

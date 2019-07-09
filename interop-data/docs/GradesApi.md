@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="listGradingCategories"></a>
 # **listGradingCategories**
-> GradingCategorysResponse listGradingCategories()
+> GradingCategorysResponse listGradingCategories(page, pageSize)
 
 List all Grading Categories
 
@@ -30,8 +30,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 GradesApi apiInstance = new GradesApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    GradingCategorysResponse result = apiInstance.listGradingCategories();
+    GradingCategorysResponse result = apiInstance.listGradingCategories(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GradesApi#listGradingCategories");
@@ -40,7 +42,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 

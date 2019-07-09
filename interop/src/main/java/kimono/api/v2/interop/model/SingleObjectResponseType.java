@@ -15,12 +15,43 @@ package kimono.api.v2.interop.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import kimono.api.v2.interop.model.ErrorType;
 
 /**
  * SingleObjectResponseType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-29T19:12:27.084-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T11:13:45.386-06:00[America/Denver]")
 public class SingleObjectResponseType {
+  public static final String SERIALIZED_NAME_ERROR = "error";
+  @SerializedName(SERIALIZED_NAME_ERROR)
+  private ErrorType error = null;
+
+  public SingleObjectResponseType error(ErrorType error) {
+    this.error = error;
+    return this;
+  }
+
+   /**
+   * Get error
+   * @return error
+  **/
+  @ApiModelProperty(value = "")
+  public ErrorType getError() {
+    return error;
+  }
+
+  public void setError(ErrorType error) {
+    this.error = error;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -30,12 +61,13 @@ public class SingleObjectResponseType {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return true;
+    SingleObjectResponseType singleObjectResponseType = (SingleObjectResponseType) o;
+    return Objects.equals(this.error, singleObjectResponseType.error);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(error);
   }
 
 
@@ -44,6 +76,7 @@ public class SingleObjectResponseType {
     StringBuilder sb = new StringBuilder();
     sb.append("class SingleObjectResponseType {\n");
     
+    sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("}");
     return sb.toString();
   }

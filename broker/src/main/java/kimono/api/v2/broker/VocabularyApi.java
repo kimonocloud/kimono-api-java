@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import kimono.api.v2.broker.model.ErrorType;
 import kimono.api.v2.broker.model.Model;
 import kimono.api.v2.broker.model.ModelsResponse;
 import kimono.api.v2.broker.model.VocabularysResponse;
@@ -528,12 +529,14 @@ public class VocabularyApi {
     }
     /**
      * Build call for listModels
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listModelsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listModelsCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -541,6 +544,14 @@ public class VocabularyApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -574,10 +585,10 @@ public class VocabularyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listModelsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listModelsValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listModelsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listModelsCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -585,22 +596,26 @@ public class VocabularyApi {
     /**
      * List Data Models
      * Get a list of all defined Data Models
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ModelsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ModelsResponse listModels() throws ApiException {
-        ApiResponse<ModelsResponse> resp = listModelsWithHttpInfo();
+    public ModelsResponse listModels(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<ModelsResponse> resp = listModelsWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List Data Models
      * Get a list of all defined Data Models
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;ModelsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ModelsResponse> listModelsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listModelsValidateBeforeCall(null, null);
+    public ApiResponse<ModelsResponse> listModelsWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listModelsValidateBeforeCall(page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<ModelsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -608,11 +623,13 @@ public class VocabularyApi {
     /**
      * List Data Models (asynchronously)
      * Get a list of all defined Data Models
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listModelsAsync(final ApiCallback<ModelsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listModelsAsync(Integer page, Integer pageSize, final ApiCallback<ModelsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -633,19 +650,21 @@ public class VocabularyApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listModelsValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listModelsValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ModelsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for listVocabularies
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listVocabulariesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listVocabulariesCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -653,6 +672,14 @@ public class VocabularyApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -686,10 +713,10 @@ public class VocabularyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listVocabulariesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listVocabulariesValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listVocabulariesCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listVocabulariesCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -697,22 +724,26 @@ public class VocabularyApi {
     /**
      * List Vocabularies
      * Get a list of all defined Vocabularies
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return VocabularysResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public VocabularysResponse listVocabularies() throws ApiException {
-        ApiResponse<VocabularysResponse> resp = listVocabulariesWithHttpInfo();
+    public VocabularysResponse listVocabularies(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<VocabularysResponse> resp = listVocabulariesWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List Vocabularies
      * Get a list of all defined Vocabularies
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;VocabularysResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<VocabularysResponse> listVocabulariesWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listVocabulariesValidateBeforeCall(null, null);
+    public ApiResponse<VocabularysResponse> listVocabulariesWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listVocabulariesValidateBeforeCall(page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<VocabularysResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -720,11 +751,13 @@ public class VocabularyApi {
     /**
      * List Vocabularies (asynchronously)
      * Get a list of all defined Vocabularies
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listVocabulariesAsync(final ApiCallback<VocabularysResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listVocabulariesAsync(Integer page, Integer pageSize, final ApiCallback<VocabularysResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -745,7 +778,7 @@ public class VocabularyApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listVocabulariesValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listVocabulariesValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<VocabularysResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

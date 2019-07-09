@@ -24,16 +24,24 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
-import kimono.api.v2.interop.model.BaseResourceType;
+import kimono.api.v2.interop.model.BaseAccountResourceType;
 
 /**
  * Cloud
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-29T19:12:27.084-06:00[America/Denver]")
-public class Cloud extends BaseResourceType {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T11:13:45.386-06:00[America/Denver]")
+public class Cloud extends BaseAccountResourceType {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_USERDATA = "userdata";
+  @SerializedName(SERIALIZED_NAME_USERDATA)
+  private String userdata;
+
+  public static final String SERIALIZED_NAME_GENERATION = "generation";
+  @SerializedName(SERIALIZED_NAME_GENERATION)
+  private Integer generation;
 
   public Cloud name(String name) {
     this.name = name;
@@ -53,6 +61,42 @@ public class Cloud extends BaseResourceType {
     this.name = name;
   }
 
+  public Cloud userdata(String userdata) {
+    this.userdata = userdata;
+    return this;
+  }
+
+   /**
+   * Get userdata
+   * @return userdata
+  **/
+  @ApiModelProperty(value = "")
+  public String getUserdata() {
+    return userdata;
+  }
+
+  public void setUserdata(String userdata) {
+    this.userdata = userdata;
+  }
+
+  public Cloud generation(Integer generation) {
+    this.generation = generation;
+    return this;
+  }
+
+   /**
+   * Get generation
+   * @return generation
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getGeneration() {
+    return generation;
+  }
+
+  public void setGeneration(Integer generation) {
+    this.generation = generation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -64,12 +108,14 @@ public class Cloud extends BaseResourceType {
     }
     Cloud cloud = (Cloud) o;
     return Objects.equals(this.name, cloud.name) &&
+        Objects.equals(this.userdata, cloud.userdata) &&
+        Objects.equals(this.generation, cloud.generation) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, super.hashCode());
+    return Objects.hash(name, userdata, generation, super.hashCode());
   }
 
 
@@ -79,6 +125,8 @@ public class Cloud extends BaseResourceType {
     sb.append("class Cloud {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    userdata: ").append(toIndentedString(userdata)).append("\n");
+    sb.append("    generation: ").append(toIndentedString(generation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

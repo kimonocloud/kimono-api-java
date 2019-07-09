@@ -52,12 +52,14 @@ public class GradesApi {
 
     /**
      * Build call for listGradingCategories
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listGradingCategoriesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listGradingCategoriesCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -65,6 +67,14 @@ public class GradesApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -98,10 +108,10 @@ public class GradesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listGradingCategoriesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listGradingCategoriesValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listGradingCategoriesCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listGradingCategoriesCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -109,22 +119,26 @@ public class GradesApi {
     /**
      * List all Grading Categories
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return GradingCategorysResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GradingCategorysResponse listGradingCategories() throws ApiException {
-        ApiResponse<GradingCategorysResponse> resp = listGradingCategoriesWithHttpInfo();
+    public GradingCategorysResponse listGradingCategories(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<GradingCategorysResponse> resp = listGradingCategoriesWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List all Grading Categories
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;GradingCategorysResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GradingCategorysResponse> listGradingCategoriesWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listGradingCategoriesValidateBeforeCall(null, null);
+    public ApiResponse<GradingCategorysResponse> listGradingCategoriesWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listGradingCategoriesValidateBeforeCall(page, pageSize, null, null);
         Type localVarReturnType = new TypeToken<GradingCategorysResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -132,11 +146,13 @@ public class GradesApi {
     /**
      * List all Grading Categories (asynchronously)
      * 
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listGradingCategoriesAsync(final ApiCallback<GradingCategorysResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listGradingCategoriesAsync(Integer page, Integer pageSize, final ApiCallback<GradingCategorysResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -157,7 +173,7 @@ public class GradesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listGradingCategoriesValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listGradingCategoriesValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GradingCategorysResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import kimono.api.v2.interop.model.Actor;
+import kimono.api.v2.interop.model.ActorsResponse;
 
 import java.lang.reflect.Type;
 
@@ -52,12 +52,14 @@ public class ActorsApi {
 
     /**
      * Build call for listActors
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listActorsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listActorsCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -65,6 +67,14 @@ public class ActorsApi {
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
         java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
         java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
         final String[] localVarAccepts = {
@@ -98,10 +108,10 @@ public class ActorsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listActorsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listActorsValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listActorsCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listActorsCall(page, pageSize, progressListener, progressRequestListener);
         return call;
 
     }
@@ -109,34 +119,40 @@ public class ActorsApi {
     /**
      * List Actors
      * Get a list of actors installed in Interop Clouds for accounts visible to you. This API is used to obtain coordinates and credentials essential for interacting with Integrations and other actors.
-     * @return java.util.List&lt;Actor&gt;
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ActorsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public java.util.List<Actor> listActors() throws ApiException {
-        ApiResponse<java.util.List<Actor>> resp = listActorsWithHttpInfo();
+    public ActorsResponse listActors(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<ActorsResponse> resp = listActorsWithHttpInfo(page, pageSize);
         return resp.getData();
     }
 
     /**
      * List Actors
      * Get a list of actors installed in Interop Clouds for accounts visible to you. This API is used to obtain coordinates and credentials essential for interacting with Integrations and other actors.
-     * @return ApiResponse&lt;java.util.List&lt;Actor&gt;&gt;
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ApiResponse&lt;ActorsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<java.util.List<Actor>> listActorsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = listActorsValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<java.util.List<Actor>>(){}.getType();
+    public ApiResponse<ActorsResponse> listActorsWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listActorsValidateBeforeCall(page, pageSize, null, null);
+        Type localVarReturnType = new TypeToken<ActorsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * List Actors (asynchronously)
      * Get a list of actors installed in Interop Clouds for accounts visible to you. This API is used to obtain coordinates and credentials essential for interacting with Integrations and other actors.
+     * @param page Specify the page number (defaults to 1) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listActorsAsync(final ApiCallback<java.util.List<Actor>> callback) throws ApiException {
+    public com.squareup.okhttp.Call listActorsAsync(Integer page, Integer pageSize, final ApiCallback<ActorsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -157,8 +173,8 @@ public class ActorsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listActorsValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<java.util.List<Actor>>(){}.getType();
+        com.squareup.okhttp.Call call = listActorsValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ActorsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -13,10 +13,10 @@
 
 package kimono.api.v2.sifcloud;
 
-import kimono.api.v2.sifcloud.ApiException;
-import kimono.api.v2.sifcloud.model.SIFZone;
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
+
+import kimono.api.v2.sifcloud.model.SIFZonesResponse;
 
 
 /**
@@ -38,7 +38,7 @@ public class ZonesApiTest {
      */
     @Test
     public void listZonesTest() throws ApiException {
-        java.util.List<SIFZone> response = api.listZones();
+        SIFZonesResponse response = api.listZones(null, null);
 
         // TODO: test validations
     }

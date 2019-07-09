@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 <a name="listModels"></a>
 # **listModels**
-> ModelsResponse listModels()
+> ModelsResponse listModels(page, pageSize)
 
 List Data Models
 
@@ -244,8 +244,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 VocabularyApi apiInstance = new VocabularyApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    ModelsResponse result = apiInstance.listModels();
+    ModelsResponse result = apiInstance.listModels(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VocabularyApi#listModels");
@@ -254,7 +256,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -271,7 +277,7 @@ This endpoint does not need any parameter.
 
 <a name="listVocabularies"></a>
 # **listVocabularies**
-> VocabularysResponse listVocabularies()
+> VocabularysResponse listVocabularies(page, pageSize)
 
 List Vocabularies
 
@@ -294,8 +300,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 VocabularyApi apiInstance = new VocabularyApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    VocabularysResponse result = apiInstance.listVocabularies();
+    VocabularysResponse result = apiInstance.listVocabularies(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VocabularyApi#listVocabularies");
@@ -304,7 +312,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 

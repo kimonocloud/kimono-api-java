@@ -23,15 +23,24 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import kimono.api.v2.platform.model.AccountType;
 
 /**
  * Account
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-29T19:12:26.994-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T11:13:45.266-06:00[America/Denver]")
 public class Account {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private java.util.UUID id;
+
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
+
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
+  private AccountType type = null;
 
   public Account id(java.util.UUID id) {
     this.id = id;
@@ -51,6 +60,42 @@ public class Account {
     this.id = id;
   }
 
+  public Account name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @ApiModelProperty(value = "")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Account type(AccountType type) {
+    this.type = type;
+    return this;
+  }
+
+   /**
+   * Get type
+   * @return type
+  **/
+  @ApiModelProperty(value = "")
+  public AccountType getType() {
+    return type;
+  }
+
+  public void setType(AccountType type) {
+    this.type = type;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -61,12 +106,14 @@ public class Account {
       return false;
     }
     Account account = (Account) o;
-    return Objects.equals(this.id, account.id);
+    return Objects.equals(this.id, account.id) &&
+        Objects.equals(this.name, account.name) &&
+        Objects.equals(this.type, account.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(id, name, type);
   }
 
 
@@ -76,6 +123,8 @@ public class Account {
     sb.append("class Account {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }

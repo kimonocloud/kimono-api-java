@@ -2,7 +2,7 @@
 
 Interop Data API
 - API version: 2.0
-  - Build date: 2019-05-20T10:02:09.090-06:00[America/Denver]
+  - Build date: 2019-06-18T15:32:03.537-06:00[America/Denver]
 
 Interop Data APIs provide access to the data objects and events from Interop Cloud repositories and Integration repositories
 
@@ -110,6 +110,10 @@ All URIs are relative to *http://localhost:5016/v2/interop/data*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *GradesApi* | [**listGradingCategories**](docs/GradesApi.md#listGradingCategories) | **GET** /grades/categories | List all Grading Categories
+*IngestionsApi* | [**cancelIngestion**](docs/IngestionsApi.md#cancelIngestion) | **DELETE** /ingestions/{id} | Cancel an Ingestion by id
+*IngestionsApi* | [**createIngestion**](docs/IngestionsApi.md#createIngestion) | **POST** /ingestions | Create an Ingestion
+*IngestionsApi* | [**findIngestion**](docs/IngestionsApi.md#findIngestion) | **GET** /ingestions/{id} | Find an Ingestion by id
+*IngestionsApi* | [**listIngestions**](docs/IngestionsApi.md#listIngestions) | **GET** /ingestions | List Ingestions
 *RosteringApi* | [**findCourse**](docs/RosteringApi.md#findCourse) | **GET** /rostering/courses/{id} | Find a Course by $sys.id
 *RosteringApi* | [**findLEA**](docs/RosteringApi.md#findLEA) | **GET** /rostering/leas/{id} | Find an LEA-type Org by $sys.id
 *RosteringApi* | [**findOrg**](docs/RosteringApi.md#findOrg) | **GET** /rostering/orgs/{id} | Find an Org by $sys.id
@@ -137,14 +141,23 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [AddressType](docs/AddressType.md)
+ - [BaseAccountResourceType](docs/BaseAccountResourceType.md)
+ - [BaseResourceType](docs/BaseResourceType.md)
+ - [BaseTenantResourceType](docs/BaseTenantResourceType.md)
  - [Course](docs/Course.md)
  - [CoursesResponse](docs/CoursesResponse.md)
  - [ErrorType](docs/ErrorType.md)
  - [GradingCategory](docs/GradingCategory.md)
  - [GradingCategorysResponse](docs/GradingCategorysResponse.md)
+ - [Ingestion](docs/Ingestion.md)
+ - [IngestionResponse](docs/IngestionResponse.md)
+ - [IngestionState](docs/IngestionState.md)
+ - [IngestionType](docs/IngestionType.md)
+ - [IngestionsResponse](docs/IngestionsResponse.md)
  - [NameType](docs/NameType.md)
  - [ObjectType](docs/ObjectType.md)
  - [Org](docs/Org.md)
+ - [OrgResponse](docs/OrgResponse.md)
  - [OrgSysType](docs/OrgSysType.md)
  - [OrgsResponse](docs/OrgsResponse.md)
  - [PagedDataResponseType](docs/PagedDataResponseType.md)
@@ -154,6 +167,7 @@ Class | Method | HTTP request | Description
  - [PersonsResponse](docs/PersonsResponse.md)
  - [Section](docs/Section.md)
  - [SectionsResponse](docs/SectionsResponse.md)
+ - [SingleObjectResponseType](docs/SingleObjectResponseType.md)
  - [SysType](docs/SysType.md)
  - [Task](docs/Task.md)
  - [TaskAck](docs/TaskAck.md)

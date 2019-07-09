@@ -11,13 +11,14 @@ Method | HTTP request | Description
 [**findIntegration**](IntegrationsApi.md#findIntegration) | **GET** /integrations/{id} | Find an Integration
 [**listIntegrationVersions**](IntegrationsApi.md#listIntegrationVersions) | **GET** /integrations/{id}/versions | List Integration Versions
 [**listIntegrations**](IntegrationsApi.md#listIntegrations) | **GET** /integrations | List Integrations
-[**updateIntegration**](IntegrationsApi.md#updateIntegration) | **PUT** /integrations/{id} | Update Integration
-[**updateIntegrationVersion**](IntegrationsApi.md#updateIntegrationVersion) | **PUT** /integrations/{id}/versions/{version} | Update Integration Version
+[**updateIntegration**](IntegrationsApi.md#updateIntegration) | **PATCH** /integrations/{id} | Update Integration
+[**updateIntegrationBlueprint**](IntegrationsApi.md#updateIntegrationBlueprint) | **PUT** /integrations/{id}/versions/{version}/blueprint | Update Integration Blueprint
+[**updateIntegrationVersion**](IntegrationsApi.md#updateIntegrationVersion) | **PATCH** /integrations/{id}/versions/{version} | Update Integration Version
 
 
 <a name="createIntegration"></a>
 # **createIntegration**
-> Integration createIntegration(integration)
+> IntegrationResponse createIntegration(integration)
 
 Create Integration
 
@@ -42,7 +43,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 IntegrationsApi apiInstance = new IntegrationsApi();
 Integration integration = new Integration(); // Integration | Integration to create
 try {
-    Integration result = apiInstance.createIntegration(integration);
+    IntegrationResponse result = apiInstance.createIntegration(integration);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#createIntegration");
@@ -58,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Integration**](Integration.md)
+[**IntegrationResponse**](IntegrationResponse.md)
 
 ### Authorization
 
@@ -71,7 +72,7 @@ Name | Type | Description  | Notes
 
 <a name="createIntegrationVersion"></a>
 # **createIntegrationVersion**
-> IntegrationVersion createIntegrationVersion(id, body)
+> IntegrationVersionResponse createIntegrationVersion(id, body)
 
 Create Integration Version
 
@@ -97,7 +98,7 @@ IntegrationsApi apiInstance = new IntegrationsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration
 String body = "body_example"; // String | 
 try {
-    IntegrationVersion result = apiInstance.createIntegrationVersion(id, body);
+    IntegrationVersionResponse result = apiInstance.createIntegrationVersion(id, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#createIntegrationVersion");
@@ -114,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IntegrationVersion**](IntegrationVersion.md)
+[**IntegrationVersionResponse**](IntegrationVersionResponse.md)
 
 ### Authorization
 
@@ -122,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: text/plain
+ - **Content-Type**: application/xml
  - **Accept**: application/json
 
 <a name="deleteIntegration"></a>
@@ -231,7 +232,7 @@ null (empty response body)
 
 <a name="findIntegration"></a>
 # **findIntegration**
-> Integration findIntegration(id)
+> IntegrationResponse findIntegration(id)
 
 Find an Integration
 
@@ -254,7 +255,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 IntegrationsApi apiInstance = new IntegrationsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration to find
 try {
-    Integration result = apiInstance.findIntegration(id);
+    IntegrationResponse result = apiInstance.findIntegration(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#findIntegration");
@@ -270,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Integration**](Integration.md)
+[**IntegrationResponse**](IntegrationResponse.md)
 
 ### Authorization
 
@@ -283,7 +284,7 @@ Name | Type | Description  | Notes
 
 <a name="listIntegrationVersions"></a>
 # **listIntegrationVersions**
-> IntegrationVersionsResponse listIntegrationVersions(id)
+> IntegrationVersionsResponse listIntegrationVersions(id, page, pageSize)
 
 List Integration Versions
 
@@ -307,8 +308,10 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    IntegrationVersionsResponse result = apiInstance.listIntegrationVersions(id);
+    IntegrationVersionsResponse result = apiInstance.listIntegrationVersions(id, page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#listIntegrationVersions");
@@ -321,6 +324,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| id of the Integration |
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -337,7 +342,7 @@ Name | Type | Description  | Notes
 
 <a name="listIntegrations"></a>
 # **listIntegrations**
-> IntegrationsResponse listIntegrations(name)
+> IntegrationsResponse listIntegrations(name, page, pageSize)
 
 List Integrations
 
@@ -361,8 +366,10 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String name = "name_example"; // String | Find an Integration by name
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    IntegrationsResponse result = apiInstance.listIntegrations(name);
+    IntegrationsResponse result = apiInstance.listIntegrations(name, page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#listIntegrations");
@@ -375,6 +382,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Find an Integration by name | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -391,7 +400,7 @@ Name | Type | Description  | Notes
 
 <a name="updateIntegration"></a>
 # **updateIntegration**
-> Integration updateIntegration(id)
+> updateIntegration(id, integration)
 
 Update Integration
 
@@ -413,9 +422,9 @@ BasicAuth.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration to update
+Integration integration = new Integration(); // Integration | Integration properties to update
 try {
-    Integration result = apiInstance.updateIntegration(id);
-    System.out.println(result);
+    apiInstance.updateIntegration(id, integration);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#updateIntegration");
     e.printStackTrace();
@@ -427,10 +436,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| id of the Integration to update |
+ **integration** | [**Integration**](Integration.md)| Integration properties to update |
 
 ### Return type
 
-[**Integration**](Integration.md)
+null (empty response body)
 
 ### Authorization
 
@@ -438,12 +448,68 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+<a name="updateIntegrationBlueprint"></a>
+# **updateIntegrationBlueprint**
+> IntegrationVersionResponse updateIntegrationBlueprint(id, version, body)
+
+Update Integration Blueprint
+
+### Example
+```java
+// Import classes:
+//import kimono.api.v2.interop.ApiClient;
+//import kimono.api.v2.interop.ApiException;
+//import kimono.api.v2.interop.Configuration;
+//import kimono.api.v2.interop.auth.*;
+//import kimono.api.v2.interop.IntegrationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure HTTP basic authorization: BasicAuth
+HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
+BasicAuth.setUsername("YOUR USERNAME");
+BasicAuth.setPassword("YOUR PASSWORD");
+
+IntegrationsApi apiInstance = new IntegrationsApi();
+java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration to update
+String version = "version_example"; // String | version to update
+String body = "body_example"; // String | Integration Blueprint
+try {
+    IntegrationVersionResponse result = apiInstance.updateIntegrationBlueprint(id, version, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntegrationsApi#updateIntegrationBlueprint");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**java.util.UUID**](.md)| id of the Integration to update |
+ **version** | **String**| version to update |
+ **body** | **String**| Integration Blueprint |
+
+### Return type
+
+[**IntegrationVersionResponse**](IntegrationVersionResponse.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml
  - **Accept**: application/json
 
 <a name="updateIntegrationVersion"></a>
 # **updateIntegrationVersion**
-> IntegrationVersion updateIntegrationVersion(id, version)
+> updateIntegrationVersion(id, version, integrationVersion)
 
 Update Integration Version
 
@@ -466,9 +532,9 @@ BasicAuth.setPassword("YOUR PASSWORD");
 IntegrationsApi apiInstance = new IntegrationsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration to update
 String version = "version_example"; // String | version to update
+IntegrationVersion integrationVersion = new IntegrationVersion(); // IntegrationVersion | IntegrationVersion properties to update
 try {
-    IntegrationVersion result = apiInstance.updateIntegrationVersion(id, version);
-    System.out.println(result);
+    apiInstance.updateIntegrationVersion(id, version, integrationVersion);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntegrationsApi#updateIntegrationVersion");
     e.printStackTrace();
@@ -481,10 +547,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| id of the Integration to update |
  **version** | **String**| version to update |
+ **integrationVersion** | [**IntegrationVersion**](IntegrationVersion.md)| IntegrationVersion properties to update |
 
 ### Return type
 
-[**IntegrationVersion**](IntegrationVersion.md)
+null (empty response body)
 
 ### Authorization
 
@@ -492,6 +559,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 

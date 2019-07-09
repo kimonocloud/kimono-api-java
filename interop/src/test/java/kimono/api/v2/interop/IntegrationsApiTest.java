@@ -13,14 +13,15 @@
 
 package kimono.api.v2.interop;
 
-import kimono.api.v2.interop.ApiException;
-import kimono.api.v2.interop.model.Error;
+import org.junit.Ignore;
+import org.junit.Test;
+
 import kimono.api.v2.interop.model.Integration;
+import kimono.api.v2.interop.model.IntegrationResponse;
 import kimono.api.v2.interop.model.IntegrationVersion;
+import kimono.api.v2.interop.model.IntegrationVersionResponse;
 import kimono.api.v2.interop.model.IntegrationVersionsResponse;
 import kimono.api.v2.interop.model.IntegrationsResponse;
-import org.junit.Test;
-import org.junit.Ignore;
 
 
 /**
@@ -43,7 +44,7 @@ public class IntegrationsApiTest {
     @Test
     public void createIntegrationTest() throws ApiException {
         Integration integration = null;
-        Integration response = api.createIntegration(integration);
+        IntegrationResponse response = api.createIntegration(integration);
 
         // TODO: test validations
     }
@@ -60,7 +61,7 @@ public class IntegrationsApiTest {
     public void createIntegrationVersionTest() throws ApiException {
         java.util.UUID id = null;
         String body = null;
-        IntegrationVersion response = api.createIntegrationVersion(id, body);
+        IntegrationVersionResponse response = api.createIntegrationVersion(id, body);
 
         // TODO: test validations
     }
@@ -109,7 +110,7 @@ public class IntegrationsApiTest {
     @Test
     public void findIntegrationTest() throws ApiException {
         java.util.UUID id = null;
-        Integration response = api.findIntegration(id);
+        IntegrationResponse response = api.findIntegration(id);
 
         // TODO: test validations
     }
@@ -125,7 +126,7 @@ public class IntegrationsApiTest {
     @Test
     public void listIntegrationVersionsTest() throws ApiException {
         java.util.UUID id = null;
-        IntegrationVersionsResponse response = api.listIntegrationVersions(id);
+        IntegrationVersionsResponse response = api.listIntegrationVersions(id,null, null);
 
         // TODO: test validations
     }
@@ -141,7 +142,7 @@ public class IntegrationsApiTest {
     @Test
     public void listIntegrationsTest() throws ApiException {
         String name = null;
-        IntegrationsResponse response = api.listIntegrations(name);
+        IntegrationsResponse response = api.listIntegrations(name,null, null);
 
         // TODO: test validations
     }
@@ -157,7 +158,26 @@ public class IntegrationsApiTest {
     @Test
     public void updateIntegrationTest() throws ApiException {
         java.util.UUID id = null;
-        Integration response = api.updateIntegration(id);
+        Integration integration = null;
+        api.updateIntegration(id, integration);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update Integration Blueprint
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateIntegrationBlueprintTest() throws ApiException {
+        java.util.UUID id = null;
+        String version = null;
+        String body = null;
+        IntegrationVersionResponse response = api.updateIntegrationBlueprint(id, version, body);
 
         // TODO: test validations
     }
@@ -174,7 +194,8 @@ public class IntegrationsApiTest {
     public void updateIntegrationVersionTest() throws ApiException {
         java.util.UUID id = null;
         String version = null;
-        IntegrationVersion response = api.updateIntegrationVersion(id, version);
+        IntegrationVersion integrationVersion = null;
+        api.updateIntegrationVersion(id, version, integrationVersion);
 
         // TODO: test validations
     }

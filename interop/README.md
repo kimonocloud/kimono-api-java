@@ -2,7 +2,7 @@
 
 Interop API
 - API version: 2.0
-  - Build date: 2019-05-20T10:02:08.701-06:00[America/Denver]
+  - Build date: 2019-06-18T15:32:03.183-06:00[America/Denver]
 
 Interop APIs provide access to Kimono Interop Cloud resources and operations
 
@@ -92,7 +92,7 @@ public class ActorsApiExample {
 
         ActorsApi apiInstance = new ActorsApi();
         try {
-            java.util.List<Actor> result = apiInstance.listActors();
+            ActorsResponse result = apiInstance.listActors();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ActorsApi#listActors");
@@ -110,11 +110,11 @@ All URIs are relative to *http://localhost:5010/v2/interop*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ActorsApi* | [**listActors**](docs/ActorsApi.md#listActors) | **GET** /actors | List Actors
+*CloudsApi* | [**createCloud**](docs/CloudsApi.md#createCloud) | **POST** /clouds | Create an Interop Cloud
+*CloudsApi* | [**deleteCloud**](docs/CloudsApi.md#deleteCloud) | **DELETE** /clouds/{id} | Delete an Interop Cloud
+*CloudsApi* | [**findCloud**](docs/CloudsApi.md#findCloud) | **GET** /clouds/{id} | Find an Interop Cloud
+*CloudsApi* | [**listActorsByCloud**](docs/CloudsApi.md#listActorsByCloud) | **GET** /clouds/{id}/actors | List all Actors in an Interop Cloud
 *CloudsApi* | [**listClouds**](docs/CloudsApi.md#listClouds) | **GET** /clouds | List Interop Clouds
-*IngestionsApi* | [**cancelIngestion**](docs/IngestionsApi.md#cancelIngestion) | **DELETE** /ingestions/{id} | Cancel an Ingestion by id
-*IngestionsApi* | [**createIngestion**](docs/IngestionsApi.md#createIngestion) | **POST** /ingestions | Create an Ingestion
-*IngestionsApi* | [**findIngestion**](docs/IngestionsApi.md#findIngestion) | **GET** /ingestions/{id} | Find an Ingestion by id
-*IngestionsApi* | [**listIngestions**](docs/IngestionsApi.md#listIngestions) | **GET** /ingestions | List Ingestions
 *IntegrationsApi* | [**createIntegration**](docs/IntegrationsApi.md#createIntegration) | **POST** /integrations | Create Integration
 *IntegrationsApi* | [**createIntegrationVersion**](docs/IntegrationsApi.md#createIntegrationVersion) | **POST** /integrations/{id}/versions | Create Integration Version
 *IntegrationsApi* | [**deleteIntegration**](docs/IntegrationsApi.md#deleteIntegration) | **DELETE** /integrations/{id} | Delete an Integration
@@ -122,8 +122,9 @@ Class | Method | HTTP request | Description
 *IntegrationsApi* | [**findIntegration**](docs/IntegrationsApi.md#findIntegration) | **GET** /integrations/{id} | Find an Integration
 *IntegrationsApi* | [**listIntegrationVersions**](docs/IntegrationsApi.md#listIntegrationVersions) | **GET** /integrations/{id}/versions | List Integration Versions
 *IntegrationsApi* | [**listIntegrations**](docs/IntegrationsApi.md#listIntegrations) | **GET** /integrations | List Integrations
-*IntegrationsApi* | [**updateIntegration**](docs/IntegrationsApi.md#updateIntegration) | **PUT** /integrations/{id} | Update Integration
-*IntegrationsApi* | [**updateIntegrationVersion**](docs/IntegrationsApi.md#updateIntegrationVersion) | **PUT** /integrations/{id}/versions/{version} | Update Integration Version
+*IntegrationsApi* | [**updateIntegration**](docs/IntegrationsApi.md#updateIntegration) | **PATCH** /integrations/{id} | Update Integration
+*IntegrationsApi* | [**updateIntegrationBlueprint**](docs/IntegrationsApi.md#updateIntegrationBlueprint) | **PUT** /integrations/{id}/versions/{version}/blueprint | Update Integration Blueprint
+*IntegrationsApi* | [**updateIntegrationVersion**](docs/IntegrationsApi.md#updateIntegrationVersion) | **PATCH** /integrations/{id}/versions/{version} | Update Integration Version
 *TenantsApi* | [**listInteropTenants**](docs/TenantsApi.md#listInteropTenants) | **GET** /tenants | List Interop Tenants
 
 
@@ -131,24 +132,31 @@ Class | Method | HTTP request | Description
 
  - [AccountRefType](docs/AccountRefType.md)
  - [Actor](docs/Actor.md)
+ - [ActorResponse](docs/ActorResponse.md)
+ - [ActorType](docs/ActorType.md)
+ - [ActorsResponse](docs/ActorsResponse.md)
  - [AuthType](docs/AuthType.md)
+ - [BaseAccountResourceType](docs/BaseAccountResourceType.md)
  - [BaseResourceType](docs/BaseResourceType.md)
+ - [BaseTenantResourceType](docs/BaseTenantResourceType.md)
  - [Cloud](docs/Cloud.md)
  - [CloudEnvRefType](docs/CloudEnvRefType.md)
  - [CloudRefType](docs/CloudRefType.md)
- - [Error](docs/Error.md)
- - [Ingestion](docs/Ingestion.md)
- - [IngestionState](docs/IngestionState.md)
- - [IngestionType](docs/IngestionType.md)
+ - [CloudResponse](docs/CloudResponse.md)
+ - [CloudsResponse](docs/CloudsResponse.md)
+ - [ErrorType](docs/ErrorType.md)
  - [Integration](docs/Integration.md)
  - [IntegrationRefType](docs/IntegrationRefType.md)
+ - [IntegrationResponse](docs/IntegrationResponse.md)
  - [IntegrationStatusType](docs/IntegrationStatusType.md)
  - [IntegrationVersion](docs/IntegrationVersion.md)
+ - [IntegrationVersionResponse](docs/IntegrationVersionResponse.md)
  - [IntegrationVersionsResponse](docs/IntegrationVersionsResponse.md)
  - [IntegrationsResponse](docs/IntegrationsResponse.md)
  - [PagedDataResponseType](docs/PagedDataResponseType.md)
  - [PagedDataResponseTypePaging](docs/PagedDataResponseTypePaging.md)
  - [ReleaseState](docs/ReleaseState.md)
+ - [SingleObjectResponseType](docs/SingleObjectResponseType.md)
  - [TenantInfo](docs/TenantInfo.md)
  - [TenantInfoLicense](docs/TenantInfoLicense.md)
 
@@ -159,6 +167,13 @@ Authentication schemes defined for the API:
 ### BasicAuth
 
 - **Type**: HTTP basic authentication
+
+### OAuth2
+
+- **Type**: OAuth
+- **Flow**: application
+- **Authorization URL**: 
+- **Scopes**: N/A
 
 
 ## Recommendation

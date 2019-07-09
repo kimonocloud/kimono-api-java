@@ -2,7 +2,7 @@
 
 Platform API
 - API version: 2.0
-  - Build date: 2019-05-20T10:02:08.587-06:00[America/Denver]
+  - Build date: 2019-06-18T15:32:02.995-06:00[America/Denver]
 
 Platform APIs provide access to core Kimono Platform resources and operations such as Accounts, Users, and Clouds.
 
@@ -91,11 +91,12 @@ public class AccountsApiExample {
         BasicAuth.setPassword("YOUR PASSWORD");
 
         AccountsApi apiInstance = new AccountsApi();
+        Account account = new Account(); // Account | Account to create
         try {
-            java.util.List<Account> result = apiInstance.listAccounts();
+            AccountResponse result = apiInstance.createAccount(account);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountsApi#listAccounts");
+            System.err.println("Exception when calling AccountsApi#createAccount");
             e.printStackTrace();
         }
     }
@@ -109,16 +110,25 @@ All URIs are relative to *http://localhost:5001/v2/platform*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountsApi* | [**createAccount**](docs/AccountsApi.md#createAccount) | **POST** /accounts | Create an Account
+*AccountsApi* | [**deleteAccount**](docs/AccountsApi.md#deleteAccount) | **DELETE** /accounts/{id} | Delete an Account
+*AccountsApi* | [**findAccount**](docs/AccountsApi.md#findAccount) | **GET** /accounts/{id} | Find an Account
+*AccountsApi* | [**findOwnAccount**](docs/AccountsApi.md#findOwnAccount) | **GET** /accounts/self | Find your Account
 *AccountsApi* | [**listAccounts**](docs/AccountsApi.md#listAccounts) | **GET** /accounts | Get Accounts
+*AccountsApi* | [**updateAccount**](docs/AccountsApi.md#updateAccount) | **PATCH** /accounts/{id} | Update an Account
 
 
 ## Documentation for Models
 
  - [Account](docs/Account.md)
+ - [AccountResponse](docs/AccountResponse.md)
+ - [AccountType](docs/AccountType.md)
+ - [AccountsResponse](docs/AccountsResponse.md)
  - [BaseResourceType](docs/BaseResourceType.md)
- - [Error](docs/Error.md)
+ - [ErrorType](docs/ErrorType.md)
  - [PagedDataResponseType](docs/PagedDataResponseType.md)
  - [PagedDataResponseTypePaging](docs/PagedDataResponseTypePaging.md)
+ - [SingleObjectResponseType](docs/SingleObjectResponseType.md)
 
 
 ## Documentation for Authorization

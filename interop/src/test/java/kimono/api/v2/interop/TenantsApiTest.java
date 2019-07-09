@@ -13,10 +13,14 @@
 
 package kimono.api.v2.interop;
 
-import kimono.api.v2.interop.ApiException;
-import kimono.api.v2.interop.model.TenantInfo;
-import org.junit.Test;
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
+
 import org.junit.Ignore;
+import org.junit.Test;
+
+import kimono.api.v2.interop.model.TenantInfosResponse;
 
 
 /**
@@ -38,8 +42,9 @@ public class TenantsApiTest {
      */
     @Test
     public void listInteropTenantsTest() throws ApiException {
-        java.util.List<String> integration = null;
-        java.util.List<TenantInfo> response = api.listInteropTenants(integration);
+        List<UUID> accounts = Arrays.asList(null);
+        List<String> integrations = Arrays.asList();
+        TenantInfosResponse response = api.listInteropTenants(accounts, integrations, null, null);
 
         // TODO: test validations
     }

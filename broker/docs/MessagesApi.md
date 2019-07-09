@@ -66,7 +66,7 @@ null (empty response body)
 
 <a name="listMessages"></a>
 # **listMessages**
-> java.util.List&lt;Message&gt; listMessages()
+> java.util.List&lt;Message&gt; listMessages(page, pageSize)
 
 List Messages
 
@@ -89,8 +89,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 MessagesApi apiInstance = new MessagesApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    java.util.List<Message> result = apiInstance.listMessages();
+    java.util.List<Message> result = apiInstance.listMessages(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagesApi#listMessages");
@@ -99,7 +101,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
@@ -116,7 +122,7 @@ This endpoint does not need any parameter.
 
 <a name="sendMessage"></a>
 # **sendMessage**
-> Message sendMessage(message)
+> MessageResponse sendMessage(message)
 
 Send Message
 
@@ -141,7 +147,7 @@ BasicAuth.setPassword("YOUR PASSWORD");
 MessagesApi apiInstance = new MessagesApi();
 Message message = new Message(); // Message | The JSON-encoded Message to send
 try {
-    Message result = apiInstance.sendMessage(message);
+    MessageResponse result = apiInstance.sendMessage(message);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagesApi#sendMessage");
@@ -157,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Message**](Message.md)
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 

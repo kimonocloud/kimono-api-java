@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="listExchanges"></a>
 # **listExchanges**
-> java.util.List&lt;Exchange&gt; listExchanges()
+> ExchangesResponse listExchanges(page, pageSize)
 
 List Grades Exchanges
 
@@ -32,8 +32,10 @@ BasicAuth.setUsername("YOUR USERNAME");
 BasicAuth.setPassword("YOUR PASSWORD");
 
 GradesExchangeApi apiInstance = new GradesExchangeApi();
+Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
-    java.util.List<Exchange> result = apiInstance.listExchanges();
+    ExchangesResponse result = apiInstance.listExchanges(page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GradesExchangeApi#listExchanges");
@@ -42,11 +44,15 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
 
-[**java.util.List&lt;Exchange&gt;**](Exchange.md)
+[**ExchangesResponse**](ExchangesResponse.md)
 
 ### Authorization
 

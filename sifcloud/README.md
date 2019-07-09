@@ -2,7 +2,7 @@
 
 SIF Cloud API
 - API version: 2.0
-  - Build date: 2019-05-20T10:02:09.550-06:00[America/Denver]
+  - Build date: 2019-06-18T15:32:04.038-06:00[America/Denver]
 
 SIF Cloud APIs provide access to SIF Cloud provisioning resources.
 
@@ -116,11 +116,12 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [BaseResourceType](docs/BaseResourceType.md)
- - [Error](docs/Error.md)
+ - [ErrorType](docs/ErrorType.md)
  - [PagedDataResponseType](docs/PagedDataResponseType.md)
  - [PagedDataResponseTypePaging](docs/PagedDataResponseTypePaging.md)
  - [SIFClient](docs/SIFClient.md)
  - [SIFZone](docs/SIFZone.md)
+ - [SingleObjectResponseType](docs/SingleObjectResponseType.md)
 
 
 ## Documentation for Authorization

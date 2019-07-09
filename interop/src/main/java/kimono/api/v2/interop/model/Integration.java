@@ -24,13 +24,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
-import kimono.api.v2.interop.model.BaseResourceType;
+import kimono.api.v2.interop.model.BaseAccountResourceType;
 
 /**
  * Integration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-29T19:12:27.084-06:00[America/Denver]")
-public class Integration extends BaseResourceType {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T11:13:45.386-06:00[America/Denver]")
+public class Integration extends BaseAccountResourceType {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -38,6 +38,10 @@ public class Integration extends BaseResourceType {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
   private String title;
+
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  private String version;
 
   public Integration name(String name) {
     this.name = name;
@@ -75,6 +79,24 @@ public class Integration extends BaseResourceType {
     this.title = title;
   }
 
+  public Integration version(String version) {
+    this.version = version;
+    return this;
+  }
+
+   /**
+   * Get version
+   * @return version
+  **/
+  @ApiModelProperty(value = "")
+  public String getVersion() {
+    return version;
+  }
+
+  public void setVersion(String version) {
+    this.version = version;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,12 +109,13 @@ public class Integration extends BaseResourceType {
     Integration integration = (Integration) o;
     return Objects.equals(this.name, integration.name) &&
         Objects.equals(this.title, integration.title) &&
+        Objects.equals(this.version, integration.version) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, title, super.hashCode());
+    return Objects.hash(name, title, version, super.hashCode());
   }
 
 
@@ -103,6 +126,7 @@ public class Integration extends BaseResourceType {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }

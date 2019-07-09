@@ -24,14 +24,14 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.OffsetDateTime;
-import kimono.api.v2.interop.model.BaseResourceType;
+import kimono.api.v2.interop.model.BaseAccountResourceType;
 import kimono.api.v2.interop.model.ReleaseState;
 
 /**
  * IntegrationVersion
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-29T19:12:27.084-06:00[America/Denver]")
-public class IntegrationVersion extends BaseResourceType {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T11:13:45.386-06:00[America/Denver]")
+public class IntegrationVersion extends BaseAccountResourceType {
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
   private String version;

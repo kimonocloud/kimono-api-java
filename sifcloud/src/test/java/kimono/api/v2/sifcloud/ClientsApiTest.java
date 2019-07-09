@@ -13,10 +13,10 @@
 
 package kimono.api.v2.sifcloud;
 
-import kimono.api.v2.sifcloud.ApiException;
-import kimono.api.v2.sifcloud.model.SIFClient;
-import org.junit.Test;
 import org.junit.Ignore;
+import org.junit.Test;
+
+import kimono.api.v2.sifcloud.model.SIFClientsResponse;
 
 
 /**
@@ -38,7 +38,7 @@ public class ClientsApiTest {
      */
     @Test
     public void listClientsTest() throws ApiException {
-        java.util.List<SIFClient> response = api.listClients();
+        SIFClientsResponse response = api.listClients(null, null);
 
         // TODO: test validations
     }

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * AddressType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-29T19:12:27.329-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T11:13:45.641-06:00[America/Denver]")
 public class AddressType {
   public static final String SERIALIZED_NAME_LINE1 = "line1";
   @SerializedName(SERIALIZED_NAME_LINE1)

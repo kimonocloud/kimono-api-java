@@ -18,6 +18,7 @@ import org.junit.Test;
 
 import kimono.api.v2.broker.model.Message;
 import kimono.api.v2.broker.model.MessageAck;
+import kimono.api.v2.broker.model.MessageResponse;
 
 
 /**
@@ -56,10 +57,25 @@ public class MessagesApiTest {
      */
     @Test
     public void listMessagesTest() throws ApiException {
-        java.util.List<Message> response = api.listMessages();
+        java.util.List<Message> response = api.listMessages(null,null);
 
         // TODO: test validations
     }
+    
+    /**
+     * Send Message
+     *
+     * Send a Message
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void sendMessageTest() throws ApiException {
+        Message message = null;
+        MessageResponse response = api.sendMessage(message);
 
+        // TODO: test validations
+    }
     
 }
