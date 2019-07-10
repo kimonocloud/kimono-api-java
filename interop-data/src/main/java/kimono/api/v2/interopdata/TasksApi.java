@@ -97,7 +97,7 @@ public class TasksApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        String[] localVarAuthNames = new String[] { "OAuth2" };
         return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
@@ -226,7 +226,7 @@ public class TasksApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        String[] localVarAuthNames = new String[] { "OAuth2" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 

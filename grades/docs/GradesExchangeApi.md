@@ -1,6 +1,6 @@
 # GradesExchangeApi
 
-All URIs are relative to *http://localhost/v2/grades*
+All URIs are relative to *https://api.us2.kimonocloud.com/v2/grades*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,10 +26,9 @@ Get a list of Grades Exchanges
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: OAuth2
+OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 GradesExchangeApi apiInstance = new GradesExchangeApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -56,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

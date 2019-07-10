@@ -1,6 +1,6 @@
 # IntegrationsApi
 
-All URIs are relative to *http://localhost/v2/interop*
+All URIs are relative to *https://api.us2.kimonocloud.com/v2/interop*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

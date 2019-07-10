@@ -28,7 +28,7 @@ import kimono.api.v2.interopdata.model.SysType;
 /**
  * TermSysType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T16:37:25.833-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-10T00:08:41.320-06:00[America/Denver]")
 public class TermSysType extends SysType {
   public static final String SERIALIZED_NAME_TERM_TYPE = "term_type";
   @SerializedName(SERIALIZED_NAME_TERM_TYPE)

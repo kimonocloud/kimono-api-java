@@ -96,7 +96,7 @@ public class VocabularyApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        String[] localVarAuthNames = new String[] { "OAuth2" };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
@@ -210,7 +210,7 @@ public class VocabularyApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        String[] localVarAuthNames = new String[] { "OAuth2" };
         return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
@@ -328,7 +328,7 @@ public class VocabularyApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        String[] localVarAuthNames = new String[] { "OAuth2" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
@@ -450,7 +450,7 @@ public class VocabularyApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        String[] localVarAuthNames = new String[] { "OAuth2" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
@@ -580,7 +580,7 @@ public class VocabularyApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        String[] localVarAuthNames = new String[] { "OAuth2" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
@@ -708,7 +708,7 @@ public class VocabularyApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        String[] localVarAuthNames = new String[] { "OAuth2" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
@@ -828,7 +828,7 @@ public class VocabularyApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        String[] localVarAuthNames = new String[] { "OAuth2" };
         return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
@@ -950,7 +950,7 @@ public class VocabularyApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "BasicAuth" };
+        String[] localVarAuthNames = new String[] { "OAuth2" };
         return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 

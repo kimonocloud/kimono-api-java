@@ -1,6 +1,6 @@
 # MessagesApi
 
-All URIs are relative to *http://localhost/v2/broker*
+All URIs are relative to *https://api.us2.kimonocloud.com/v2/broker*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,10 +28,9 @@ Each Message that is returned from &#x60;listMessages&#x60; must be acknowledged
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: OAuth2
+OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MessagesApi apiInstance = new MessagesApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Message to acknowledge
@@ -57,7 +56,7 @@ null (empty response body)
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -83,10 +82,9 @@ Get the next batch of Messages for the authenticated actor. The number of Messag
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: OAuth2
+OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MessagesApi apiInstance = new MessagesApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -113,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -139,10 +137,9 @@ Send a Message
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: OAuth2
+OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 MessagesApi apiInstance = new MessagesApi();
 Message message = new Message(); // Message | The JSON-encoded Message to send
@@ -167,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

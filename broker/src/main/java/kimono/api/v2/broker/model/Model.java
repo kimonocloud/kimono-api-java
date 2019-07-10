@@ -29,7 +29,7 @@ import kimono.api.v2.broker.model.BaseResourceType;
 /**
  * Model
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T16:37:24.830-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-10T00:08:40.585-06:00[America/Denver]")
 public class Model extends BaseResourceType {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

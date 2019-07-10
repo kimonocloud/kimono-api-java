@@ -28,7 +28,7 @@ import kimono.api.v2.sifcloud.model.ErrorType;
 /**
  * SingleObjectResponseType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T16:37:50.580-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-10T00:08:41.707-06:00[America/Denver]")
 public class SingleObjectResponseType {
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)

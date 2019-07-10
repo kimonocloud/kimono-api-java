@@ -57,7 +57,7 @@ import kimono.api.v2.platform.auth.OAuthFlow;
 
 public class ApiClient {
 
-    private String basePath = "http://localhost/v2/platform";
+    private String basePath = "https://api.us2.kimonocloud.com/v2/platform";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
@@ -116,7 +116,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g http://localhost/v2/platform
+     * @param basePath Base path of the URL (e.g https://api.us2.kimonocloud.com/v2/platform
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {

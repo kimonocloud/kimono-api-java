@@ -57,7 +57,7 @@ import kimono.api.v2.sifcloud.auth.OAuthFlow;
 
 public class ApiClient {
 
-    private String basePath = "https://api.kimonocloud.com/v2/sifcloud";
+    private String basePath = "https://api.us2.kimonocloud.com/v2/sifcloud";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
@@ -116,7 +116,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://api.kimonocloud.com/v2/sifcloud
+     * @param basePath Base path of the URL (e.g https://api.us2.kimonocloud.com/v2/sifcloud
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {

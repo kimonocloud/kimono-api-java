@@ -57,7 +57,7 @@ import kimono.api.v2.broker.auth.OAuthFlow;
 
 public class ApiClient {
 
-    private String basePath = "http://localhost/v2/broker";
+    private String basePath = "https://api.us2.kimonocloud.com/v2/broker";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
@@ -85,7 +85,6 @@ public class ApiClient {
         init();
 
         // Setup authentications (key: authentication name, value: authentication).
-        authentications.put("BasicAuth", new HttpBasicAuth());
         authentications.put("OAuth2", new OAuth());
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
@@ -111,7 +110,7 @@ public class ApiClient {
     public ApiClient(String clientId, String clientSecret, Map<String, String> parameters) {
         init();
 
-        RetryingOAuth retryingOAuth = new RetryingOAuth("https://api.kimonocloud.com/oauth/token", clientId, OAuthFlow.application, clientSecret, parameters);
+        RetryingOAuth retryingOAuth = new RetryingOAuth("https://api.us2.kimonocloud.com/oauth/token", clientId, OAuthFlow.application, clientSecret, parameters);
         authentications.put(
                 "OAuth2",
                 retryingOAuth
@@ -148,7 +147,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g http://localhost/v2/broker
+     * @param basePath Base path of the URL (e.g https://api.us2.kimonocloud.com/v2/broker
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {

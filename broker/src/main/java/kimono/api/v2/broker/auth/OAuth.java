@@ -18,7 +18,7 @@ import kimono.api.v2.broker.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T16:37:24.830-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-10T00:08:40.585-06:00[America/Denver]")
 public class OAuth implements Authentication {
   private String accessToken;
 

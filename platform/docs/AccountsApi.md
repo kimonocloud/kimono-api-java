@@ -1,6 +1,6 @@
 # AccountsApi
 
-All URIs are relative to *http://localhost/v2/platform*
+All URIs are relative to *https://api.us2.kimonocloud.com/v2/platform*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

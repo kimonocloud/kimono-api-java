@@ -1,6 +1,6 @@
 # ZonesApi
 
-All URIs are relative to *https://api.kimonocloud.com/v2/sifcloud*
+All URIs are relative to *https://api.us2.kimonocloud.com/v2/sifcloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

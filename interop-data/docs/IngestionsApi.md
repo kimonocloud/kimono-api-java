@@ -1,6 +1,6 @@
 # IngestionsApi
 
-All URIs are relative to *http://localhost/v2/interop/data*
+All URIs are relative to *https://api.us2.kimonocloud.com/v2/interop/data*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,10 +27,9 @@ Cancel an Ingestion by id
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: OAuth2
+OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 IngestionsApi apiInstance = new IngestionsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Ingestion to cancel
@@ -55,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -81,10 +80,9 @@ Create an Ingestion. Use the resulting session_token to send Load messages conta
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: OAuth2
+OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 IngestionsApi apiInstance = new IngestionsApi();
 Ingestion ingestion = new Ingestion(); // Ingestion | Ingestion to create
@@ -109,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -133,10 +131,9 @@ Find an Ingestion by id
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: OAuth2
+OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 IngestionsApi apiInstance = new IngestionsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Ingestion to find
@@ -161,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -187,10 +184,9 @@ Get a list of Ingestions. By default only incomplete Ingestions from the Ingesti
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: OAuth2
+OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 IngestionsApi apiInstance = new IngestionsApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -217,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 

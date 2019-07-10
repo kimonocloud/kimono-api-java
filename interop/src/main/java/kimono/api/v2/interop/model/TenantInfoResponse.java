@@ -30,7 +30,7 @@ import kimono.api.v2.interop.model.TenantInfo;
 /**
  * TenantInfoResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T16:37:25.539-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-10T00:08:41.076-06:00[America/Denver]")
 public class TenantInfoResponse extends SingleObjectResponseType {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
