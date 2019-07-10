@@ -1,6 +1,6 @@
 # TasksApi
 
-All URIs are relative to *http://localhost:5016/v2/interop/data*
+All URIs are relative to *http://localhost/v2/interop/data*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

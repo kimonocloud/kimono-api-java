@@ -57,7 +57,7 @@ import kimono.api.v2.interop.auth.OAuthFlow;
 
 public class ApiClient {
 
-    private String basePath = "http://localhost:5010/v2/interop";
+    private String basePath = "http://localhost/v2/interop";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
@@ -148,7 +148,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g http://localhost:5010/v2/interop
+     * @param basePath Base path of the URL (e.g http://localhost/v2/interop
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {

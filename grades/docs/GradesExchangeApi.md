@@ -1,6 +1,6 @@
 # GradesExchangeApi
 
-All URIs are relative to *http://localhost:5020/v2/grades*
+All URIs are relative to *http://localhost/v2/grades*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

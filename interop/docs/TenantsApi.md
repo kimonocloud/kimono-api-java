@@ -1,6 +1,6 @@
 # TenantsApi
 
-All URIs are relative to *http://localhost:5010/v2/interop*
+All URIs are relative to *http://localhost/v2/interop*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

@@ -1,6 +1,6 @@
 # MessagesApi
 
-All URIs are relative to *http://localhost:5021/v2/broker*
+All URIs are relative to *http://localhost/v2/broker*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

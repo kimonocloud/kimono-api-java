@@ -19,7 +19,7 @@ import java.util.Arrays;
 /**
  * Exchange
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T11:13:45.944-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T16:37:25.431-06:00[America/Denver]")
 public class Exchange {
 
   @Override

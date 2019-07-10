@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ObjectType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T11:13:45.641-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-09T16:37:25.833-06:00[America/Denver]")
 public class ObjectType {
   public static final String SERIALIZED_NAME_$_EXT = "$ext";
   @SerializedName(SERIALIZED_NAME_$_EXT)
