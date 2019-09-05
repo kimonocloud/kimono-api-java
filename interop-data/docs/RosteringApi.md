@@ -43,9 +43,9 @@ Find a Course by $sys.id
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Course to find
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -94,9 +94,9 @@ Find an LEA-type Org by $sys.id
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the LEA
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -145,9 +145,9 @@ Find an Org by $sys.id
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the object
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -196,9 +196,9 @@ Find a Person by $sys.id
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Person to find
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -247,9 +247,9 @@ Find a Section by $sys.id
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Section to find
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -298,9 +298,9 @@ Find a Term by $sys.id
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Term to find
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -349,9 +349,9 @@ List all Courses
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -402,9 +402,9 @@ List Courses that belong to an Org
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -457,9 +457,9 @@ List all LEA-type Orgs
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -486,7 +486,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -510,9 +510,9 @@ List all Orgs
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -563,9 +563,9 @@ Get all Persons
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -592,7 +592,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -616,9 +616,9 @@ List all School-type Orgs
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -645,7 +645,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -669,9 +669,9 @@ List all Sections
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -698,7 +698,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -722,9 +722,9 @@ List Sections that belong to an Org
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
@@ -753,7 +753,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -777,9 +777,9 @@ List all Student-type Persons
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -806,7 +806,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -830,9 +830,9 @@ List Students that are members of an Org
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
@@ -861,7 +861,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -885,9 +885,9 @@ List all Teacher-type Persons
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -914,7 +914,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -938,9 +938,9 @@ List Teachers that are members of an Org
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
@@ -969,7 +969,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -993,9 +993,9 @@ List all Terms
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -1022,7 +1022,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -1046,9 +1046,9 @@ List Terms that belong to an Org
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
@@ -1077,7 +1077,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 

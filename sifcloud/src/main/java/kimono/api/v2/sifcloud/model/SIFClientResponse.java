@@ -30,7 +30,7 @@ import kimono.api.v2.sifcloud.model.SingleObjectResponseType;
 /**
  * SIFClientResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-10T00:08:41.707-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-04T14:46:40.742-06:00[America/Denver]")
 public class SIFClientResponse extends SingleObjectResponseType {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)

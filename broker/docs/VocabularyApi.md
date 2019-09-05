@@ -33,9 +33,9 @@ Create a Data Model
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 VocabularyApi apiInstance = new VocabularyApi();
 try {
@@ -56,7 +56,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -80,9 +80,9 @@ Delete a Data Model
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 VocabularyApi apiInstance = new VocabularyApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Model
@@ -106,7 +106,7 @@ null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -130,9 +130,9 @@ Get a Data Model by id
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 VocabularyApi apiInstance = new VocabularyApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Model to find
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -181,9 +181,9 @@ Get a Data Model by id
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 VocabularyApi apiInstance = new VocabularyApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Model to find
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -234,9 +234,9 @@ Get a list of all defined Data Models
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 VocabularyApi apiInstance = new VocabularyApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -289,9 +289,9 @@ Get a list of all defined Vocabularies
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 VocabularyApi apiInstance = new VocabularyApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -342,9 +342,9 @@ Update the properties of a Data Model
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 VocabularyApi apiInstance = new VocabularyApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Model
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -393,9 +393,9 @@ Update the properties of a Data Model
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 VocabularyApi apiInstance = new VocabularyApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Model
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 

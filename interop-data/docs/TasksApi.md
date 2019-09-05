@@ -27,9 +27,9 @@ Each Task that is returned from &#x60;listTasks&#x60; must be acknowledged to re
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 TasksApi apiInstance = new TasksApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Task to acknowledge
@@ -55,7 +55,7 @@ null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -81,9 +81,9 @@ Get the next batch of Tasks for the authenticated actor. The number of Tasks ret
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: OAuth2
-OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
-OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 TasksApi apiInstance = new TasksApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 

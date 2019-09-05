@@ -103,7 +103,7 @@ public class GradesApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "OAuth2" };
+        String[] localVarAuthNames = new String[] { "Actor" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 

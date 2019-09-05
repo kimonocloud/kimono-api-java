@@ -29,10 +29,10 @@ Create an Account
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 AccountsApi apiInstance = new AccountsApi();
 Account account = new Account(); // Account | Account to create
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 
@@ -81,10 +81,10 @@ Delete an Account
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 AccountsApi apiInstance = new AccountsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Account to delete
@@ -108,7 +108,7 @@ null (empty response body)
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 
@@ -132,10 +132,10 @@ Find an Account
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 AccountsApi apiInstance = new AccountsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the object
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 
@@ -184,10 +184,10 @@ Find your Account
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 AccountsApi apiInstance = new AccountsApi();
 try {
@@ -208,7 +208,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 
@@ -234,10 +234,10 @@ Get a list of Accounts
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 AccountsApi apiInstance = new AccountsApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 1)
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 
@@ -288,10 +288,10 @@ Update an Account
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 AccountsApi apiInstance = new AccountsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the object
@@ -317,7 +317,7 @@ null (empty response body)
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 

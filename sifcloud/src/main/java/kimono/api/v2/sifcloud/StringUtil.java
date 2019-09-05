@@ -13,7 +13,7 @@
 
 package kimono.api.v2.sifcloud;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-10T00:08:41.707-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-04T14:46:40.742-06:00[America/Denver]")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).

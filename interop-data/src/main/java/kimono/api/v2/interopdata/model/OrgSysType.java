@@ -28,7 +28,7 @@ import kimono.api.v2.interopdata.model.SysType;
 /**
  * OrgSysType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-07-10T00:08:41.320-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-04T14:46:16.451-06:00[America/Denver]")
 public class OrgSysType extends SysType {
   public static final String SERIALIZED_NAME_ORG_TYPE = "org_type";
   @SerializedName(SERIALIZED_NAME_ORG_TYPE)

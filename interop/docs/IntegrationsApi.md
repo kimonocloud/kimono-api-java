@@ -35,10 +35,10 @@ Create an Integration
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 Integration integration = new Integration(); // Integration | Integration to create
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 
@@ -89,10 +89,10 @@ Create a new version of an Integration
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 
@@ -143,10 +143,10 @@ Delete an Integration
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration to delete
@@ -170,7 +170,7 @@ null (empty response body)
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 
@@ -194,10 +194,10 @@ Delete Integration Version
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration to update
@@ -223,7 +223,7 @@ null (empty response body)
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 
@@ -247,10 +247,10 @@ Find an Integration
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration to find
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 
@@ -301,10 +301,10 @@ List the versions of an Integration. Each version is described by an Integration
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 
@@ -359,10 +359,10 @@ List all Integrations
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String name = "name_example"; // String | Find an Integration by name
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 
@@ -415,10 +415,10 @@ Update Integration
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration to update
@@ -444,7 +444,7 @@ null (empty response body)
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 
@@ -468,10 +468,10 @@ Update Integration Blueprint
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration to update
@@ -500,7 +500,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 
@@ -524,10 +524,10 @@ Update Integration Version
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration to update
@@ -555,7 +555,7 @@ null (empty response body)
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 

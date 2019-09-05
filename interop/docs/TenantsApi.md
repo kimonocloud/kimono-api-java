@@ -4,8 +4,61 @@ All URIs are relative to *https://api.us2.kimonocloud.com/v2/interop*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**findInteropTenant**](TenantsApi.md#findInteropTenant) | **GET** /tenants/{id} | Find an TenantInfo by ID
 [**listInteropTenants**](TenantsApi.md#listInteropTenants) | **GET** /tenants | List Interop Tenants
 
+
+<a name="findInteropTenant"></a>
+# **findInteropTenant**
+> TenantInfoResponse findInteropTenant(id)
+
+Find an TenantInfo by ID
+
+### Example
+```java
+// Import classes:
+//import kimono.api.v2.interop.ApiClient;
+//import kimono.api.v2.interop.ApiException;
+//import kimono.api.v2.interop.Configuration;
+//import kimono.api.v2.interop.auth.*;
+//import kimono.api.v2.interop.TenantsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
+
+TenantsApi apiInstance = new TenantsApi();
+java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the TenantInfo to find
+try {
+    TenantInfoResponse result = apiInstance.findInteropTenant(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TenantsApi#findInteropTenant");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**java.util.UUID**](.md)| id of the TenantInfo to find |
+
+### Return type
+
+[**TenantInfoResponse**](TenantInfoResponse.md)
+
+### Authorization
+
+[Vendor](../README.md#Vendor)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="listInteropTenants"></a>
 # **listInteropTenants**
@@ -26,10 +79,10 @@ Get a list of &#x60;TenantInfo&#x60; representing your licensed and authorized I
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: BasicAuth
-HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-BasicAuth.setUsername("YOUR USERNAME");
-BasicAuth.setPassword("YOUR PASSWORD");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 TenantsApi apiInstance = new TenantsApi();
 java.util.List<java.util.UUID> accounts = Arrays.asList(); // java.util.List<java.util.UUID> | Optionally restrict the returned list of tenants to only those for the specified Accounts.
@@ -60,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BasicAuth](../README.md#BasicAuth)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 

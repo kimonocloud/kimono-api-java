@@ -85,7 +85,7 @@ public class ApiClient {
         init();
 
         // Setup authentications (key: authentication name, value: authentication).
-        authentications.put("OAuth2", new OAuth());
+        authentications.put("Actor", new OAuth());
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
@@ -112,7 +112,7 @@ public class ApiClient {
 
         RetryingOAuth retryingOAuth = new RetryingOAuth("https://api.us2.kimonocloud.com/oauth/token", clientId, OAuthFlow.application, clientSecret, parameters);
         authentications.put(
-                "OAuth2",
+                "Actor",
                 retryingOAuth
         );
         httpClient.interceptors().add(retryingOAuth);
