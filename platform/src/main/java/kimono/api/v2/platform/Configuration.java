@@ -13,7 +13,7 @@
 
 package kimono.api.v2.platform;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-04T14:46:24.678-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-23T17:04:44.891-06:00[America/Denver]")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 

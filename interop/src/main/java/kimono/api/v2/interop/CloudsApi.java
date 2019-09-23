@@ -418,7 +418,7 @@ public class CloudsApi {
     /**
      * Build call for listActorsByCloud
      * @param id id of the object (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -492,7 +492,7 @@ public class CloudsApi {
      * List all Actors in an Interop Cloud
      * 
      * @param id id of the object (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ActorsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -506,7 +506,7 @@ public class CloudsApi {
      * List all Actors in an Interop Cloud
      * 
      * @param id id of the object (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;ActorsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -521,7 +521,7 @@ public class CloudsApi {
      * List all Actors in an Interop Cloud (asynchronously)
      * 
      * @param id id of the object (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -555,7 +555,7 @@ public class CloudsApi {
     }
     /**
      * Build call for listClouds
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -622,7 +622,7 @@ public class CloudsApi {
     /**
      * List Interop Clouds
      * Get a list of Interop Clouds for accounts visible to you.
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return CloudsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -635,7 +635,7 @@ public class CloudsApi {
     /**
      * List Interop Clouds
      * Get a list of Interop Clouds for accounts visible to you.
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;CloudsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -649,7 +649,7 @@ public class CloudsApi {
     /**
      * List Interop Clouds (asynchronously)
      * Get a list of Interop Clouds for accounts visible to you.
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -686,7 +686,7 @@ public class CloudsApi {
      * @param generation List all Clouds of a matching generation (optional)
      * @param userdata List all Clouds with matching userdata (optional)
      * @param name List all Clouds with a matching name (optional)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -768,7 +768,7 @@ public class CloudsApi {
      * @param generation List all Clouds of a matching generation (optional)
      * @param userdata List all Clouds with matching userdata (optional)
      * @param name List all Clouds with a matching name (optional)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return CloudsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -784,7 +784,7 @@ public class CloudsApi {
      * @param generation List all Clouds of a matching generation (optional)
      * @param userdata List all Clouds with matching userdata (optional)
      * @param name List all Clouds with a matching name (optional)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;CloudsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -801,7 +801,7 @@ public class CloudsApi {
      * @param generation List all Clouds of a matching generation (optional)
      * @param userdata List all Clouds with matching userdata (optional)
      * @param name List all Clouds with a matching name (optional)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

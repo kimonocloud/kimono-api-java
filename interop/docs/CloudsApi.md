@@ -193,7 +193,7 @@ Vendor.setPassword("YOUR PASSWORD");
 
 CloudsApi apiInstance = new CloudsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the object
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     ActorsResponse result = apiInstance.listActorsByCloud(id, page, pageSize);
@@ -209,7 +209,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| id of the object |
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -250,7 +250,7 @@ Vendor.setUsername("YOUR USERNAME");
 Vendor.setPassword("YOUR PASSWORD");
 
 CloudsApi apiInstance = new CloudsApi();
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     CloudsResponse result = apiInstance.listClouds(page, pageSize);
@@ -265,7 +265,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -309,7 +309,7 @@ CloudsApi apiInstance = new CloudsApi();
 Integer generation = 56; // Integer | List all Clouds of a matching generation
 String userdata = "userdata_example"; // String | List all Clouds with matching userdata
 String name = "name_example"; // String | List all Clouds with a matching name
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     CloudsResponse result = apiInstance.searchClouds(generation, userdata, name, page, pageSize);
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
  **generation** | **Integer**| List all Clouds of a matching generation | [optional]
  **userdata** | **String**| List all Clouds with matching userdata | [optional]
  **name** | **String**| List all Clouds with a matching name | [optional]
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type

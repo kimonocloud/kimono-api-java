@@ -298,7 +298,7 @@ public class ZonesApi {
     }
     /**
      * Build call for listZones
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -365,7 +365,7 @@ public class ZonesApi {
     /**
      * Get SIF Zones
      * Get a list of &#x60;SIFZone&#x60;s
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return SIFZonesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -378,7 +378,7 @@ public class ZonesApi {
     /**
      * Get SIF Zones
      * Get a list of &#x60;SIFZone&#x60;s
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;SIFZonesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -392,7 +392,7 @@ public class ZonesApi {
     /**
      * Get SIF Zones (asynchronously)
      * Get a list of &#x60;SIFZone&#x60;s
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

@@ -406,14 +406,14 @@ public class VocabularyApi {
         return call;
     }
     /**
-     * Build call for findModel_0
-     * @param id id of the Model to find (required)
+     * Build call for findVocabulary
+     * @param id id of the Vocabulary to find (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call findModel_0Call(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call findVocabularyCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -455,53 +455,53 @@ public class VocabularyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call findModel_0ValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call findVocabularyValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling findModel_0(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling findVocabulary(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = findModel_0Call(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = findVocabularyCall(id, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Get a Data Model by id
+     * Get a Vocabulary by id
      * 
-     * @param id id of the Model to find (required)
+     * @param id id of the Vocabulary to find (required)
      * @return ModelsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ModelsResponse findModel_0(java.util.UUID id) throws ApiException {
-        ApiResponse<ModelsResponse> resp = findModel_0WithHttpInfo(id);
+    public ModelsResponse findVocabulary(java.util.UUID id) throws ApiException {
+        ApiResponse<ModelsResponse> resp = findVocabularyWithHttpInfo(id);
         return resp.getData();
     }
 
     /**
-     * Get a Data Model by id
+     * Get a Vocabulary by id
      * 
-     * @param id id of the Model to find (required)
+     * @param id id of the Vocabulary to find (required)
      * @return ApiResponse&lt;ModelsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ModelsResponse> findModel_0WithHttpInfo(java.util.UUID id) throws ApiException {
-        com.squareup.okhttp.Call call = findModel_0ValidateBeforeCall(id, null, null);
+    public ApiResponse<ModelsResponse> findVocabularyWithHttpInfo(java.util.UUID id) throws ApiException {
+        com.squareup.okhttp.Call call = findVocabularyValidateBeforeCall(id, null, null);
         Type localVarReturnType = new TypeToken<ModelsResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get a Data Model by id (asynchronously)
+     * Get a Vocabulary by id (asynchronously)
      * 
-     * @param id id of the Model to find (required)
+     * @param id id of the Vocabulary to find (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call findModel_0Async(java.util.UUID id, final ApiCallback<ModelsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call findVocabularyAsync(java.util.UUID id, final ApiCallback<ModelsResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -522,14 +522,14 @@ public class VocabularyApi {
             };
         }
 
-        com.squareup.okhttp.Call call = findModel_0ValidateBeforeCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = findVocabularyValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ModelsResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for listModels
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -596,7 +596,7 @@ public class VocabularyApi {
     /**
      * List Data Models
      * Get a list of all defined Data Models
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ModelsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -609,7 +609,7 @@ public class VocabularyApi {
     /**
      * List Data Models
      * Get a list of all defined Data Models
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;ModelsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -623,7 +623,7 @@ public class VocabularyApi {
     /**
      * List Data Models (asynchronously)
      * Get a list of all defined Data Models
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -657,7 +657,7 @@ public class VocabularyApi {
     }
     /**
      * Build call for listVocabularies
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -724,7 +724,7 @@ public class VocabularyApi {
     /**
      * List Vocabularies
      * Get a list of all defined Vocabularies
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return VocabularysResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -737,7 +737,7 @@ public class VocabularyApi {
     /**
      * List Vocabularies
      * Get a list of all defined Vocabularies
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;VocabularysResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -751,7 +751,7 @@ public class VocabularyApi {
     /**
      * List Vocabularies (asynchronously)
      * Get a list of all defined Vocabularies
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -906,14 +906,14 @@ public class VocabularyApi {
         return call;
     }
     /**
-     * Build call for updateModel_0
-     * @param id id of the Model (required)
+     * Build call for updateVocabulary
+     * @param id id of the Vocabulary (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateModel_0Call(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateVocabularyCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -955,53 +955,53 @@ public class VocabularyApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateModel_0ValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateVocabularyValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling updateModel_0(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling updateVocabulary(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = updateModel_0Call(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateVocabularyCall(id, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Update the properties of a Data Model
+     * Update the properties of a Vocabulary
      * 
-     * @param id id of the Model (required)
-     * @return ModelsResponse
+     * @param id id of the Vocabulary (required)
+     * @return VocabularysResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ModelsResponse updateModel_0(java.util.UUID id) throws ApiException {
-        ApiResponse<ModelsResponse> resp = updateModel_0WithHttpInfo(id);
+    public VocabularysResponse updateVocabulary(java.util.UUID id) throws ApiException {
+        ApiResponse<VocabularysResponse> resp = updateVocabularyWithHttpInfo(id);
         return resp.getData();
     }
 
     /**
-     * Update the properties of a Data Model
+     * Update the properties of a Vocabulary
      * 
-     * @param id id of the Model (required)
-     * @return ApiResponse&lt;ModelsResponse&gt;
+     * @param id id of the Vocabulary (required)
+     * @return ApiResponse&lt;VocabularysResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ModelsResponse> updateModel_0WithHttpInfo(java.util.UUID id) throws ApiException {
-        com.squareup.okhttp.Call call = updateModel_0ValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<ModelsResponse>(){}.getType();
+    public ApiResponse<VocabularysResponse> updateVocabularyWithHttpInfo(java.util.UUID id) throws ApiException {
+        com.squareup.okhttp.Call call = updateVocabularyValidateBeforeCall(id, null, null);
+        Type localVarReturnType = new TypeToken<VocabularysResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Update the properties of a Data Model (asynchronously)
+     * Update the properties of a Vocabulary (asynchronously)
      * 
-     * @param id id of the Model (required)
+     * @param id id of the Vocabulary (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateModel_0Async(java.util.UUID id, final ApiCallback<ModelsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateVocabularyAsync(java.util.UUID id, final ApiCallback<VocabularysResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1022,8 +1022,8 @@ public class VocabularyApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateModel_0ValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ModelsResponse>(){}.getType();
+        com.squareup.okhttp.Call call = updateVocabularyValidateBeforeCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<VocabularysResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

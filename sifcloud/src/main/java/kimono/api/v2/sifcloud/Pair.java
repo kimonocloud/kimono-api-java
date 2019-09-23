@@ -13,7 +13,7 @@
 
 package kimono.api.v2.sifcloud;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-04T14:46:40.742-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-23T17:04:45.679-06:00[America/Denver]")
 public class Pair {
     private String name = "";
     private String value = "";

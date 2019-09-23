@@ -528,7 +528,7 @@ public class AccountsApi {
     }
     /**
      * Build call for listAccounts
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -595,7 +595,7 @@ public class AccountsApi {
     /**
      * Get Accounts
      * Get a list of Accounts
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return AccountsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -608,7 +608,7 @@ public class AccountsApi {
     /**
      * Get Accounts
      * Get a list of Accounts
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;AccountsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -622,7 +622,7 @@ public class AccountsApi {
     /**
      * Get Accounts (asynchronously)
      * Get a list of Accounts
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

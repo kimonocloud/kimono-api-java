@@ -7,11 +7,11 @@ Method | HTTP request | Description
 [**createModel**](VocabularyApi.md#createModel) | **POST** /models | Create Data Models
 [**deleteModel**](VocabularyApi.md#deleteModel) | **DELETE** /models/{id} | Delete a Data Model
 [**findModel**](VocabularyApi.md#findModel) | **GET** /models/{id} | Get a Data Model by id
-[**findModel_0**](VocabularyApi.md#findModel_0) | **GET** /vocabulary/{id} | Get a Data Model by id
+[**findVocabulary**](VocabularyApi.md#findVocabulary) | **GET** /vocabulary/{id} | Get a Vocabulary by id
 [**listModels**](VocabularyApi.md#listModels) | **GET** /models | List Data Models
 [**listVocabularies**](VocabularyApi.md#listVocabularies) | **GET** /vocabularies | List Vocabularies
 [**updateModel**](VocabularyApi.md#updateModel) | **PUT** /models/{id} | Update the properties of a Data Model
-[**updateModel_0**](VocabularyApi.md#updateModel_0) | **PUT** /vocabulary/{id} | Update the properties of a Data Model
+[**updateVocabulary**](VocabularyApi.md#updateVocabulary) | **PUT** /vocabulary/{id} | Update the properties of a Vocabulary
 
 
 <a name="createModel"></a>
@@ -164,11 +164,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="findModel_0"></a>
-# **findModel_0**
-> ModelsResponse findModel_0(id)
+<a name="findVocabulary"></a>
+# **findVocabulary**
+> ModelsResponse findVocabulary(id)
 
-Get a Data Model by id
+Get a Vocabulary by id
 
 ### Example
 ```java
@@ -186,12 +186,12 @@ OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
 Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 VocabularyApi apiInstance = new VocabularyApi();
-java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Model to find
+java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Vocabulary to find
 try {
-    ModelsResponse result = apiInstance.findModel_0(id);
+    ModelsResponse result = apiInstance.findVocabulary(id);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling VocabularyApi#findModel_0");
+    System.err.println("Exception when calling VocabularyApi#findVocabulary");
     e.printStackTrace();
 }
 ```
@@ -200,7 +200,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**java.util.UUID**](.md)| id of the Model to find |
+ **id** | [**java.util.UUID**](.md)| id of the Vocabulary to find |
 
 ### Return type
 
@@ -239,7 +239,7 @@ OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
 Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 VocabularyApi apiInstance = new VocabularyApi();
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     ModelsResponse result = apiInstance.listModels(page, pageSize);
@@ -254,7 +254,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -294,7 +294,7 @@ OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
 Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 VocabularyApi apiInstance = new VocabularyApi();
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     VocabularysResponse result = apiInstance.listVocabularies(page, pageSize);
@@ -309,7 +309,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -376,11 +376,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="updateModel_0"></a>
-# **updateModel_0**
-> ModelsResponse updateModel_0(id)
+<a name="updateVocabulary"></a>
+# **updateVocabulary**
+> VocabularysResponse updateVocabulary(id)
 
-Update the properties of a Data Model
+Update the properties of a Vocabulary
 
 ### Example
 ```java
@@ -398,12 +398,12 @@ OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
 Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 VocabularyApi apiInstance = new VocabularyApi();
-java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Model
+java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Vocabulary
 try {
-    ModelsResponse result = apiInstance.updateModel_0(id);
+    VocabularysResponse result = apiInstance.updateVocabulary(id);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling VocabularyApi#updateModel_0");
+    System.err.println("Exception when calling VocabularyApi#updateVocabulary");
     e.printStackTrace();
 }
 ```
@@ -412,11 +412,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**java.util.UUID**](.md)| id of the Model |
+ **id** | [**java.util.UUID**](.md)| id of the Vocabulary |
 
 ### Return type
 
-[**ModelsResponse**](ModelsResponse.md)
+[**VocabularysResponse**](VocabularysResponse.md)
 
 ### Authorization
 

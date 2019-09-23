@@ -308,7 +308,7 @@ Vendor.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Integration
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     IntegrationVersionsResponse result = apiInstance.listIntegrationVersions(id, page, pageSize);
@@ -324,7 +324,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| id of the Integration |
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -366,7 +366,7 @@ Vendor.setPassword("YOUR PASSWORD");
 
 IntegrationsApi apiInstance = new IntegrationsApi();
 String name = "name_example"; // String | Find an Integration by name
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     IntegrationsResponse result = apiInstance.listIntegrations(name, page, pageSize);
@@ -382,7 +382,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Find an Integration by name | [optional]
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type

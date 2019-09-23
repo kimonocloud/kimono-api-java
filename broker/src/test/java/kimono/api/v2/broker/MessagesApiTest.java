@@ -13,12 +13,13 @@
 
 package kimono.api.v2.broker;
 
-import org.junit.Ignore;
-import org.junit.Test;
-
+import kimono.api.v2.broker.ApiException;
+import kimono.api.v2.broker.model.ErrorType;
 import kimono.api.v2.broker.model.Message;
 import kimono.api.v2.broker.model.MessageAck;
 import kimono.api.v2.broker.model.MessageResponse;
+import org.junit.Test;
+import org.junit.Ignore;
 
 
 /**
@@ -57,7 +58,9 @@ public class MessagesApiTest {
      */
     @Test
     public void listMessagesTest() throws ApiException {
-        java.util.List<Message> response = api.listMessages(null,null);
+        Integer page = null;
+        Integer pageSize = null;
+        java.util.List<Message> response = api.listMessages(page, pageSize);
 
         // TODO: test validations
     }

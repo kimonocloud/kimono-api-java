@@ -354,7 +354,7 @@ OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
 Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     CoursesResponse result = apiInstance.listCourses(page, pageSize);
@@ -369,7 +369,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -408,7 +408,7 @@ Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     CoursesResponse result = apiInstance.listCoursesForOrg(id, page, pageSize);
@@ -424,7 +424,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| $sys.id of the Org |
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -462,7 +462,7 @@ OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
 Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     OrgsResponse result = apiInstance.listLEAs(page, pageSize);
@@ -477,7 +477,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -515,7 +515,7 @@ OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
 Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     OrgsResponse result = apiInstance.listOrgs(page, pageSize);
@@ -530,7 +530,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -568,7 +568,7 @@ OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
 Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     PersonsResponse result = apiInstance.listPersons(page, pageSize);
@@ -583,7 +583,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -621,7 +621,7 @@ OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
 Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     OrgsResponse result = apiInstance.listSchools(page, pageSize);
@@ -636,7 +636,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -674,7 +674,7 @@ OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
 Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     SectionsResponse result = apiInstance.listSections(page, pageSize);
@@ -689,7 +689,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -728,7 +728,7 @@ Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     SectionsResponse result = apiInstance.listSectionsForOrg(id, page, pageSize);
@@ -744,7 +744,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| $sys.id of the Org |
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -782,7 +782,7 @@ OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
 Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     PersonsResponse result = apiInstance.listStudents(page, pageSize);
@@ -797,7 +797,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -836,7 +836,7 @@ Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     PersonsResponse result = apiInstance.listStudentsForOrg(id, page, pageSize);
@@ -852,7 +852,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| $sys.id of the Org |
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -890,7 +890,7 @@ OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
 Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     PersonsResponse result = apiInstance.listTeachers(page, pageSize);
@@ -905,7 +905,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -944,7 +944,7 @@ Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     PersonsResponse result = apiInstance.listTeachersForOrg(id, page, pageSize);
@@ -960,7 +960,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| $sys.id of the Org |
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -998,7 +998,7 @@ OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
 Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     TermsResponse result = apiInstance.listTerms(page, pageSize);
@@ -1013,7 +1013,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type
@@ -1052,7 +1052,7 @@ Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 RosteringApi apiInstance = new RosteringApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | $sys.id of the Org
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     TermsResponse result = apiInstance.listTermsForOrg(id, page, pageSize);
@@ -1068,7 +1068,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**java.util.UUID**](.md)| $sys.id of the Org |
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type

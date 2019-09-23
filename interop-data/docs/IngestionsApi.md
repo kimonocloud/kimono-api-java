@@ -189,7 +189,7 @@ OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
 Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 IngestionsApi apiInstance = new IngestionsApi();
-Integer page = 56; // Integer | Specify the page number (defaults to 1)
+Integer page = 56; // Integer | Specify the page number (defaults to 0)
 Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
 try {
     IngestionsResponse result = apiInstance.listIngestions(page, pageSize);
@@ -204,7 +204,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Integer**| Specify the page number (defaults to 1) | [optional]
+ **page** | **Integer**| Specify the page number (defaults to 0) | [optional]
  **pageSize** | **Integer**| Specify the page_size (defaults to the maximum page size) | [optional]
 
 ### Return type

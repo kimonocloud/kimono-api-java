@@ -794,7 +794,7 @@ public class RosteringApi {
     }
     /**
      * Build call for listCourses
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -861,7 +861,7 @@ public class RosteringApi {
     /**
      * List all Courses
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return CoursesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -874,7 +874,7 @@ public class RosteringApi {
     /**
      * List all Courses
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;CoursesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -888,7 +888,7 @@ public class RosteringApi {
     /**
      * List all Courses (asynchronously)
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -923,7 +923,7 @@ public class RosteringApi {
     /**
      * Build call for listCoursesForOrg
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -997,7 +997,7 @@ public class RosteringApi {
      * List Courses that belong to an Org
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return CoursesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1011,7 +1011,7 @@ public class RosteringApi {
      * List Courses that belong to an Org
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;CoursesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1026,7 +1026,7 @@ public class RosteringApi {
      * List Courses that belong to an Org (asynchronously)
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1060,7 +1060,7 @@ public class RosteringApi {
     }
     /**
      * Build call for listLEAs
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -1127,7 +1127,7 @@ public class RosteringApi {
     /**
      * List all LEA-type Orgs
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return OrgsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1140,7 +1140,7 @@ public class RosteringApi {
     /**
      * List all LEA-type Orgs
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;OrgsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1154,7 +1154,7 @@ public class RosteringApi {
     /**
      * List all LEA-type Orgs (asynchronously)
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1188,7 +1188,7 @@ public class RosteringApi {
     }
     /**
      * Build call for listOrgs
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -1255,7 +1255,7 @@ public class RosteringApi {
     /**
      * List all Orgs
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return OrgsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1268,7 +1268,7 @@ public class RosteringApi {
     /**
      * List all Orgs
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;OrgsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1282,7 +1282,7 @@ public class RosteringApi {
     /**
      * List all Orgs (asynchronously)
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1316,7 +1316,7 @@ public class RosteringApi {
     }
     /**
      * Build call for listPersons
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -1383,7 +1383,7 @@ public class RosteringApi {
     /**
      * Get all Persons
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return PersonsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1396,7 +1396,7 @@ public class RosteringApi {
     /**
      * Get all Persons
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;PersonsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1410,7 +1410,7 @@ public class RosteringApi {
     /**
      * Get all Persons (asynchronously)
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1444,7 +1444,7 @@ public class RosteringApi {
     }
     /**
      * Build call for listSchools
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -1511,7 +1511,7 @@ public class RosteringApi {
     /**
      * List all School-type Orgs
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return OrgsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1524,7 +1524,7 @@ public class RosteringApi {
     /**
      * List all School-type Orgs
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;OrgsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1538,7 +1538,7 @@ public class RosteringApi {
     /**
      * List all School-type Orgs (asynchronously)
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1572,7 +1572,7 @@ public class RosteringApi {
     }
     /**
      * Build call for listSections
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -1639,7 +1639,7 @@ public class RosteringApi {
     /**
      * List all Sections
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return SectionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1652,7 +1652,7 @@ public class RosteringApi {
     /**
      * List all Sections
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;SectionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1666,7 +1666,7 @@ public class RosteringApi {
     /**
      * List all Sections (asynchronously)
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1701,7 +1701,7 @@ public class RosteringApi {
     /**
      * Build call for listSectionsForOrg
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -1775,7 +1775,7 @@ public class RosteringApi {
      * List Sections that belong to an Org
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return SectionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1789,7 +1789,7 @@ public class RosteringApi {
      * List Sections that belong to an Org
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;SectionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1804,7 +1804,7 @@ public class RosteringApi {
      * List Sections that belong to an Org (asynchronously)
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1838,7 +1838,7 @@ public class RosteringApi {
     }
     /**
      * Build call for listStudents
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -1905,7 +1905,7 @@ public class RosteringApi {
     /**
      * List all Student-type Persons
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return PersonsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1918,7 +1918,7 @@ public class RosteringApi {
     /**
      * List all Student-type Persons
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;PersonsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1932,7 +1932,7 @@ public class RosteringApi {
     /**
      * List all Student-type Persons (asynchronously)
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1967,7 +1967,7 @@ public class RosteringApi {
     /**
      * Build call for listStudentsForOrg
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -2041,7 +2041,7 @@ public class RosteringApi {
      * List Students that are members of an Org
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return PersonsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2055,7 +2055,7 @@ public class RosteringApi {
      * List Students that are members of an Org
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;PersonsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2070,7 +2070,7 @@ public class RosteringApi {
      * List Students that are members of an Org (asynchronously)
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2104,7 +2104,7 @@ public class RosteringApi {
     }
     /**
      * Build call for listTeachers
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -2171,7 +2171,7 @@ public class RosteringApi {
     /**
      * List all Teacher-type Persons
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return PersonsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2184,7 +2184,7 @@ public class RosteringApi {
     /**
      * List all Teacher-type Persons
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;PersonsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2198,7 +2198,7 @@ public class RosteringApi {
     /**
      * List all Teacher-type Persons (asynchronously)
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2233,7 +2233,7 @@ public class RosteringApi {
     /**
      * Build call for listTeachersForOrg
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -2307,7 +2307,7 @@ public class RosteringApi {
      * List Teachers that are members of an Org
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return PersonsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2321,7 +2321,7 @@ public class RosteringApi {
      * List Teachers that are members of an Org
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;PersonsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2336,7 +2336,7 @@ public class RosteringApi {
      * List Teachers that are members of an Org (asynchronously)
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2370,7 +2370,7 @@ public class RosteringApi {
     }
     /**
      * Build call for listTerms
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -2437,7 +2437,7 @@ public class RosteringApi {
     /**
      * List all Terms
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return TermsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2450,7 +2450,7 @@ public class RosteringApi {
     /**
      * List all Terms
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;TermsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2464,7 +2464,7 @@ public class RosteringApi {
     /**
      * List all Terms (asynchronously)
      * 
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2499,7 +2499,7 @@ public class RosteringApi {
     /**
      * Build call for listTermsForOrg
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -2573,7 +2573,7 @@ public class RosteringApi {
      * List Terms that belong to an Org
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return TermsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2587,7 +2587,7 @@ public class RosteringApi {
      * List Terms that belong to an Org
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;TermsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2602,7 +2602,7 @@ public class RosteringApi {
      * List Terms that belong to an Org (asynchronously)
      * 
      * @param id $sys.id of the Org (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

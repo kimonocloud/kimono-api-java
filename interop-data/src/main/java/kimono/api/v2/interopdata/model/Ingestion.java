@@ -31,7 +31,7 @@ import kimono.api.v2.interopdata.model.IngestionType;
 /**
  * Ingestion
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-04T14:46:16.451-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-23T17:04:45.282-06:00[America/Denver]")
 public class Ingestion extends BaseTenantResourceType {
   public static final String SERIALIZED_NAME_TENANT_ID = "tenant_id";
   @SerializedName(SERIALIZED_NAME_TENANT_ID)

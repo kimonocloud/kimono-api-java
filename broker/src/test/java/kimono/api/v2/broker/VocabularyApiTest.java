@@ -13,12 +13,13 @@
 
 package kimono.api.v2.broker;
 
-import org.junit.Ignore;
-import org.junit.Test;
-
+import kimono.api.v2.broker.ApiException;
+import kimono.api.v2.broker.model.ErrorType;
 import kimono.api.v2.broker.model.Model;
 import kimono.api.v2.broker.model.ModelsResponse;
 import kimono.api.v2.broker.model.VocabularysResponse;
+import org.junit.Test;
+import org.junit.Ignore;
 
 
 /**
@@ -78,7 +79,7 @@ public class VocabularyApiTest {
     }
     
     /**
-     * Get a Data Model by id
+     * Get a Vocabulary by id
      *
      * 
      *
@@ -86,9 +87,9 @@ public class VocabularyApiTest {
      *          if the Api call fails
      */
     @Test
-    public void findModel_0Test() throws ApiException {
+    public void findVocabularyTest() throws ApiException {
         java.util.UUID id = null;
-        ModelsResponse response = api.findModel_0(id);
+        ModelsResponse response = api.findVocabulary(id);
 
         // TODO: test validations
     }
@@ -103,7 +104,9 @@ public class VocabularyApiTest {
      */
     @Test
     public void listModelsTest() throws ApiException {
-        ModelsResponse response = api.listModels(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        ModelsResponse response = api.listModels(page, pageSize);
 
         // TODO: test validations
     }
@@ -118,7 +121,9 @@ public class VocabularyApiTest {
      */
     @Test
     public void listVocabulariesTest() throws ApiException {
-        VocabularysResponse response = api.listVocabularies(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        VocabularysResponse response = api.listVocabularies(page, pageSize);
 
         // TODO: test validations
     }
@@ -140,7 +145,7 @@ public class VocabularyApiTest {
     }
     
     /**
-     * Update the properties of a Data Model
+     * Update the properties of a Vocabulary
      *
      * 
      *
@@ -148,9 +153,9 @@ public class VocabularyApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateModel_0Test() throws ApiException {
+    public void updateVocabularyTest() throws ApiException {
         java.util.UUID id = null;
-        ModelsResponse response = api.updateModel_0(id);
+        VocabularysResponse response = api.updateVocabulary(id);
 
         // TODO: test validations
     }

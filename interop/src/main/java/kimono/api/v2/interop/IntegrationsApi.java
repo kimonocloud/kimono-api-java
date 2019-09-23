@@ -679,7 +679,7 @@ public class IntegrationsApi {
     /**
      * Build call for listIntegrationVersions
      * @param id id of the Integration (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -753,7 +753,7 @@ public class IntegrationsApi {
      * List Integration Versions
      * List the versions of an Integration. Each version is described by an Integration Blueprint.
      * @param id id of the Integration (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return IntegrationVersionsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -767,7 +767,7 @@ public class IntegrationsApi {
      * List Integration Versions
      * List the versions of an Integration. Each version is described by an Integration Blueprint.
      * @param id id of the Integration (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;IntegrationVersionsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -782,7 +782,7 @@ public class IntegrationsApi {
      * List Integration Versions (asynchronously)
      * List the versions of an Integration. Each version is described by an Integration Blueprint.
      * @param id id of the Integration (required)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -817,7 +817,7 @@ public class IntegrationsApi {
     /**
      * Build call for listIntegrations
      * @param name Find an Integration by name (optional)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -889,7 +889,7 @@ public class IntegrationsApi {
      * List Integrations
      * List all Integrations
      * @param name Find an Integration by name (optional)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return IntegrationsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -903,7 +903,7 @@ public class IntegrationsApi {
      * List Integrations
      * List all Integrations
      * @param name Find an Integration by name (optional)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;IntegrationsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -918,7 +918,7 @@ public class IntegrationsApi {
      * List Integrations (asynchronously)
      * List all Integrations
      * @param name Find an Integration by name (optional)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

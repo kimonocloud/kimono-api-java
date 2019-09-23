@@ -298,7 +298,7 @@ public class ClientsApi {
     }
     /**
      * Build call for listClients
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -365,7 +365,7 @@ public class ClientsApi {
     /**
      * Get SIF Clients
      * Get a list of &#x60;SIFClient&#x60;s
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return SIFClientsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -378,7 +378,7 @@ public class ClientsApi {
     /**
      * Get SIF Clients
      * Get a list of &#x60;SIFClient&#x60;s
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;SIFClientsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -392,7 +392,7 @@ public class ClientsApi {
     /**
      * Get SIF Clients (asynchronously)
      * Get a list of &#x60;SIFClient&#x60;s
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

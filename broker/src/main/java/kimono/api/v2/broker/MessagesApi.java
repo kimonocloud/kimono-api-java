@@ -177,7 +177,7 @@ public class MessagesApi {
     }
     /**
      * Build call for listMessages
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -244,7 +244,7 @@ public class MessagesApi {
     /**
      * List Messages
      * Get the next batch of Messages for the authenticated actor. The number of Messages returned is determined by Kimono and may change from time to time. See [Messages](doc:broker-api-messages) for details.
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return java.util.List&lt;Message&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -257,7 +257,7 @@ public class MessagesApi {
     /**
      * List Messages
      * Get the next batch of Messages for the authenticated actor. The number of Messages returned is determined by Kimono and may change from time to time. See [Messages](doc:broker-api-messages) for details.
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;java.util.List&lt;Message&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -271,7 +271,7 @@ public class MessagesApi {
     /**
      * List Messages (asynchronously)
      * Get the next batch of Messages for the authenticated actor. The number of Messages returned is determined by Kimono and may change from time to time. See [Messages](doc:broker-api-messages) for details.
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

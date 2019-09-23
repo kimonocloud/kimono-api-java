@@ -177,7 +177,7 @@ public class TenantsApi {
      * Build call for listInteropTenants
      * @param accounts Optionally restrict the returned list of tenants to only those for the specified Accounts. (optional)
      * @param integrations Optionally restrict the returned list of tenants to only those for the specified Integration or Integrations. Use this parameter when you have multiple Integrations all serviced by the same client application. When omitted, includes tenants of all Integrations owned by your account. (optional)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -254,7 +254,7 @@ public class TenantsApi {
      * Get a list of &#x60;TenantInfo&#x60; representing your licensed and authorized Integration tenants.
      * @param accounts Optionally restrict the returned list of tenants to only those for the specified Accounts. (optional)
      * @param integrations Optionally restrict the returned list of tenants to only those for the specified Integration or Integrations. Use this parameter when you have multiple Integrations all serviced by the same client application. When omitted, includes tenants of all Integrations owned by your account. (optional)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return TenantInfosResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -269,7 +269,7 @@ public class TenantsApi {
      * Get a list of &#x60;TenantInfo&#x60; representing your licensed and authorized Integration tenants.
      * @param accounts Optionally restrict the returned list of tenants to only those for the specified Accounts. (optional)
      * @param integrations Optionally restrict the returned list of tenants to only those for the specified Integration or Integrations. Use this parameter when you have multiple Integrations all serviced by the same client application. When omitted, includes tenants of all Integrations owned by your account. (optional)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;TenantInfosResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -285,7 +285,7 @@ public class TenantsApi {
      * Get a list of &#x60;TenantInfo&#x60; representing your licensed and authorized Integration tenants.
      * @param accounts Optionally restrict the returned list of tenants to only those for the specified Accounts. (optional)
      * @param integrations Optionally restrict the returned list of tenants to only those for the specified Integration or Integrations. Use this parameter when you have multiple Integrations all serviced by the same client application. When omitted, includes tenants of all Integrations owned by your account. (optional)
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

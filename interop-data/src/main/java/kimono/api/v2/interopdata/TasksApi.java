@@ -175,7 +175,7 @@ public class TasksApi {
     }
     /**
      * Build call for listTasks
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -242,7 +242,7 @@ public class TasksApi {
     /**
      * List Tasks
      * Get the next batch of Tasks for the authenticated actor. The number of Tasks returned is determined by Kimono and may change from time to time. See [Tasks](doc:interop-data-api-tasks) for details.
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return TasksResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -255,7 +255,7 @@ public class TasksApi {
     /**
      * List Tasks
      * Get the next batch of Tasks for the authenticated actor. The number of Tasks returned is determined by Kimono and may change from time to time. See [Tasks](doc:interop-data-api-tasks) for details.
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @return ApiResponse&lt;TasksResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -269,7 +269,7 @@ public class TasksApi {
     /**
      * List Tasks (asynchronously)
      * Get the next batch of Tasks for the authenticated actor. The number of Tasks returned is determined by Kimono and may change from time to time. See [Tasks](doc:interop-data-api-tasks) for details.
-     * @param page Specify the page number (defaults to 1) (optional)
+     * @param page Specify the page number (defaults to 0) (optional)
      * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
