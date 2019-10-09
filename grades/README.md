@@ -2,7 +2,7 @@
 
 Grades Exchange API
 - API version: 2.0
-  - Build date: 2019-06-18T15:32:03.953-06:00[America/Denver]
+  - Build date: 2019-10-09T14:00:54.511-06:00[America/Denver]
 
 Use the Grades Exchange APIs to implement a Grades Producer or Grades Consumer client application and to manage Exchanges between producers and consumers.
 
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.kimonocloud</groupId>
   <artifactId>api-grades</artifactId>
-  <version>2.0-SNAPSHOT</version>
+  <version>2.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.kimonocloud:api-grades:2.0-SNAPSHOT"
+compile "com.kimonocloud:api-grades:2.0.0"
 ```
 
 ### Others
@@ -63,7 +63,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-grades-2.0-SNAPSHOT.jar`
+* `target/api-grades-2.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -85,14 +85,15 @@ public class GradesExchangeApiExample {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         
-        // Configure HTTP basic authorization: BasicAuth
-        HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-        BasicAuth.setUsername("YOUR USERNAME");
-        BasicAuth.setPassword("YOUR PASSWORD");
+        // Configure OAuth2 access token for authorization: Actor
+        OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+        Actor.setAccessToken("YOUR ACCESS TOKEN");
 
         GradesExchangeApi apiInstance = new GradesExchangeApi();
+        Integer page = 56; // Integer | Specify the page number (defaults to 0)
+        Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
         try {
-            java.util.List<Exchange> result = apiInstance.listExchanges();
+            ExchangesResponse result = apiInstance.listExchanges(page, pageSize);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GradesExchangeApi#listExchanges");
@@ -105,7 +106,7 @@ public class GradesExchangeApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:5020/v2/grades*
+All URIs are relative to *https://api.us2.kimonocloud.com/v2/grades*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -115,17 +116,24 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [BaseResourceType](docs/BaseResourceType.md)
+ - [ErrorType](docs/ErrorType.md)
  - [Exchange](docs/Exchange.md)
+ - [ExchangeResponse](docs/ExchangeResponse.md)
+ - [ExchangesResponse](docs/ExchangesResponse.md)
  - [PagedDataResponseType](docs/PagedDataResponseType.md)
  - [PagedDataResponseTypePaging](docs/PagedDataResponseTypePaging.md)
+ - [SingleObjectResponseType](docs/SingleObjectResponseType.md)
 
 
 ## Documentation for Authorization
 
 Authentication schemes defined for the API:
-### BasicAuth
+### Actor
 
-- **Type**: HTTP basic authentication
+- **Type**: OAuth
+- **Flow**: application
+- **Authorization URL**: 
+- **Scopes**: N/A
 
 
 ## Recommendation

@@ -13,10 +13,13 @@
 
 package kimono.api.v2.sifcloud;
 
-import org.junit.Ignore;
-import org.junit.Test;
-
+import kimono.api.v2.sifcloud.ApiException;
+import kimono.api.v2.sifcloud.model.ErrorType;
+import kimono.api.v2.sifcloud.model.SIFClient;
+import kimono.api.v2.sifcloud.model.SIFClientResponse;
 import kimono.api.v2.sifcloud.model.SIFClientsResponse;
+import org.junit.Test;
+import org.junit.Ignore;
 
 
 /**
@@ -29,6 +32,38 @@ public class ClientsApiTest {
 
     
     /**
+     * Create a SIF Client
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createClientTest() throws ApiException {
+        SIFClient siFClient = null;
+        SIFClientResponse response = api.createClient(siFClient);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Find a &#x60;SIFClient&#x60;
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void findClientTest() throws ApiException {
+        java.util.UUID id = null;
+        SIFClientResponse response = api.findClient(id);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get SIF Clients
      *
      * Get a list of &#x60;SIFClient&#x60;s
@@ -38,7 +73,9 @@ public class ClientsApiTest {
      */
     @Test
     public void listClientsTest() throws ApiException {
-        SIFClientsResponse response = api.listClients(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        SIFClientsResponse response = api.listClients(page, pageSize);
 
         // TODO: test validations
     }

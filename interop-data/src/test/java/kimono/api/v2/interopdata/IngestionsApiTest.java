@@ -13,12 +13,12 @@
 
 package kimono.api.v2.interopdata;
 
-import org.junit.Ignore;
-import org.junit.Test;
-
+import kimono.api.v2.interopdata.ApiException;
 import kimono.api.v2.interopdata.model.Ingestion;
 import kimono.api.v2.interopdata.model.IngestionResponse;
 import kimono.api.v2.interopdata.model.IngestionsResponse;
+import org.junit.Test;
+import org.junit.Ignore;
 
 
 /**
@@ -88,7 +88,9 @@ public class IngestionsApiTest {
      */
     @Test
     public void listIngestionsTest() throws ApiException {
-        IngestionsResponse response = api.listIngestions(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        IngestionsResponse response = api.listIngestions(page, pageSize);
 
         // TODO: test validations
     }

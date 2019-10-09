@@ -13,10 +13,13 @@
 
 package kimono.api.v2.sifcloud;
 
-import org.junit.Ignore;
-import org.junit.Test;
-
+import kimono.api.v2.sifcloud.ApiException;
+import kimono.api.v2.sifcloud.model.ErrorType;
+import kimono.api.v2.sifcloud.model.SIFZone;
+import kimono.api.v2.sifcloud.model.SIFZoneResponse;
 import kimono.api.v2.sifcloud.model.SIFZonesResponse;
+import org.junit.Test;
+import org.junit.Ignore;
 
 
 /**
@@ -29,6 +32,38 @@ public class ZonesApiTest {
 
     
     /**
+     * Create a SIF Zone
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createZoneTest() throws ApiException {
+        SIFZone siFZone = null;
+        SIFZoneResponse response = api.createZone(siFZone);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Find a &#x60;SIFZone&#x60;
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void findZoneTest() throws ApiException {
+        java.util.UUID id = null;
+        SIFZoneResponse response = api.findZone(id);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get SIF Zones
      *
      * Get a list of &#x60;SIFZone&#x60;s
@@ -38,7 +73,9 @@ public class ZonesApiTest {
      */
     @Test
     public void listZonesTest() throws ApiException {
-        SIFZonesResponse response = api.listZones(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        SIFZonesResponse response = api.listZones(page, pageSize);
 
         // TODO: test validations
     }

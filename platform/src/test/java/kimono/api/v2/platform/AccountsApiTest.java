@@ -13,12 +13,13 @@
 
 package kimono.api.v2.platform;
 
-import org.junit.Ignore;
-import org.junit.Test;
-
+import kimono.api.v2.platform.ApiException;
 import kimono.api.v2.platform.model.Account;
 import kimono.api.v2.platform.model.AccountResponse;
 import kimono.api.v2.platform.model.AccountsResponse;
+import kimono.api.v2.platform.model.ErrorType;
+import org.junit.Test;
+import org.junit.Ignore;
 
 
 /**
@@ -103,7 +104,9 @@ public class AccountsApiTest {
      */
     @Test
     public void listAccountsTest() throws ApiException {
-        AccountsResponse response = api.listAccounts(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        AccountsResponse response = api.listAccounts(page, pageSize);
 
         // TODO: test validations
     }

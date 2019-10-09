@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **dob** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **aup** | **Boolean** |  |  [optional]
 **gradYear** | **String** |  |  [optional]
-**$schools** | [**java.util.List&lt;OrgSysType&gt;**](OrgSysType.md) |  |  [optional]
-**$sections** | [**java.util.List&lt;SysType&gt;**](SysType.md) |  |  [optional]
+**$schools** | [**java.util.List&lt;OrgMembershipRefType&gt;**](OrgMembershipRefType.md) |  |  [optional]
+**$sections** | [**java.util.List&lt;MembershipRefType&gt;**](MembershipRefType.md) |  |  [optional]
 
 
 

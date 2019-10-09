@@ -2,7 +2,7 @@
 
 Interop Data API
 - API version: 2.0
-  - Build date: 2019-06-18T15:32:03.537-06:00[America/Denver]
+  - Build date: 2019-10-09T14:00:54.025-06:00[America/Denver]
 
 Interop Data APIs provide access to the data objects and events from Interop Cloud repositories and Integration repositories
 
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.kimonocloud</groupId>
   <artifactId>api-interop-data</artifactId>
-  <version>2.0-SNAPSHOT</version>
+  <version>2.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.kimonocloud:api-interop-data:2.0-SNAPSHOT"
+compile "com.kimonocloud:api-interop-data:2.0.0"
 ```
 
 ### Others
@@ -63,7 +63,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-interop-data-2.0-SNAPSHOT.jar`
+* `target/api-interop-data-2.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -85,14 +85,15 @@ public class GradesApiExample {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         
-        // Configure HTTP basic authorization: BasicAuth
-        HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-        BasicAuth.setUsername("YOUR USERNAME");
-        BasicAuth.setPassword("YOUR PASSWORD");
+        // Configure OAuth2 access token for authorization: Actor
+        OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+        Actor.setAccessToken("YOUR ACCESS TOKEN");
 
         GradesApi apiInstance = new GradesApi();
+        Integer page = 56; // Integer | Specify the page number (defaults to 0)
+        Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
         try {
-            GradingCategorysResponse result = apiInstance.listGradingCategories();
+            GradingCategorysResponse result = apiInstance.listGradingCategories(page, pageSize);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling GradesApi#listGradingCategories");
@@ -105,7 +106,7 @@ public class GradesApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:5016/v2/interop/data*
+All URIs are relative to *https://api.us2.kimonocloud.com/v2/interop/data*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -154,24 +155,33 @@ Class | Method | HTTP request | Description
  - [IngestionState](docs/IngestionState.md)
  - [IngestionType](docs/IngestionType.md)
  - [IngestionsResponse](docs/IngestionsResponse.md)
+ - [MembershipRefType](docs/MembershipRefType.md)
  - [NameType](docs/NameType.md)
  - [ObjectType](docs/ObjectType.md)
  - [Org](docs/Org.md)
+ - [OrgMembershipRefType](docs/OrgMembershipRefType.md)
+ - [OrgRefType](docs/OrgRefType.md)
  - [OrgResponse](docs/OrgResponse.md)
  - [OrgSysType](docs/OrgSysType.md)
  - [OrgsResponse](docs/OrgsResponse.md)
  - [PagedDataResponseType](docs/PagedDataResponseType.md)
  - [PagedDataResponseTypePaging](docs/PagedDataResponseTypePaging.md)
  - [Person](docs/Person.md)
+ - [PersonMembershipRefType](docs/PersonMembershipRefType.md)
+ - [PersonRefType](docs/PersonRefType.md)
  - [PersonSysType](docs/PersonSysType.md)
  - [PersonsResponse](docs/PersonsResponse.md)
+ - [RefType](docs/RefType.md)
  - [Section](docs/Section.md)
  - [SectionsResponse](docs/SectionsResponse.md)
  - [SingleObjectResponseType](docs/SingleObjectResponseType.md)
  - [SysType](docs/SysType.md)
  - [Task](docs/Task.md)
  - [TaskAck](docs/TaskAck.md)
+ - [TaskResponse](docs/TaskResponse.md)
+ - [TasksResponse](docs/TasksResponse.md)
  - [Term](docs/Term.md)
+ - [TermRefType](docs/TermRefType.md)
  - [TermSysType](docs/TermSysType.md)
  - [TermsResponse](docs/TermsResponse.md)
 
@@ -179,11 +189,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Authorization
 
 Authentication schemes defined for the API:
-### BasicAuth
-
-- **Type**: HTTP basic authentication
-
-### OAuth2
+### Actor
 
 - **Type**: OAuth
 - **Flow**: application

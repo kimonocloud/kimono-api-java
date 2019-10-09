@@ -23,12 +23,13 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import kimono.api.v2.interopdata.model.SysType;
 
 /**
  * PersonSysType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-23T17:04:45.282-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-09T14:17:25.210-06:00[America/Denver]")
 public class PersonSysType extends SysType {
   public static final String SERIALIZED_NAME_PERSON_TYPE = "person_type";
   @SerializedName(SERIALIZED_NAME_PERSON_TYPE)

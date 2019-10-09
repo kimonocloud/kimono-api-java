@@ -2,7 +2,7 @@
 
 Interop API
 - API version: 2.0
-  - Build date: 2019-06-18T15:32:03.183-06:00[America/Denver]
+  - Build date: 2019-10-09T14:00:53.730-06:00[America/Denver]
 
 Interop APIs provide access to Kimono Interop Cloud resources and operations
 
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.kimonocloud</groupId>
   <artifactId>api-interop</artifactId>
-  <version>2.0-SNAPSHOT</version>
+  <version>2.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.kimonocloud:api-interop:2.0-SNAPSHOT"
+compile "com.kimonocloud:api-interop:2.0.0"
 ```
 
 ### Others
@@ -63,7 +63,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-interop-2.0-SNAPSHOT.jar`
+* `target/api-interop-2.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -85,14 +85,16 @@ public class ActorsApiExample {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         
-        // Configure HTTP basic authorization: BasicAuth
-        HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-        BasicAuth.setUsername("YOUR USERNAME");
-        BasicAuth.setPassword("YOUR PASSWORD");
+        // Configure HTTP basic authorization: Vendor
+        HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+        Vendor.setUsername("YOUR USERNAME");
+        Vendor.setPassword("YOUR PASSWORD");
 
         ActorsApi apiInstance = new ActorsApi();
+        Integer page = 56; // Integer | Specify the page number (defaults to 0)
+        Integer pageSize = 56; // Integer | Specify the page_size (defaults to the maximum page size)
         try {
-            ActorsResponse result = apiInstance.listActors();
+            ActorsResponse result = apiInstance.listActors(page, pageSize);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ActorsApi#listActors");
@@ -105,7 +107,7 @@ public class ActorsApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:5010/v2/interop*
+All URIs are relative to *https://api.us2.kimonocloud.com/v2/interop*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -115,6 +117,7 @@ Class | Method | HTTP request | Description
 *CloudsApi* | [**findCloud**](docs/CloudsApi.md#findCloud) | **GET** /clouds/{id} | Find an Interop Cloud
 *CloudsApi* | [**listActorsByCloud**](docs/CloudsApi.md#listActorsByCloud) | **GET** /clouds/{id}/actors | List all Actors in an Interop Cloud
 *CloudsApi* | [**listClouds**](docs/CloudsApi.md#listClouds) | **GET** /clouds | List Interop Clouds
+*CloudsApi* | [**searchClouds**](docs/CloudsApi.md#searchClouds) | **GET** /clouds/search | Search Interop Clouds
 *IntegrationsApi* | [**createIntegration**](docs/IntegrationsApi.md#createIntegration) | **POST** /integrations | Create Integration
 *IntegrationsApi* | [**createIntegrationVersion**](docs/IntegrationsApi.md#createIntegrationVersion) | **POST** /integrations/{id}/versions | Create Integration Version
 *IntegrationsApi* | [**deleteIntegration**](docs/IntegrationsApi.md#deleteIntegration) | **DELETE** /integrations/{id} | Delete an Integration
@@ -125,6 +128,7 @@ Class | Method | HTTP request | Description
 *IntegrationsApi* | [**updateIntegration**](docs/IntegrationsApi.md#updateIntegration) | **PATCH** /integrations/{id} | Update Integration
 *IntegrationsApi* | [**updateIntegrationBlueprint**](docs/IntegrationsApi.md#updateIntegrationBlueprint) | **PUT** /integrations/{id}/versions/{version}/blueprint | Update Integration Blueprint
 *IntegrationsApi* | [**updateIntegrationVersion**](docs/IntegrationsApi.md#updateIntegrationVersion) | **PATCH** /integrations/{id}/versions/{version} | Update Integration Version
+*TenantsApi* | [**findInteropTenant**](docs/TenantsApi.md#findInteropTenant) | **GET** /tenants/{id} | Find an TenantInfo by ID
 *TenantsApi* | [**listInteropTenants**](docs/TenantsApi.md#listInteropTenants) | **GET** /tenants | List Interop Tenants
 
 
@@ -159,21 +163,16 @@ Class | Method | HTTP request | Description
  - [SingleObjectResponseType](docs/SingleObjectResponseType.md)
  - [TenantInfo](docs/TenantInfo.md)
  - [TenantInfoLicense](docs/TenantInfoLicense.md)
+ - [TenantInfoResponse](docs/TenantInfoResponse.md)
+ - [TenantInfosResponse](docs/TenantInfosResponse.md)
 
 
 ## Documentation for Authorization
 
 Authentication schemes defined for the API:
-### BasicAuth
+### Vendor
 
 - **Type**: HTTP basic authentication
-
-### OAuth2
-
-- **Type**: OAuth
-- **Flow**: application
-- **Authorization URL**: 
-- **Scopes**: N/A
 
 
 ## Recommendation

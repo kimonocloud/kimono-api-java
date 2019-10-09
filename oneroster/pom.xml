@@ -5,7 +5,7 @@
     <artifactId>api-oneroster</artifactId>
     <packaging>jar</packaging>
     <name>api-oneroster</name>
-    <version>2.0-SNAPSHOT</version>
+    <version>2.0.0</version>
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>OpenAPI Java</description>
     <scm>

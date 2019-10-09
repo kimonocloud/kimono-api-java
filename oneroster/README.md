@@ -2,7 +2,7 @@
 
 OneRoster 1.1
 - API version: 2.0
-  - Build date: 2019-06-18T15:32:04.179-06:00[America/Denver]
+  - Build date: 2019-10-09T14:00:54.751-06:00[America/Denver]
 
 OneRoster 1.1. API
 
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.kimonocloud</groupId>
   <artifactId>api-oneroster</artifactId>
-  <version>2.0-SNAPSHOT</version>
+  <version>2.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.kimonocloud:api-oneroster:2.0-SNAPSHOT"
+compile "com.kimonocloud:api-oneroster:2.0.0"
 ```
 
 ### Others
@@ -63,7 +63,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-oneroster-2.0-SNAPSHOT.jar`
+* `target/api-oneroster-2.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

@@ -13,7 +13,7 @@
 
 package kimono.api.v2.platform;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-23T17:04:44.891-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-09T14:17:25.813-06:00[America/Denver]")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).

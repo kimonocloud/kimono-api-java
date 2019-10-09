@@ -13,10 +13,10 @@
 
 package kimono.api.v2.interopdata;
 
-import org.junit.Ignore;
-import org.junit.Test;
-
+import kimono.api.v2.interopdata.ApiException;
 import kimono.api.v2.interopdata.model.GradingCategorysResponse;
+import org.junit.Test;
+import org.junit.Ignore;
 
 
 /**
@@ -38,7 +38,9 @@ public class GradesApiTest {
      */
     @Test
     public void listGradingCategoriesTest() throws ApiException {
-        GradingCategorysResponse response = api.listGradingCategories(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        GradingCategorysResponse response = api.listGradingCategories(page, pageSize);
 
         // TODO: test validations
     }

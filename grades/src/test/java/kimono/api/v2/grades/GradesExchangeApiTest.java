@@ -13,10 +13,10 @@
 
 package kimono.api.v2.grades;
 
-import org.junit.Ignore;
-import org.junit.Test;
-
+import kimono.api.v2.grades.ApiException;
 import kimono.api.v2.grades.model.ExchangesResponse;
+import org.junit.Test;
+import org.junit.Ignore;
 
 
 /**
@@ -38,7 +38,9 @@ public class GradesExchangeApiTest {
      */
     @Test
     public void listExchangesTest() throws ApiException {
-        ExchangesResponse response = api.listExchanges(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        ExchangesResponse response = api.listExchanges(page, pageSize);
 
         // TODO: test validations
     }

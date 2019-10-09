@@ -13,15 +13,16 @@
 
 package kimono.api.v2.interop;
 
-import org.junit.Ignore;
-import org.junit.Test;
-
+import kimono.api.v2.interop.ApiException;
+import kimono.api.v2.interop.model.ErrorType;
 import kimono.api.v2.interop.model.Integration;
 import kimono.api.v2.interop.model.IntegrationResponse;
 import kimono.api.v2.interop.model.IntegrationVersion;
 import kimono.api.v2.interop.model.IntegrationVersionResponse;
 import kimono.api.v2.interop.model.IntegrationVersionsResponse;
 import kimono.api.v2.interop.model.IntegrationsResponse;
+import org.junit.Test;
+import org.junit.Ignore;
 
 
 /**
@@ -126,7 +127,9 @@ public class IntegrationsApiTest {
     @Test
     public void listIntegrationVersionsTest() throws ApiException {
         java.util.UUID id = null;
-        IntegrationVersionsResponse response = api.listIntegrationVersions(id,null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        IntegrationVersionsResponse response = api.listIntegrationVersions(id, page, pageSize);
 
         // TODO: test validations
     }
@@ -142,7 +145,9 @@ public class IntegrationsApiTest {
     @Test
     public void listIntegrationsTest() throws ApiException {
         String name = null;
-        IntegrationsResponse response = api.listIntegrations(name,null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        IntegrationsResponse response = api.listIntegrations(name, page, pageSize);
 
         // TODO: test validations
     }

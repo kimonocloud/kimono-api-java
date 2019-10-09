@@ -29,7 +29,7 @@ import kimono.api.v2.interop.model.BaseAccountResourceType;
 /**
  * Integration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-23T17:04:45.016-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-09T14:17:24.861-06:00[America/Denver]")
 public class Integration extends BaseAccountResourceType {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

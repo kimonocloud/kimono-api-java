@@ -13,14 +13,11 @@
 
 package kimono.api.v2.interop;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
-
-import org.junit.Ignore;
-import org.junit.Test;
-
+import kimono.api.v2.interop.ApiException;
+import kimono.api.v2.interop.model.TenantInfoResponse;
 import kimono.api.v2.interop.model.TenantInfosResponse;
+import org.junit.Test;
+import org.junit.Ignore;
 
 
 /**
@@ -33,6 +30,22 @@ public class TenantsApiTest {
 
     
     /**
+     * Find an TenantInfo by ID
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void findInteropTenantTest() throws ApiException {
+        java.util.UUID id = null;
+        TenantInfoResponse response = api.findInteropTenant(id);
+
+        // TODO: test validations
+    }
+    
+    /**
      * List Interop Tenants
      *
      * Get a list of &#x60;TenantInfo&#x60; representing your licensed and authorized Integration tenants.
@@ -42,9 +55,11 @@ public class TenantsApiTest {
      */
     @Test
     public void listInteropTenantsTest() throws ApiException {
-        List<UUID> accounts = Arrays.asList(null);
-        List<String> integrations = Arrays.asList();
-        TenantInfosResponse response = api.listInteropTenants(accounts, integrations, null, null);
+        java.util.List<java.util.UUID> accounts = null;
+        java.util.List<String> integrations = null;
+        Integer page = null;
+        Integer pageSize = null;
+        TenantInfosResponse response = api.listInteropTenants(accounts, integrations, page, pageSize);
 
         // TODO: test validations
     }

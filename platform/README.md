@@ -2,7 +2,7 @@
 
 Platform API
 - API version: 2.0
-  - Build date: 2019-06-18T15:32:02.995-06:00[America/Denver]
+  - Build date: 2019-10-09T14:00:53.547-06:00[America/Denver]
 
 Platform APIs provide access to core Kimono Platform resources and operations such as Accounts, Users, and Clouds.
 
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.kimonocloud</groupId>
   <artifactId>api-platform</artifactId>
-  <version>2.0-SNAPSHOT</version>
+  <version>2.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.kimonocloud:api-platform:2.0-SNAPSHOT"
+compile "com.kimonocloud:api-platform:2.0.0"
 ```
 
 ### Others
@@ -63,7 +63,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-platform-2.0-SNAPSHOT.jar`
+* `target/api-platform-2.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -85,10 +85,10 @@ public class AccountsApiExample {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         
-        // Configure HTTP basic authorization: BasicAuth
-        HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-        BasicAuth.setUsername("YOUR USERNAME");
-        BasicAuth.setPassword("YOUR PASSWORD");
+        // Configure HTTP basic authorization: Vendor
+        HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+        Vendor.setUsername("YOUR USERNAME");
+        Vendor.setPassword("YOUR PASSWORD");
 
         AccountsApi apiInstance = new AccountsApi();
         Account account = new Account(); // Account | Account to create
@@ -106,7 +106,7 @@ public class AccountsApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:5001/v2/platform*
+All URIs are relative to *https://api.us2.kimonocloud.com/v2/platform*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -134,7 +134,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Authorization
 
 Authentication schemes defined for the API:
-### BasicAuth
+### Vendor
 
 - **Type**: HTTP basic authentication
 

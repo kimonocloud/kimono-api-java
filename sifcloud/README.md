@@ -2,7 +2,7 @@
 
 SIF Cloud API
 - API version: 2.0
-  - Build date: 2019-06-18T15:32:04.038-06:00[America/Denver]
+  - Build date: 2019-10-09T14:00:54.603-06:00[America/Denver]
 
 SIF Cloud APIs provide access to SIF Cloud provisioning resources.
 
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.kimonocloud</groupId>
   <artifactId>api-sifcloud</artifactId>
-  <version>2.0-SNAPSHOT</version>
+  <version>2.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.kimonocloud:api-sifcloud:2.0-SNAPSHOT"
+compile "com.kimonocloud:api-sifcloud:2.0.0"
 ```
 
 ### Others
@@ -63,7 +63,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-sifcloud-2.0-SNAPSHOT.jar`
+* `target/api-sifcloud-2.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -85,17 +85,17 @@ public class ClientsApiExample {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         
-        // Configure HTTP basic authorization: BasicAuth
-        HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-        BasicAuth.setUsername("YOUR USERNAME");
-        BasicAuth.setPassword("YOUR PASSWORD");
+        // Configure OAuth2 access token for authorization: Actor
+        OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+        Actor.setAccessToken("YOUR ACCESS TOKEN");
 
         ClientsApi apiInstance = new ClientsApi();
+        SIFClient siFClient = new SIFClient(); // SIFClient | SIF Client to create
         try {
-            java.util.List<SIFClient> result = apiInstance.listClients();
+            SIFClientResponse result = apiInstance.createClient(siFClient);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ClientsApi#listClients");
+            System.err.println("Exception when calling ClientsApi#createClient");
             e.printStackTrace();
         }
     }
@@ -105,11 +105,15 @@ public class ClientsApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.kimonocloud.com/v2/sifcloud*
+All URIs are relative to *https://api.us2.kimonocloud.com/v2/sifcloud*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ClientsApi* | [**createClient**](docs/ClientsApi.md#createClient) | **POST** /clients | Create a SIF Client
+*ClientsApi* | [**findClient**](docs/ClientsApi.md#findClient) | **GET** /clients/{id} | Find a &#x60;SIFClient&#x60;
 *ClientsApi* | [**listClients**](docs/ClientsApi.md#listClients) | **GET** /clients | Get SIF Clients
+*ZonesApi* | [**createZone**](docs/ZonesApi.md#createZone) | **POST** /zones | Create a SIF Zone
+*ZonesApi* | [**findZone**](docs/ZonesApi.md#findZone) | **GET** /zones/{id} | Find a &#x60;SIFZone&#x60;
 *ZonesApi* | [**listZones**](docs/ZonesApi.md#listZones) | **GET** /zones | Get SIF Zones
 
 
@@ -120,16 +124,23 @@ Class | Method | HTTP request | Description
  - [PagedDataResponseType](docs/PagedDataResponseType.md)
  - [PagedDataResponseTypePaging](docs/PagedDataResponseTypePaging.md)
  - [SIFClient](docs/SIFClient.md)
+ - [SIFClientResponse](docs/SIFClientResponse.md)
+ - [SIFClientsResponse](docs/SIFClientsResponse.md)
  - [SIFZone](docs/SIFZone.md)
+ - [SIFZoneResponse](docs/SIFZoneResponse.md)
+ - [SIFZonesResponse](docs/SIFZonesResponse.md)
  - [SingleObjectResponseType](docs/SingleObjectResponseType.md)
 
 
 ## Documentation for Authorization
 
 Authentication schemes defined for the API:
-### BasicAuth
+### Actor
 
-- **Type**: HTTP basic authentication
+- **Type**: OAuth
+- **Flow**: application
+- **Authorization URL**: 
+- **Scopes**: N/A
 
 
 ## Recommendation

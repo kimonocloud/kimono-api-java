@@ -2,7 +2,7 @@
 
 Broker API
 - API version: 2.0
-  - Build date: 2019-06-18T15:32:02.619-06:00[America/Denver]
+  - Build date: 2019-10-09T14:00:53.060-06:00[America/Denver]
 
 Broker APIs provide access to Kimono Broker resources and operations
 
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.kimonocloud</groupId>
   <artifactId>api-broker</artifactId>
-  <version>2.0-SNAPSHOT</version>
+  <version>2.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.kimonocloud:api-broker:2.0-SNAPSHOT"
+compile "com.kimonocloud:api-broker:2.0.0"
 ```
 
 ### Others
@@ -63,7 +63,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-broker-2.0-SNAPSHOT.jar`
+* `target/api-broker-2.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -85,10 +85,9 @@ public class MessagesApiExample {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         
-        // Configure HTTP basic authorization: BasicAuth
-        HttpBasicAuth BasicAuth = (HttpBasicAuth) defaultClient.getAuthentication("BasicAuth");
-        BasicAuth.setUsername("YOUR USERNAME");
-        BasicAuth.setPassword("YOUR PASSWORD");
+        // Configure OAuth2 access token for authorization: Actor
+        OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+        Actor.setAccessToken("YOUR ACCESS TOKEN");
 
         MessagesApi apiInstance = new MessagesApi();
         java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Message to acknowledge
@@ -106,7 +105,7 @@ public class MessagesApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:5021/v2/broker*
+All URIs are relative to *https://api.us2.kimonocloud.com/v2/broker*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -116,11 +115,11 @@ Class | Method | HTTP request | Description
 *VocabularyApi* | [**createModel**](docs/VocabularyApi.md#createModel) | **POST** /models | Create Data Models
 *VocabularyApi* | [**deleteModel**](docs/VocabularyApi.md#deleteModel) | **DELETE** /models/{id} | Delete a Data Model
 *VocabularyApi* | [**findModel**](docs/VocabularyApi.md#findModel) | **GET** /models/{id} | Get a Data Model by id
-*VocabularyApi* | [**findModel_0**](docs/VocabularyApi.md#findModel_0) | **GET** /vocabulary/{id} | Get a Data Model by id
+*VocabularyApi* | [**findVocabulary**](docs/VocabularyApi.md#findVocabulary) | **GET** /vocabulary/{id} | Get a Vocabulary by id
 *VocabularyApi* | [**listModels**](docs/VocabularyApi.md#listModels) | **GET** /models | List Data Models
 *VocabularyApi* | [**listVocabularies**](docs/VocabularyApi.md#listVocabularies) | **GET** /vocabularies | List Vocabularies
 *VocabularyApi* | [**updateModel**](docs/VocabularyApi.md#updateModel) | **PUT** /models/{id} | Update the properties of a Data Model
-*VocabularyApi* | [**updateModel_0**](docs/VocabularyApi.md#updateModel_0) | **PUT** /vocabulary/{id} | Update the properties of a Data Model
+*VocabularyApi* | [**updateVocabulary**](docs/VocabularyApi.md#updateVocabulary) | **PUT** /vocabulary/{id} | Update the properties of a Vocabulary
 
 
 ## Documentation for Models
@@ -129,6 +128,8 @@ Class | Method | HTTP request | Description
  - [ErrorType](docs/ErrorType.md)
  - [Message](docs/Message.md)
  - [MessageAck](docs/MessageAck.md)
+ - [MessageResponse](docs/MessageResponse.md)
+ - [MessagesResponse](docs/MessagesResponse.md)
  - [Model](docs/Model.md)
  - [ModelsResponse](docs/ModelsResponse.md)
  - [PagedDataResponseType](docs/PagedDataResponseType.md)
@@ -141,11 +142,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Authorization
 
 Authentication schemes defined for the API:
-### BasicAuth
-
-- **Type**: HTTP basic authentication
-
-### OAuth2
+### Actor
 
 - **Type**: OAuth
 - **Flow**: application

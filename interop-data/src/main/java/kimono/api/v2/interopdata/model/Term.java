@@ -25,12 +25,13 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.LocalDate;
 import kimono.api.v2.interopdata.model.ObjectType;
+import kimono.api.v2.interopdata.model.TermRefType;
 import kimono.api.v2.interopdata.model.TermSysType;
 
 /**
  * Term
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-23T17:04:45.282-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-09T14:17:25.210-06:00[America/Denver]")
 public class Term extends ObjectType {
   public static final String SERIALIZED_NAME_$_SYS = "$sys";
   @SerializedName(SERIALIZED_NAME_$_SYS)
@@ -58,11 +59,11 @@ public class Term extends ObjectType {
 
   public static final String SERIALIZED_NAME_$_PARENT = "$parent";
   @SerializedName(SERIALIZED_NAME_$_PARENT)
-  private TermSysType $parent = null;
+  private TermRefType $parent = null;
 
   public static final String SERIALIZED_NAME_$_CHILDREN = "$children";
   @SerializedName(SERIALIZED_NAME_$_CHILDREN)
-  private java.util.List<TermSysType> $children = null;
+  private java.util.List<TermRefType> $children = null;
 
   public Term $sys(TermSysType $sys) {
     this.$sys = $sys;
@@ -127,7 +128,7 @@ public class Term extends ObjectType {
     return status;
   }
 
-  public Term $parent(TermSysType $parent) {
+  public Term $parent(TermRefType $parent) {
     this.$parent = $parent;
     return this;
   }
@@ -137,11 +138,11 @@ public class Term extends ObjectType {
    * @return $parent
   **/
   @ApiModelProperty(value = "")
-  public TermSysType get$Parent() {
+  public TermRefType get$Parent() {
     return $parent;
   }
 
-  public void set$Parent(TermSysType $parent) {
+  public void set$Parent(TermRefType $parent) {
     this.$parent = $parent;
   }
 
@@ -150,7 +151,7 @@ public class Term extends ObjectType {
    * @return $children
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<TermSysType> get$Children() {
+  public java.util.List<TermRefType> get$Children() {
     return $children;
   }
 

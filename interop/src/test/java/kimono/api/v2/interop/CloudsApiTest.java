@@ -13,13 +13,14 @@
 
 package kimono.api.v2.interop;
 
-import org.junit.Ignore;
-import org.junit.Test;
-
+import kimono.api.v2.interop.ApiException;
 import kimono.api.v2.interop.model.ActorsResponse;
 import kimono.api.v2.interop.model.Cloud;
 import kimono.api.v2.interop.model.CloudResponse;
 import kimono.api.v2.interop.model.CloudsResponse;
+import kimono.api.v2.interop.model.ErrorType;
+import org.junit.Test;
+import org.junit.Ignore;
 
 
 /**
@@ -90,7 +91,9 @@ public class CloudsApiTest {
     @Test
     public void listActorsByCloudTest() throws ApiException {
         java.util.UUID id = null;
-        ActorsResponse response = api.listActorsByCloud(id,null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        ActorsResponse response = api.listActorsByCloud(id, page, pageSize);
 
         // TODO: test validations
     }
@@ -105,7 +108,29 @@ public class CloudsApiTest {
      */
     @Test
     public void listCloudsTest() throws ApiException {
-        CloudsResponse response = api.listClouds(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        CloudsResponse response = api.listClouds(page, pageSize);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Search Interop Clouds
+     *
+     * Get a list of Interop Clouds matching the search criteria.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void searchCloudsTest() throws ApiException {
+        Integer generation = null;
+        String userdata = null;
+        String name = null;
+        Integer page = null;
+        Integer pageSize = null;
+        CloudsResponse response = api.searchClouds(generation, userdata, name, page, pageSize);
 
         // TODO: test validations
     }

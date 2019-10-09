@@ -23,15 +23,32 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 
 /**
  * SysType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-23T17:04:45.282-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-09T14:17:25.210-06:00[America/Denver]")
 public class SysType {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private java.util.UUID id;
+
+  public static final String SERIALIZED_NAME_LABEL = "label";
+  @SerializedName(SERIALIZED_NAME_LABEL)
+  private String label;
+
+  public static final String SERIALIZED_NAME_SCHOOL_YEAR = "school_year";
+  @SerializedName(SERIALIZED_NAME_SCHOOL_YEAR)
+  private Integer schoolYear;
+
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  private OffsetDateTime createdAt;
+
+  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
+  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  private OffsetDateTime updatedAt;
 
    /**
    * Get id
@@ -40,6 +57,51 @@ public class SysType {
   @ApiModelProperty(value = "")
   public java.util.UUID getId() {
     return id;
+  }
+
+   /**
+   * Get label
+   * @return label
+  **/
+  @ApiModelProperty(value = "")
+  public String getLabel() {
+    return label;
+  }
+
+  public SysType schoolYear(Integer schoolYear) {
+    this.schoolYear = schoolYear;
+    return this;
+  }
+
+   /**
+   * Get schoolYear
+   * @return schoolYear
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getSchoolYear() {
+    return schoolYear;
+  }
+
+  public void setSchoolYear(Integer schoolYear) {
+    this.schoolYear = schoolYear;
+  }
+
+   /**
+   * Get createdAt
+   * @return createdAt
+  **/
+  @ApiModelProperty(value = "")
+  public OffsetDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+   /**
+   * Get updatedAt
+   * @return updatedAt
+  **/
+  @ApiModelProperty(value = "")
+  public OffsetDateTime getUpdatedAt() {
+    return updatedAt;
   }
 
 
@@ -52,12 +114,16 @@ public class SysType {
       return false;
     }
     SysType sysType = (SysType) o;
-    return Objects.equals(this.id, sysType.id);
+    return Objects.equals(this.id, sysType.id) &&
+        Objects.equals(this.label, sysType.label) &&
+        Objects.equals(this.schoolYear, sysType.schoolYear) &&
+        Objects.equals(this.createdAt, sysType.createdAt) &&
+        Objects.equals(this.updatedAt, sysType.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(id, label, schoolYear, createdAt, updatedAt);
   }
 
 
@@ -67,6 +133,10 @@ public class SysType {
     sb.append("class SysType {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    label: ").append(toIndentedString(label)).append("\n");
+    sb.append("    schoolYear: ").append(toIndentedString(schoolYear)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

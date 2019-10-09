@@ -24,13 +24,14 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import kimono.api.v2.interopdata.model.ObjectType;
-import kimono.api.v2.interopdata.model.OrgSysType;
+import kimono.api.v2.interopdata.model.OrgRefType;
+import kimono.api.v2.interopdata.model.RefType;
 import kimono.api.v2.interopdata.model.SysType;
 
 /**
  * Course
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-23T17:04:45.282-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-09T14:17:25.210-06:00[America/Denver]")
 public class Course extends ObjectType {
   public static final String SERIALIZED_NAME_$_SYS = "$sys";
   @SerializedName(SERIALIZED_NAME_$_SYS)
@@ -50,11 +51,11 @@ public class Course extends ObjectType {
 
   public static final String SERIALIZED_NAME_$_ORGS = "$orgs";
   @SerializedName(SERIALIZED_NAME_$_ORGS)
-  private java.util.List<OrgSysType> $orgs = null;
+  private java.util.List<OrgRefType> $orgs = null;
 
   public static final String SERIALIZED_NAME_$_SECTIONS = "$sections";
   @SerializedName(SERIALIZED_NAME_$_SECTIONS)
-  private java.util.List<SysType> $sections = null;
+  private java.util.List<RefType> $sections = null;
 
   public Course $sys(SysType $sys) {
     this.$sys = $sys;
@@ -106,7 +107,7 @@ public class Course extends ObjectType {
    * @return $orgs
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<OrgSysType> get$Orgs() {
+  public java.util.List<OrgRefType> get$Orgs() {
     return $orgs;
   }
 
@@ -115,7 +116,7 @@ public class Course extends ObjectType {
    * @return $sections
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<SysType> get$Sections() {
+  public java.util.List<RefType> get$Sections() {
     return $sections;
   }
 

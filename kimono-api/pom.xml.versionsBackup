@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.kimonocloud</groupId>
+ 	<artifactId>kimono-api</artifactId>
+	<version>2.0.0</version>
+
+	<name>Kimono APIs for Java</name>
+ 	<description>Kimono APIs for Java</description>
+ 	<packaging>jar</packaging>
+
+	<properties>
+		<api.version>2.0.0</api.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.kimonocloud</groupId>
+			<artifactId>api-interop-data</artifactId>
+			<version>${api.version}</version>
+		</dependency>		
+		<dependency>
+			<groupId>com.kimonocloud</groupId>
+			<artifactId>api-interop</artifactId>
+			<version>${api.version}</version>
+		</dependency>		
+		<dependency>
+			<groupId>com.kimonocloud</groupId>
+			<artifactId>api-broker</artifactId>
+			<version>${api.version}</version>
+		</dependency>		
+		<dependency>
+			<groupId>com.kimonocloud</groupId>
+			<artifactId>api-grades</artifactId>
+			<version>${api.version}</version>
+		</dependency>		
+		<dependency>
+			<groupId>com.kimonocloud</groupId>
+			<artifactId>api-platform</artifactId>
+			<version>${api.version}</version>
+		</dependency>		
+		<dependency>
+			<groupId>com.kimonocloud</groupId>
+			<artifactId>api-sifcloud</artifactId>
+			<version>${api.version}</version>
+		</dependency>		
+	</dependencies>
+</project>

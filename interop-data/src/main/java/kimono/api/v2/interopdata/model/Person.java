@@ -25,16 +25,16 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.time.LocalDate;
 import kimono.api.v2.interopdata.model.AddressType;
+import kimono.api.v2.interopdata.model.MembershipRefType;
 import kimono.api.v2.interopdata.model.NameType;
 import kimono.api.v2.interopdata.model.ObjectType;
-import kimono.api.v2.interopdata.model.OrgSysType;
+import kimono.api.v2.interopdata.model.OrgMembershipRefType;
 import kimono.api.v2.interopdata.model.PersonSysType;
-import kimono.api.v2.interopdata.model.SysType;
 
 /**
  * Person
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-23T17:04:45.282-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-09T14:17:25.210-06:00[America/Denver]")
 public class Person extends ObjectType {
   public static final String SERIALIZED_NAME_$_SYS = "$sys";
   @SerializedName(SERIALIZED_NAME_$_SYS)
@@ -82,11 +82,11 @@ public class Person extends ObjectType {
 
   public static final String SERIALIZED_NAME_$_SCHOOLS = "$schools";
   @SerializedName(SERIALIZED_NAME_$_SCHOOLS)
-  private java.util.List<OrgSysType> $schools = null;
+  private java.util.List<OrgMembershipRefType> $schools = null;
 
   public static final String SERIALIZED_NAME_$_SECTIONS = "$sections";
   @SerializedName(SERIALIZED_NAME_$_SECTIONS)
-  private java.util.List<SysType> $sections = null;
+  private java.util.List<MembershipRefType> $sections = null;
 
   public Person $sys(PersonSysType $sys) {
     this.$sys = $sys;
@@ -219,7 +219,7 @@ public class Person extends ObjectType {
    * @return $schools
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<OrgSysType> get$Schools() {
+  public java.util.List<OrgMembershipRefType> get$Schools() {
     return $schools;
   }
 
@@ -228,7 +228,7 @@ public class Person extends ObjectType {
    * @return $sections
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<SysType> get$Sections() {
+  public java.util.List<MembershipRefType> get$Sections() {
     return $sections;
   }
 

@@ -13,9 +13,7 @@
 
 package kimono.api.v2.interopdata;
 
-import org.junit.Ignore;
-import org.junit.Test;
-
+import kimono.api.v2.interopdata.ApiException;
 import kimono.api.v2.interopdata.model.Course;
 import kimono.api.v2.interopdata.model.CoursesResponse;
 import kimono.api.v2.interopdata.model.Org;
@@ -27,6 +25,8 @@ import kimono.api.v2.interopdata.model.Section;
 import kimono.api.v2.interopdata.model.SectionsResponse;
 import kimono.api.v2.interopdata.model.Term;
 import kimono.api.v2.interopdata.model.TermsResponse;
+import org.junit.Test;
+import org.junit.Ignore;
 
 
 /**
@@ -144,7 +144,9 @@ public class RosteringApiTest {
      */
     @Test
     public void listCoursesTest() throws ApiException {
-        CoursesResponse response = api.listCourses(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        CoursesResponse response = api.listCourses(page, pageSize);
 
         // TODO: test validations
     }
@@ -160,7 +162,9 @@ public class RosteringApiTest {
     @Test
     public void listCoursesForOrgTest() throws ApiException {
         java.util.UUID id = null;
-        CoursesResponse response = api.listCoursesForOrg(id,null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        CoursesResponse response = api.listCoursesForOrg(id, page, pageSize);
 
         // TODO: test validations
     }
@@ -175,7 +179,9 @@ public class RosteringApiTest {
      */
     @Test
     public void listLEAsTest() throws ApiException {
-        OrgsResponse response = api.listLEAs(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        OrgsResponse response = api.listLEAs(page, pageSize);
 
         // TODO: test validations
     }
@@ -190,7 +196,9 @@ public class RosteringApiTest {
      */
     @Test
     public void listOrgsTest() throws ApiException {
-        OrgsResponse response = api.listOrgs(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        OrgsResponse response = api.listOrgs(page, pageSize);
 
         // TODO: test validations
     }
@@ -205,7 +213,9 @@ public class RosteringApiTest {
      */
     @Test
     public void listPersonsTest() throws ApiException {
-        PersonsResponse response = api.listPersons(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        PersonsResponse response = api.listPersons(page, pageSize);
 
         // TODO: test validations
     }
@@ -220,7 +230,9 @@ public class RosteringApiTest {
      */
     @Test
     public void listSchoolsTest() throws ApiException {
-        OrgsResponse response = api.listSchools(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        OrgsResponse response = api.listSchools(page, pageSize);
 
         // TODO: test validations
     }
@@ -235,7 +247,9 @@ public class RosteringApiTest {
      */
     @Test
     public void listSectionsTest() throws ApiException {
-        SectionsResponse response = api.listSections(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        SectionsResponse response = api.listSections(page, pageSize);
 
         // TODO: test validations
     }
@@ -251,7 +265,9 @@ public class RosteringApiTest {
     @Test
     public void listSectionsForOrgTest() throws ApiException {
         java.util.UUID id = null;
-        SectionsResponse response = api.listSectionsForOrg(id,null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        SectionsResponse response = api.listSectionsForOrg(id, page, pageSize);
 
         // TODO: test validations
     }
@@ -266,7 +282,9 @@ public class RosteringApiTest {
      */
     @Test
     public void listStudentsTest() throws ApiException {
-        PersonsResponse response = api.listStudents(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        PersonsResponse response = api.listStudents(page, pageSize);
 
         // TODO: test validations
     }
@@ -282,7 +300,9 @@ public class RosteringApiTest {
     @Test
     public void listStudentsForOrgTest() throws ApiException {
         java.util.UUID id = null;
-        PersonsResponse response = api.listStudentsForOrg(id,null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        PersonsResponse response = api.listStudentsForOrg(id, page, pageSize);
 
         // TODO: test validations
     }
@@ -297,7 +317,9 @@ public class RosteringApiTest {
      */
     @Test
     public void listTeachersTest() throws ApiException {
-        PersonsResponse response = api.listTeachers(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        PersonsResponse response = api.listTeachers(page, pageSize);
 
         // TODO: test validations
     }
@@ -313,7 +335,9 @@ public class RosteringApiTest {
     @Test
     public void listTeachersForOrgTest() throws ApiException {
         java.util.UUID id = null;
-        PersonsResponse response = api.listTeachersForOrg(id,null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        PersonsResponse response = api.listTeachersForOrg(id, page, pageSize);
 
         // TODO: test validations
     }
@@ -328,7 +352,9 @@ public class RosteringApiTest {
      */
     @Test
     public void listTermsTest() throws ApiException {
-        TermsResponse response = api.listTerms(null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        TermsResponse response = api.listTerms(page, pageSize);
 
         // TODO: test validations
     }
@@ -344,7 +370,9 @@ public class RosteringApiTest {
     @Test
     public void listTermsForOrgTest() throws ApiException {
         java.util.UUID id = null;
-        TermsResponse response = api.listTermsForOrg(id,null, null);
+        Integer page = null;
+        Integer pageSize = null;
+        TermsResponse response = api.listTermsForOrg(id, page, pageSize);
 
         // TODO: test validations
     }

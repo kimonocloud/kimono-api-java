@@ -24,13 +24,14 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import kimono.api.v2.interopdata.model.ObjectType;
+import kimono.api.v2.interopdata.model.OrgRefType;
 import kimono.api.v2.interopdata.model.OrgSysType;
-import kimono.api.v2.interopdata.model.PersonSysType;
+import kimono.api.v2.interopdata.model.PersonMembershipRefType;
 
 /**
  * Org
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-09-23T17:04:45.282-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-09T14:17:25.210-06:00[America/Denver]")
 public class Org extends ObjectType {
   public static final String SERIALIZED_NAME_$_SYS = "$sys";
   @SerializedName(SERIALIZED_NAME_$_SYS)
@@ -46,19 +47,19 @@ public class Org extends ObjectType {
 
   public static final String SERIALIZED_NAME_$_PARENT = "$parent";
   @SerializedName(SERIALIZED_NAME_$_PARENT)
-  private OrgSysType $parent = null;
+  private OrgRefType $parent = null;
 
   public static final String SERIALIZED_NAME_$_CHILDREN = "$children";
   @SerializedName(SERIALIZED_NAME_$_CHILDREN)
-  private java.util.List<OrgSysType> $children = null;
+  private java.util.List<OrgRefType> $children = null;
 
   public static final String SERIALIZED_NAME_$_STUDENTS = "$students";
   @SerializedName(SERIALIZED_NAME_$_STUDENTS)
-  private java.util.List<PersonSysType> $students = null;
+  private java.util.List<PersonMembershipRefType> $students = null;
 
   public static final String SERIALIZED_NAME_$_TEACHERS = "$teachers";
   @SerializedName(SERIALIZED_NAME_$_TEACHERS)
-  private java.util.List<PersonSysType> $teachers = null;
+  private java.util.List<PersonMembershipRefType> $teachers = null;
 
   public Org $sys(OrgSysType $sys) {
     this.$sys = $sys;
@@ -96,7 +97,7 @@ public class Org extends ObjectType {
     return name;
   }
 
-  public Org $parent(OrgSysType $parent) {
+  public Org $parent(OrgRefType $parent) {
     this.$parent = $parent;
     return this;
   }
@@ -106,11 +107,11 @@ public class Org extends ObjectType {
    * @return $parent
   **/
   @ApiModelProperty(value = "")
-  public OrgSysType get$Parent() {
+  public OrgRefType get$Parent() {
     return $parent;
   }
 
-  public void set$Parent(OrgSysType $parent) {
+  public void set$Parent(OrgRefType $parent) {
     this.$parent = $parent;
   }
 
@@ -119,7 +120,7 @@ public class Org extends ObjectType {
    * @return $children
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<OrgSysType> get$Children() {
+  public java.util.List<OrgRefType> get$Children() {
     return $children;
   }
 
@@ -128,7 +129,7 @@ public class Org extends ObjectType {
    * @return $students
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<PersonSysType> get$Students() {
+  public java.util.List<PersonMembershipRefType> get$Students() {
     return $students;
   }
 
@@ -137,7 +138,7 @@ public class Org extends ObjectType {
    * @return $teachers
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<PersonSysType> get$Teachers() {
+  public java.util.List<PersonMembershipRefType> get$Teachers() {
     return $teachers;
   }
 
