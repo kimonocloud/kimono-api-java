@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * PagedDataResponseTypePaging
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-09T14:17:25.887-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-03-12T13:22:44.944-06:00[America/Denver]")
 public class PagedDataResponseTypePaging {
   public static final String SERIALIZED_NAME_NEXT = "next";
   @SerializedName(SERIALIZED_NAME_NEXT)

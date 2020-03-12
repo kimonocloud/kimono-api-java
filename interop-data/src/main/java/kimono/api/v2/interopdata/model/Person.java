@@ -28,13 +28,13 @@ import kimono.api.v2.interopdata.model.AddressType;
 import kimono.api.v2.interopdata.model.MembershipRefType;
 import kimono.api.v2.interopdata.model.NameType;
 import kimono.api.v2.interopdata.model.ObjectType;
-import kimono.api.v2.interopdata.model.OrgMembershipRefType;
+import kimono.api.v2.interopdata.model.OrgMembershipSys;
 import kimono.api.v2.interopdata.model.PersonSysType;
 
 /**
  * Person
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-09T14:17:25.210-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-03-12T13:22:44.287-06:00[America/Denver]")
 public class Person extends ObjectType {
   public static final String SERIALIZED_NAME_$_SYS = "$sys";
   @SerializedName(SERIALIZED_NAME_$_SYS)
@@ -82,7 +82,7 @@ public class Person extends ObjectType {
 
   public static final String SERIALIZED_NAME_$_SCHOOLS = "$schools";
   @SerializedName(SERIALIZED_NAME_$_SCHOOLS)
-  private java.util.List<OrgMembershipRefType> $schools = null;
+  private java.util.List<OrgMembershipSys> $schools = null;
 
   public static final String SERIALIZED_NAME_$_SECTIONS = "$sections";
   @SerializedName(SERIALIZED_NAME_$_SECTIONS)
@@ -219,7 +219,7 @@ public class Person extends ObjectType {
    * @return $schools
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<OrgMembershipRefType> get$Schools() {
+  public java.util.List<OrgMembershipSys> get$Schools() {
     return $schools;
   }
 

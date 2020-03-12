@@ -27,6 +27,15 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import kimono.api.v2.interop.model.ErrorType;
+import kimono.api.v2.interop.model.ScopingCourse;
+import kimono.api.v2.interop.model.ScopingCourseResponse;
+import kimono.api.v2.interop.model.ScopingCoursesBulkRequest;
+import kimono.api.v2.interop.model.ScopingCoursesResponse;
+import kimono.api.v2.interop.model.ScopingSchool;
+import kimono.api.v2.interop.model.ScopingSchoolResponse;
+import kimono.api.v2.interop.model.ScopingSchoolsBulkRequest;
+import kimono.api.v2.interop.model.ScopingSchoolsResponse;
 import kimono.api.v2.interop.model.TenantInfoResponse;
 import kimono.api.v2.interop.model.TenantInfosResponse;
 
@@ -51,6 +60,716 @@ public class TenantsApi {
         this.apiClient = apiClient;
     }
 
+    /**
+     * Build call for createScopingCourses
+     * @param scopingCoursesBulkRequest One or more Scoping Courses to create (required)
+     * @param replace true to replace existing Scoping Courses, false to append to existing Scoping Courses (optional, default to true)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call createScopingCoursesCall(ScopingCoursesBulkRequest scopingCoursesBulkRequest, Boolean replace, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = scopingCoursesBulkRequest;
+
+        // create path and map variables
+        String localVarPath = "/tenant/scoping/courses";
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (replace != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("replace", replace));
+        }
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createScopingCoursesValidateBeforeCall(ScopingCoursesBulkRequest scopingCoursesBulkRequest, Boolean replace, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'scopingCoursesBulkRequest' is set
+        if (scopingCoursesBulkRequest == null) {
+            throw new ApiException("Missing the required parameter 'scopingCoursesBulkRequest' when calling createScopingCourses(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createScopingCoursesCall(scopingCoursesBulkRequest, replace, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create Scoping Courses
+     * 
+     * @param scopingCoursesBulkRequest One or more Scoping Courses to create (required)
+     * @param replace true to replace existing Scoping Courses, false to append to existing Scoping Courses (optional, default to true)
+     * @return ScopingCourseResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ScopingCourseResponse createScopingCourses(ScopingCoursesBulkRequest scopingCoursesBulkRequest, Boolean replace) throws ApiException {
+        ApiResponse<ScopingCourseResponse> resp = createScopingCoursesWithHttpInfo(scopingCoursesBulkRequest, replace);
+        return resp.getData();
+    }
+
+    /**
+     * Create Scoping Courses
+     * 
+     * @param scopingCoursesBulkRequest One or more Scoping Courses to create (required)
+     * @param replace true to replace existing Scoping Courses, false to append to existing Scoping Courses (optional, default to true)
+     * @return ApiResponse&lt;ScopingCourseResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ScopingCourseResponse> createScopingCoursesWithHttpInfo(ScopingCoursesBulkRequest scopingCoursesBulkRequest, Boolean replace) throws ApiException {
+        com.squareup.okhttp.Call call = createScopingCoursesValidateBeforeCall(scopingCoursesBulkRequest, replace, null, null);
+        Type localVarReturnType = new TypeToken<ScopingCourseResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create Scoping Courses (asynchronously)
+     * 
+     * @param scopingCoursesBulkRequest One or more Scoping Courses to create (required)
+     * @param replace true to replace existing Scoping Courses, false to append to existing Scoping Courses (optional, default to true)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createScopingCoursesAsync(ScopingCoursesBulkRequest scopingCoursesBulkRequest, Boolean replace, final ApiCallback<ScopingCourseResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createScopingCoursesValidateBeforeCall(scopingCoursesBulkRequest, replace, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ScopingCourseResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for createScopingSchools
+     * @param scopingSchoolsBulkRequest One or more Scoping Schools to create (required)
+     * @param replace true to replace existing Scoping Schools, false to append to existing Scoping Schools (optional, default to true)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call createScopingSchoolsCall(ScopingSchoolsBulkRequest scopingSchoolsBulkRequest, Boolean replace, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = scopingSchoolsBulkRequest;
+
+        // create path and map variables
+        String localVarPath = "/tenant/scoping/schools";
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (replace != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("replace", replace));
+        }
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createScopingSchoolsValidateBeforeCall(ScopingSchoolsBulkRequest scopingSchoolsBulkRequest, Boolean replace, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'scopingSchoolsBulkRequest' is set
+        if (scopingSchoolsBulkRequest == null) {
+            throw new ApiException("Missing the required parameter 'scopingSchoolsBulkRequest' when calling createScopingSchools(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createScopingSchoolsCall(scopingSchoolsBulkRequest, replace, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create Scoping Schools
+     * 
+     * @param scopingSchoolsBulkRequest One or more Scoping Schools to create (required)
+     * @param replace true to replace existing Scoping Schools, false to append to existing Scoping Schools (optional, default to true)
+     * @return ScopingSchoolResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ScopingSchoolResponse createScopingSchools(ScopingSchoolsBulkRequest scopingSchoolsBulkRequest, Boolean replace) throws ApiException {
+        ApiResponse<ScopingSchoolResponse> resp = createScopingSchoolsWithHttpInfo(scopingSchoolsBulkRequest, replace);
+        return resp.getData();
+    }
+
+    /**
+     * Create Scoping Schools
+     * 
+     * @param scopingSchoolsBulkRequest One or more Scoping Schools to create (required)
+     * @param replace true to replace existing Scoping Schools, false to append to existing Scoping Schools (optional, default to true)
+     * @return ApiResponse&lt;ScopingSchoolResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ScopingSchoolResponse> createScopingSchoolsWithHttpInfo(ScopingSchoolsBulkRequest scopingSchoolsBulkRequest, Boolean replace) throws ApiException {
+        com.squareup.okhttp.Call call = createScopingSchoolsValidateBeforeCall(scopingSchoolsBulkRequest, replace, null, null);
+        Type localVarReturnType = new TypeToken<ScopingSchoolResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create Scoping Schools (asynchronously)
+     * 
+     * @param scopingSchoolsBulkRequest One or more Scoping Schools to create (required)
+     * @param replace true to replace existing Scoping Schools, false to append to existing Scoping Schools (optional, default to true)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createScopingSchoolsAsync(ScopingSchoolsBulkRequest scopingSchoolsBulkRequest, Boolean replace, final ApiCallback<ScopingSchoolResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createScopingSchoolsValidateBeforeCall(scopingSchoolsBulkRequest, replace, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ScopingSchoolResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for deleteScopingCourse
+     * @param id id of the ScopingCourse (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call deleteScopingCourseCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/tenant/scoping/courses/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call deleteScopingCourseValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling deleteScopingCourse(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = deleteScopingCourseCall(id, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Delete Scoping Course
+     * 
+     * @param id id of the ScopingCourse (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void deleteScopingCourse(java.util.UUID id) throws ApiException {
+        deleteScopingCourseWithHttpInfo(id);
+    }
+
+    /**
+     * Delete Scoping Course
+     * 
+     * @param id id of the ScopingCourse (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> deleteScopingCourseWithHttpInfo(java.util.UUID id) throws ApiException {
+        com.squareup.okhttp.Call call = deleteScopingCourseValidateBeforeCall(id, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Delete Scoping Course (asynchronously)
+     * 
+     * @param id id of the ScopingCourse (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call deleteScopingCourseAsync(java.util.UUID id, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = deleteScopingCourseValidateBeforeCall(id, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
+     * Build call for deleteScopingCourses
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call deleteScopingCoursesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/tenant/scoping/courses";
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call deleteScopingCoursesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = deleteScopingCoursesCall(progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Delete Scoping Courses
+     * 
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void deleteScopingCourses() throws ApiException {
+        deleteScopingCoursesWithHttpInfo();
+    }
+
+    /**
+     * Delete Scoping Courses
+     * 
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> deleteScopingCoursesWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = deleteScopingCoursesValidateBeforeCall(null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Delete Scoping Courses (asynchronously)
+     * 
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call deleteScopingCoursesAsync(final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = deleteScopingCoursesValidateBeforeCall(progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
+     * Build call for deleteScopingSchool
+     * @param id id of the ScopingSchool (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call deleteScopingSchoolCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/tenant/scoping/schools/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call deleteScopingSchoolValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling deleteScopingSchool(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = deleteScopingSchoolCall(id, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Delete Scoping School
+     * 
+     * @param id id of the ScopingSchool (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void deleteScopingSchool(java.util.UUID id) throws ApiException {
+        deleteScopingSchoolWithHttpInfo(id);
+    }
+
+    /**
+     * Delete Scoping School
+     * 
+     * @param id id of the ScopingSchool (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> deleteScopingSchoolWithHttpInfo(java.util.UUID id) throws ApiException {
+        com.squareup.okhttp.Call call = deleteScopingSchoolValidateBeforeCall(id, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Delete Scoping School (asynchronously)
+     * 
+     * @param id id of the ScopingSchool (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call deleteScopingSchoolAsync(java.util.UUID id, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = deleteScopingSchoolValidateBeforeCall(id, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
+     * Build call for deleteScopingSchools
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call deleteScopingSchoolsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/tenant/scoping/schools";
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call deleteScopingSchoolsValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = deleteScopingSchoolsCall(progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Delete Scoping Schools
+     * 
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void deleteScopingSchools() throws ApiException {
+        deleteScopingSchoolsWithHttpInfo();
+    }
+
+    /**
+     * Delete Scoping Schools
+     * 
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> deleteScopingSchoolsWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = deleteScopingSchoolsValidateBeforeCall(null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Delete Scoping Schools (asynchronously)
+     * 
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call deleteScopingSchoolsAsync(final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = deleteScopingSchoolsValidateBeforeCall(progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
     /**
      * Build call for findInteropTenant
      * @param id id of the TenantInfo to find (required)
@@ -96,7 +815,7 @@ public class TenantsApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "Vendor" };
+        String[] localVarAuthNames = new String[] { "Actor" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
@@ -115,7 +834,7 @@ public class TenantsApi {
     }
 
     /**
-     * Find an TenantInfo by ID
+     * Find Interop Tenant
      * 
      * @param id id of the TenantInfo to find (required)
      * @return TenantInfoResponse
@@ -127,7 +846,7 @@ public class TenantsApi {
     }
 
     /**
-     * Find an TenantInfo by ID
+     * Find Interop Tenant
      * 
      * @param id id of the TenantInfo to find (required)
      * @return ApiResponse&lt;TenantInfoResponse&gt;
@@ -140,7 +859,7 @@ public class TenantsApi {
     }
 
     /**
-     * Find an TenantInfo by ID (asynchronously)
+     * Find Interop Tenant (asynchronously)
      * 
      * @param id id of the TenantInfo to find (required)
      * @param callback The callback to be executed when the API call finishes
@@ -170,6 +889,250 @@ public class TenantsApi {
 
         com.squareup.okhttp.Call call = findInteropTenantValidateBeforeCall(id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TenantInfoResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for findScopingCourse
+     * @param id id of the ScopingCourse to find (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call findScopingCourseCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/tenant/scoping/courses/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call findScopingCourseValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling findScopingCourse(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = findScopingCourseCall(id, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Find Scoping Course
+     * 
+     * @param id id of the ScopingCourse to find (required)
+     * @return ScopingCourseResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ScopingCourseResponse findScopingCourse(java.util.UUID id) throws ApiException {
+        ApiResponse<ScopingCourseResponse> resp = findScopingCourseWithHttpInfo(id);
+        return resp.getData();
+    }
+
+    /**
+     * Find Scoping Course
+     * 
+     * @param id id of the ScopingCourse to find (required)
+     * @return ApiResponse&lt;ScopingCourseResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ScopingCourseResponse> findScopingCourseWithHttpInfo(java.util.UUID id) throws ApiException {
+        com.squareup.okhttp.Call call = findScopingCourseValidateBeforeCall(id, null, null);
+        Type localVarReturnType = new TypeToken<ScopingCourseResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Find Scoping Course (asynchronously)
+     * 
+     * @param id id of the ScopingCourse to find (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call findScopingCourseAsync(java.util.UUID id, final ApiCallback<ScopingCourseResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = findScopingCourseValidateBeforeCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ScopingCourseResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for findScopingSchool
+     * @param id id of the ScopingSchool to find (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call findScopingSchoolCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/tenant/scoping/schools/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call findScopingSchoolValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling findScopingSchool(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = findScopingSchoolCall(id, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Find Scoping School
+     * 
+     * @param id id of the ScopingSchool to find (required)
+     * @return ScopingSchoolResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ScopingSchoolResponse findScopingSchool(java.util.UUID id) throws ApiException {
+        ApiResponse<ScopingSchoolResponse> resp = findScopingSchoolWithHttpInfo(id);
+        return resp.getData();
+    }
+
+    /**
+     * Find Scoping School
+     * 
+     * @param id id of the ScopingSchool to find (required)
+     * @return ApiResponse&lt;ScopingSchoolResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ScopingSchoolResponse> findScopingSchoolWithHttpInfo(java.util.UUID id) throws ApiException {
+        com.squareup.okhttp.Call call = findScopingSchoolValidateBeforeCall(id, null, null);
+        Type localVarReturnType = new TypeToken<ScopingSchoolResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Find Scoping School (asynchronously)
+     * 
+     * @param id id of the ScopingSchool to find (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call findScopingSchoolAsync(java.util.UUID id, final ApiCallback<ScopingSchoolResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = findScopingSchoolValidateBeforeCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ScopingSchoolResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -236,7 +1199,7 @@ public class TenantsApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "Vendor" };
+        String[] localVarAuthNames = new String[] { "Actor" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
@@ -314,6 +1277,524 @@ public class TenantsApi {
 
         com.squareup.okhttp.Call call = listInteropTenantsValidateBeforeCall(accounts, integrations, page, pageSize, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TenantInfosResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for listScopingCourses
+     * @param page Specify the page number (defaults to 0) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call listScopingCoursesCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/tenant/scoping/courses";
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call listScopingCoursesValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = listScopingCoursesCall(page, pageSize, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * List Scoping Courses
+     * Get the list of Scoping Courses to apply to this tenant&#39;s repository
+     * @param page Specify the page number (defaults to 0) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ScopingCoursesResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ScopingCoursesResponse listScopingCourses(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<ScopingCoursesResponse> resp = listScopingCoursesWithHttpInfo(page, pageSize);
+        return resp.getData();
+    }
+
+    /**
+     * List Scoping Courses
+     * Get the list of Scoping Courses to apply to this tenant&#39;s repository
+     * @param page Specify the page number (defaults to 0) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ApiResponse&lt;ScopingCoursesResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ScopingCoursesResponse> listScopingCoursesWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listScopingCoursesValidateBeforeCall(page, pageSize, null, null);
+        Type localVarReturnType = new TypeToken<ScopingCoursesResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * List Scoping Courses (asynchronously)
+     * Get the list of Scoping Courses to apply to this tenant&#39;s repository
+     * @param page Specify the page number (defaults to 0) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call listScopingCoursesAsync(Integer page, Integer pageSize, final ApiCallback<ScopingCoursesResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = listScopingCoursesValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ScopingCoursesResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for listScopingSchools
+     * @param page Specify the page number (defaults to 0) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call listScopingSchoolsCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/tenant/scoping/schools";
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call listScopingSchoolsValidateBeforeCall(Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = listScopingSchoolsCall(page, pageSize, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * List Scoping Schools
+     * Get the list of &#x60;ScopingSchool&#x60;s that define how to scope this tenant&#39;s repository by school
+     * @param page Specify the page number (defaults to 0) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ScopingSchoolsResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ScopingSchoolsResponse listScopingSchools(Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<ScopingSchoolsResponse> resp = listScopingSchoolsWithHttpInfo(page, pageSize);
+        return resp.getData();
+    }
+
+    /**
+     * List Scoping Schools
+     * Get the list of &#x60;ScopingSchool&#x60;s that define how to scope this tenant&#39;s repository by school
+     * @param page Specify the page number (defaults to 0) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ApiResponse&lt;ScopingSchoolsResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ScopingSchoolsResponse> listScopingSchoolsWithHttpInfo(Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listScopingSchoolsValidateBeforeCall(page, pageSize, null, null);
+        Type localVarReturnType = new TypeToken<ScopingSchoolsResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * List Scoping Schools (asynchronously)
+     * Get the list of &#x60;ScopingSchool&#x60;s that define how to scope this tenant&#39;s repository by school
+     * @param page Specify the page number (defaults to 0) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call listScopingSchoolsAsync(Integer page, Integer pageSize, final ApiCallback<ScopingSchoolsResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = listScopingSchoolsValidateBeforeCall(page, pageSize, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ScopingSchoolsResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for updateScopingCourse
+     * @param id id of the Scoping Course to update (required)
+     * @param scopingCourse Scoping Course (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call updateScopingCourseCall(java.util.UUID id, ScopingCourse scopingCourse, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = scopingCourse;
+
+        // create path and map variables
+        String localVarPath = "/tenant/scoping/courses/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call updateScopingCourseValidateBeforeCall(java.util.UUID id, ScopingCourse scopingCourse, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling updateScopingCourse(Async)");
+        }
+        
+        // verify the required parameter 'scopingCourse' is set
+        if (scopingCourse == null) {
+            throw new ApiException("Missing the required parameter 'scopingCourse' when calling updateScopingCourse(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = updateScopingCourseCall(id, scopingCourse, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Update Scoping Course
+     * 
+     * @param id id of the Scoping Course to update (required)
+     * @param scopingCourse Scoping Course (required)
+     * @return ScopingCourseResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ScopingCourseResponse updateScopingCourse(java.util.UUID id, ScopingCourse scopingCourse) throws ApiException {
+        ApiResponse<ScopingCourseResponse> resp = updateScopingCourseWithHttpInfo(id, scopingCourse);
+        return resp.getData();
+    }
+
+    /**
+     * Update Scoping Course
+     * 
+     * @param id id of the Scoping Course to update (required)
+     * @param scopingCourse Scoping Course (required)
+     * @return ApiResponse&lt;ScopingCourseResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ScopingCourseResponse> updateScopingCourseWithHttpInfo(java.util.UUID id, ScopingCourse scopingCourse) throws ApiException {
+        com.squareup.okhttp.Call call = updateScopingCourseValidateBeforeCall(id, scopingCourse, null, null);
+        Type localVarReturnType = new TypeToken<ScopingCourseResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update Scoping Course (asynchronously)
+     * 
+     * @param id id of the Scoping Course to update (required)
+     * @param scopingCourse Scoping Course (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call updateScopingCourseAsync(java.util.UUID id, ScopingCourse scopingCourse, final ApiCallback<ScopingCourseResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = updateScopingCourseValidateBeforeCall(id, scopingCourse, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ScopingCourseResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for updateScopingSchool
+     * @param id id of the Scoping School to update (required)
+     * @param scopingSchool Scoping School (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call updateScopingSchoolCall(java.util.UUID id, ScopingSchool scopingSchool, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = scopingSchool;
+
+        // create path and map variables
+        String localVarPath = "/tenant/scoping/schools/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call updateScopingSchoolValidateBeforeCall(java.util.UUID id, ScopingSchool scopingSchool, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling updateScopingSchool(Async)");
+        }
+        
+        // verify the required parameter 'scopingSchool' is set
+        if (scopingSchool == null) {
+            throw new ApiException("Missing the required parameter 'scopingSchool' when calling updateScopingSchool(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = updateScopingSchoolCall(id, scopingSchool, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Update Scoping School
+     * 
+     * @param id id of the Scoping School to update (required)
+     * @param scopingSchool Scoping School (required)
+     * @return ScopingSchoolResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ScopingSchoolResponse updateScopingSchool(java.util.UUID id, ScopingSchool scopingSchool) throws ApiException {
+        ApiResponse<ScopingSchoolResponse> resp = updateScopingSchoolWithHttpInfo(id, scopingSchool);
+        return resp.getData();
+    }
+
+    /**
+     * Update Scoping School
+     * 
+     * @param id id of the Scoping School to update (required)
+     * @param scopingSchool Scoping School (required)
+     * @return ApiResponse&lt;ScopingSchoolResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ScopingSchoolResponse> updateScopingSchoolWithHttpInfo(java.util.UUID id, ScopingSchool scopingSchool) throws ApiException {
+        com.squareup.okhttp.Call call = updateScopingSchoolValidateBeforeCall(id, scopingSchool, null, null);
+        Type localVarReturnType = new TypeToken<ScopingSchoolResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update Scoping School (asynchronously)
+     * 
+     * @param id id of the Scoping School to update (required)
+     * @param scopingSchool Scoping School (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call updateScopingSchoolAsync(java.util.UUID id, ScopingSchool scopingSchool, final ApiCallback<ScopingSchoolResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = updateScopingSchoolValidateBeforeCall(id, scopingSchool, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ScopingSchoolResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

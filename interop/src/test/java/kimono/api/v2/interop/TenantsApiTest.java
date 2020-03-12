@@ -14,6 +14,15 @@
 package kimono.api.v2.interop;
 
 import kimono.api.v2.interop.ApiException;
+import kimono.api.v2.interop.model.ErrorType;
+import kimono.api.v2.interop.model.ScopingCourse;
+import kimono.api.v2.interop.model.ScopingCourseResponse;
+import kimono.api.v2.interop.model.ScopingCoursesBulkRequest;
+import kimono.api.v2.interop.model.ScopingCoursesResponse;
+import kimono.api.v2.interop.model.ScopingSchool;
+import kimono.api.v2.interop.model.ScopingSchoolResponse;
+import kimono.api.v2.interop.model.ScopingSchoolsBulkRequest;
+import kimono.api.v2.interop.model.ScopingSchoolsResponse;
 import kimono.api.v2.interop.model.TenantInfoResponse;
 import kimono.api.v2.interop.model.TenantInfosResponse;
 import org.junit.Test;
@@ -30,7 +39,103 @@ public class TenantsApiTest {
 
     
     /**
-     * Find an TenantInfo by ID
+     * Create Scoping Courses
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createScopingCoursesTest() throws ApiException {
+        ScopingCoursesBulkRequest scopingCoursesBulkRequest = null;
+        Boolean replace = null;
+        ScopingCourseResponse response = api.createScopingCourses(scopingCoursesBulkRequest, replace);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create Scoping Schools
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createScopingSchoolsTest() throws ApiException {
+        ScopingSchoolsBulkRequest scopingSchoolsBulkRequest = null;
+        Boolean replace = null;
+        ScopingSchoolResponse response = api.createScopingSchools(scopingSchoolsBulkRequest, replace);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Delete Scoping Course
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteScopingCourseTest() throws ApiException {
+        java.util.UUID id = null;
+        api.deleteScopingCourse(id);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Delete Scoping Courses
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteScopingCoursesTest() throws ApiException {
+        api.deleteScopingCourses();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Delete Scoping School
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteScopingSchoolTest() throws ApiException {
+        java.util.UUID id = null;
+        api.deleteScopingSchool(id);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Delete Scoping Schools
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteScopingSchoolsTest() throws ApiException {
+        api.deleteScopingSchools();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Find Interop Tenant
      *
      * 
      *
@@ -41,6 +146,38 @@ public class TenantsApiTest {
     public void findInteropTenantTest() throws ApiException {
         java.util.UUID id = null;
         TenantInfoResponse response = api.findInteropTenant(id);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Find Scoping Course
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void findScopingCourseTest() throws ApiException {
+        java.util.UUID id = null;
+        ScopingCourseResponse response = api.findScopingCourse(id);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Find Scoping School
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void findScopingSchoolTest() throws ApiException {
+        java.util.UUID id = null;
+        ScopingSchoolResponse response = api.findScopingSchool(id);
 
         // TODO: test validations
     }
@@ -60,6 +197,74 @@ public class TenantsApiTest {
         Integer page = null;
         Integer pageSize = null;
         TenantInfosResponse response = api.listInteropTenants(accounts, integrations, page, pageSize);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List Scoping Courses
+     *
+     * Get the list of Scoping Courses to apply to this tenant&#39;s repository
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listScopingCoursesTest() throws ApiException {
+        Integer page = null;
+        Integer pageSize = null;
+        ScopingCoursesResponse response = api.listScopingCourses(page, pageSize);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List Scoping Schools
+     *
+     * Get the list of &#x60;ScopingSchool&#x60;s that define how to scope this tenant&#39;s repository by school
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listScopingSchoolsTest() throws ApiException {
+        Integer page = null;
+        Integer pageSize = null;
+        ScopingSchoolsResponse response = api.listScopingSchools(page, pageSize);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update Scoping Course
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateScopingCourseTest() throws ApiException {
+        java.util.UUID id = null;
+        ScopingCourse scopingCourse = null;
+        ScopingCourseResponse response = api.updateScopingCourse(id, scopingCourse);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update Scoping School
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateScopingSchoolTest() throws ApiException {
+        java.util.UUID id = null;
+        ScopingSchool scopingSchool = null;
+        ScopingSchoolResponse response = api.updateScopingSchool(id, scopingSchool);
 
         // TODO: test validations
     }

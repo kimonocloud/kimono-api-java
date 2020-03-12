@@ -4,7 +4,7 @@ All URIs are relative to *https://api.us2.kimonocloud.com/v2/interop/data*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listGradingCategories**](GradesApi.md#listGradingCategories) | **GET** /grades/categories | List all Grading Categories
+[**listGradingCategories**](GradesApi.md#listGradingCategories) | **GET** /grades/gradingCategories | List all Grading Categories
 
 
 <a name="listGradingCategories"></a>

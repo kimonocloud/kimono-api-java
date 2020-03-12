@@ -28,7 +28,7 @@ import kimono.api.v2.interopdata.model.ErrorType;
 /**
  * TaskAck
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-09T14:17:25.210-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-03-12T13:22:44.287-06:00[America/Denver]")
 public class TaskAck {
   /**
    * Task processing status

@@ -8,11 +8,11 @@ Name | Type | Description | Notes
 **localId** | **String** |  |  [optional]
 **title** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
-**$terms** | [**java.util.List&lt;TermRefType&gt;**](TermRefType.md) |  |  [optional]
-**$course** | [**RefType**](RefType.md) |  |  [optional]
-**$org** | [**OrgRefType**](OrgRefType.md) |  |  [optional]
-**$teachers** | [**java.util.List&lt;PersonMembershipRefType&gt;**](PersonMembershipRefType.md) |  |  [optional]
-**$students** | [**java.util.List&lt;PersonMembershipRefType&gt;**](PersonMembershipRefType.md) |  |  [optional]
+**$terms** | [**java.util.List&lt;TermSys&gt;**](TermSys.md) |  |  [optional]
+**$course** | [**RefSys**](RefSys.md) |  |  [optional]
+**$org** | [**OrgSys**](OrgSys.md) |  |  [optional]
+**$teachers** | [**java.util.List&lt;PersonMembershipSys&gt;**](PersonMembershipSys.md) |  |  [optional]
+**$students** | [**java.util.List&lt;PersonMembershipSys&gt;**](PersonMembershipSys.md) |  |  [optional]
 
 
 

@@ -103,7 +103,7 @@ public class ActorsApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "Vendor" };
+        String[] localVarAuthNames = new String[] { "Actor" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 

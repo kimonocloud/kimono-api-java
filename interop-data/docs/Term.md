@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **status** | **String** |  |  [optional]
-**$parent** | [**TermRefType**](TermRefType.md) |  |  [optional]
-**$children** | [**java.util.List&lt;TermRefType&gt;**](TermRefType.md) |  |  [optional]
+**$parent** | [**TermSys**](TermSys.md) |  |  [optional]
+**$children** | [**java.util.List&lt;TermSys&gt;**](TermSys.md) |  |  [optional]
 
 
 

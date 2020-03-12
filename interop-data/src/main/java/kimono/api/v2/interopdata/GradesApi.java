@@ -63,7 +63,7 @@ public class GradesApi {
         Object localVarPostBody = new Object();
 
         // create path and map variables
-        String localVarPath = "/grades/categories";
+        String localVarPath = "/grades/gradingCategories";
 
         java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
         java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();

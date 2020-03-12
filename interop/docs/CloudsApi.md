@@ -29,10 +29,9 @@ Create an Interop Cloud
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: Vendor
-HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
-Vendor.setUsername("YOUR USERNAME");
-Vendor.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 CloudsApi apiInstance = new CloudsApi();
 Cloud cloud = new Cloud(); // Cloud | Cloud to create
@@ -57,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Vendor](../README.md#Vendor)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -81,10 +80,9 @@ Delete an Interop Cloud
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: Vendor
-HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
-Vendor.setUsername("YOUR USERNAME");
-Vendor.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 CloudsApi apiInstance = new CloudsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the Cloud to delete
@@ -108,7 +106,7 @@ null (empty response body)
 
 ### Authorization
 
-[Vendor](../README.md#Vendor)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -134,10 +132,9 @@ Find an Interop Cloud by identifier
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: Vendor
-HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
-Vendor.setUsername("YOUR USERNAME");
-Vendor.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 CloudsApi apiInstance = new CloudsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the object
@@ -162,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Vendor](../README.md#Vendor)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -186,10 +183,9 @@ List all Actors in an Interop Cloud
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: Vendor
-HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
-Vendor.setUsername("YOUR USERNAME");
-Vendor.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 CloudsApi apiInstance = new CloudsApi();
 java.util.UUID id = new java.util.UUID(); // java.util.UUID | id of the object
@@ -218,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Vendor](../README.md#Vendor)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -244,10 +240,9 @@ Get a list of Interop Clouds for accounts visible to you.
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: Vendor
-HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
-Vendor.setUsername("YOUR USERNAME");
-Vendor.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 CloudsApi apiInstance = new CloudsApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 0)
@@ -274,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Vendor](../README.md#Vendor)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 
@@ -300,10 +295,9 @@ Get a list of Interop Clouds matching the search criteria.
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: Vendor
-HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
-Vendor.setUsername("YOUR USERNAME");
-Vendor.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 CloudsApi apiInstance = new CloudsApi();
 Integer generation = 56; // Integer | List all Clouds of a matching generation
@@ -336,7 +330,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Vendor](../README.md#Vendor)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 

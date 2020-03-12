@@ -27,6 +27,14 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import kimono.api.v2.grades.model.ErrorType;
+import kimono.api.v2.grades.model.ExchangeDataRequest;
+import kimono.api.v2.grades.model.ExchangeDataResponse;
+import kimono.api.v2.grades.model.ExchangeError;
+import kimono.api.v2.grades.model.ExchangeErrorResponse;
+import kimono.api.v2.grades.model.ExchangeErrorsResponse;
+import kimono.api.v2.grades.model.ExchangeResponse;
+import kimono.api.v2.grades.model.ExchangesRequest;
 import kimono.api.v2.grades.model.ExchangesResponse;
 
 import java.lang.reflect.Type;
@@ -50,6 +58,649 @@ public class GradesExchangeApi {
         this.apiClient = apiClient;
     }
 
+    /**
+     * Build call for createExchange
+     * @param exchangesRequest Exchange to create (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call createExchangeCall(ExchangesRequest exchangesRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = exchangesRequest;
+
+        // create path and map variables
+        String localVarPath = "/exchanges";
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createExchangeValidateBeforeCall(ExchangesRequest exchangesRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'exchangesRequest' is set
+        if (exchangesRequest == null) {
+            throw new ApiException("Missing the required parameter 'exchangesRequest' when calling createExchange(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createExchangeCall(exchangesRequest, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create a Grades Exchange
+     * Create a Grades Exchange
+     * @param exchangesRequest Exchange to create (required)
+     * @return ExchangeDataResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ExchangeDataResponse createExchange(ExchangesRequest exchangesRequest) throws ApiException {
+        ApiResponse<ExchangeDataResponse> resp = createExchangeWithHttpInfo(exchangesRequest);
+        return resp.getData();
+    }
+
+    /**
+     * Create a Grades Exchange
+     * Create a Grades Exchange
+     * @param exchangesRequest Exchange to create (required)
+     * @return ApiResponse&lt;ExchangeDataResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ExchangeDataResponse> createExchangeWithHttpInfo(ExchangesRequest exchangesRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createExchangeValidateBeforeCall(exchangesRequest, null, null);
+        Type localVarReturnType = new TypeToken<ExchangeDataResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create a Grades Exchange (asynchronously)
+     * Create a Grades Exchange
+     * @param exchangesRequest Exchange to create (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createExchangeAsync(ExchangesRequest exchangesRequest, final ApiCallback<ExchangeDataResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createExchangeValidateBeforeCall(exchangesRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ExchangeDataResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for createExchangeData
+     * @param id id of the Exchange to create Data (required)
+     * @param exchangeDataRequest Exchange Data to create (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call createExchangeDataCall(java.util.UUID id, ExchangeDataRequest exchangeDataRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = exchangeDataRequest;
+
+        // create path and map variables
+        String localVarPath = "/exchanges/{id}/data"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createExchangeDataValidateBeforeCall(java.util.UUID id, ExchangeDataRequest exchangeDataRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling createExchangeData(Async)");
+        }
+        
+        // verify the required parameter 'exchangeDataRequest' is set
+        if (exchangeDataRequest == null) {
+            throw new ApiException("Missing the required parameter 'exchangeDataRequest' when calling createExchangeData(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createExchangeDataCall(id, exchangeDataRequest, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create Grades Exchange Data
+     * Create Grades data for an Exchange
+     * @param id id of the Exchange to create Data (required)
+     * @param exchangeDataRequest Exchange Data to create (required)
+     * @return ExchangeDataResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ExchangeDataResponse createExchangeData(java.util.UUID id, ExchangeDataRequest exchangeDataRequest) throws ApiException {
+        ApiResponse<ExchangeDataResponse> resp = createExchangeDataWithHttpInfo(id, exchangeDataRequest);
+        return resp.getData();
+    }
+
+    /**
+     * Create Grades Exchange Data
+     * Create Grades data for an Exchange
+     * @param id id of the Exchange to create Data (required)
+     * @param exchangeDataRequest Exchange Data to create (required)
+     * @return ApiResponse&lt;ExchangeDataResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ExchangeDataResponse> createExchangeDataWithHttpInfo(java.util.UUID id, ExchangeDataRequest exchangeDataRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createExchangeDataValidateBeforeCall(id, exchangeDataRequest, null, null);
+        Type localVarReturnType = new TypeToken<ExchangeDataResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create Grades Exchange Data (asynchronously)
+     * Create Grades data for an Exchange
+     * @param id id of the Exchange to create Data (required)
+     * @param exchangeDataRequest Exchange Data to create (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createExchangeDataAsync(java.util.UUID id, ExchangeDataRequest exchangeDataRequest, final ApiCallback<ExchangeDataResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createExchangeDataValidateBeforeCall(id, exchangeDataRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ExchangeDataResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for createExchangeError
+     * @param id id of the Exchange to create Errors (required)
+     * @param body Exchange to create (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call createExchangeErrorCall(java.util.UUID id, ExchangeError body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/exchanges/{id}/errors"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createExchangeErrorValidateBeforeCall(java.util.UUID id, ExchangeError body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling createExchangeError(Async)");
+        }
+        
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling createExchangeError(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createExchangeErrorCall(id, body, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create Grades Exchange Errors
+     * Create a list of Grades Exchange Errors
+     * @param id id of the Exchange to create Errors (required)
+     * @param body Exchange to create (required)
+     * @return ExchangeErrorResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ExchangeErrorResponse createExchangeError(java.util.UUID id, ExchangeError body) throws ApiException {
+        ApiResponse<ExchangeErrorResponse> resp = createExchangeErrorWithHttpInfo(id, body);
+        return resp.getData();
+    }
+
+    /**
+     * Create Grades Exchange Errors
+     * Create a list of Grades Exchange Errors
+     * @param id id of the Exchange to create Errors (required)
+     * @param body Exchange to create (required)
+     * @return ApiResponse&lt;ExchangeErrorResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ExchangeErrorResponse> createExchangeErrorWithHttpInfo(java.util.UUID id, ExchangeError body) throws ApiException {
+        com.squareup.okhttp.Call call = createExchangeErrorValidateBeforeCall(id, body, null, null);
+        Type localVarReturnType = new TypeToken<ExchangeErrorResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create Grades Exchange Errors (asynchronously)
+     * Create a list of Grades Exchange Errors
+     * @param id id of the Exchange to create Errors (required)
+     * @param body Exchange to create (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createExchangeErrorAsync(java.util.UUID id, ExchangeError body, final ApiCallback<ExchangeErrorResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createExchangeErrorValidateBeforeCall(id, body, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ExchangeErrorResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for findExchange
+     * @param id id of the Exchange to find (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call findExchangeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/exchanges/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call findExchangeValidateBeforeCall(java.util.UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling findExchange(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = findExchangeCall(id, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Find a Grades Exchange by id
+     * Get an Exchange
+     * @param id id of the Exchange to find (required)
+     * @return ExchangeResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ExchangeResponse findExchange(java.util.UUID id) throws ApiException {
+        ApiResponse<ExchangeResponse> resp = findExchangeWithHttpInfo(id);
+        return resp.getData();
+    }
+
+    /**
+     * Find a Grades Exchange by id
+     * Get an Exchange
+     * @param id id of the Exchange to find (required)
+     * @return ApiResponse&lt;ExchangeResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ExchangeResponse> findExchangeWithHttpInfo(java.util.UUID id) throws ApiException {
+        com.squareup.okhttp.Call call = findExchangeValidateBeforeCall(id, null, null);
+        Type localVarReturnType = new TypeToken<ExchangeResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Find a Grades Exchange by id (asynchronously)
+     * Get an Exchange
+     * @param id id of the Exchange to find (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call findExchangeAsync(java.util.UUID id, final ApiCallback<ExchangeResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = findExchangeValidateBeforeCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ExchangeResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for listExchangeErrors
+     * @param id id of the Exchange to list Errors (required)
+     * @param page Specify the page number (defaults to 0) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call listExchangeErrorsCall(java.util.UUID id, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/exchanges/{id}/errors"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
+        java.util.List<Pair> localVarCollectionQueryParams = new java.util.ArrayList<Pair>();
+        if (page != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(apiClient.parameterToPair("page_size", pageSize));
+        }
+
+        java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
+        java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Actor" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call listExchangeErrorsValidateBeforeCall(java.util.UUID id, Integer page, Integer pageSize, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling listExchangeErrors(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = listExchangeErrorsCall(id, page, pageSize, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * List Grades Exchange Errors
+     * Get a list of Grades Exchange Errors
+     * @param id id of the Exchange to list Errors (required)
+     * @param page Specify the page number (defaults to 0) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ExchangeErrorsResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ExchangeErrorsResponse listExchangeErrors(java.util.UUID id, Integer page, Integer pageSize) throws ApiException {
+        ApiResponse<ExchangeErrorsResponse> resp = listExchangeErrorsWithHttpInfo(id, page, pageSize);
+        return resp.getData();
+    }
+
+    /**
+     * List Grades Exchange Errors
+     * Get a list of Grades Exchange Errors
+     * @param id id of the Exchange to list Errors (required)
+     * @param page Specify the page number (defaults to 0) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @return ApiResponse&lt;ExchangeErrorsResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ExchangeErrorsResponse> listExchangeErrorsWithHttpInfo(java.util.UUID id, Integer page, Integer pageSize) throws ApiException {
+        com.squareup.okhttp.Call call = listExchangeErrorsValidateBeforeCall(id, page, pageSize, null, null);
+        Type localVarReturnType = new TypeToken<ExchangeErrorsResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * List Grades Exchange Errors (asynchronously)
+     * Get a list of Grades Exchange Errors
+     * @param id id of the Exchange to list Errors (required)
+     * @param page Specify the page number (defaults to 0) (optional)
+     * @param pageSize Specify the page_size (defaults to the maximum page size) (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call listExchangeErrorsAsync(java.util.UUID id, Integer page, Integer pageSize, final ApiCallback<ExchangeErrorsResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = listExchangeErrorsValidateBeforeCall(id, page, pageSize, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ExchangeErrorsResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /**
      * Build call for listExchanges
      * @param page Specify the page number (defaults to 0) (optional)

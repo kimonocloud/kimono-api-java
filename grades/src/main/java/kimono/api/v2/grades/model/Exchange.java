@@ -15,12 +15,84 @@ package kimono.api.v2.grades.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import java.time.OffsetDateTime;
+import kimono.api.v2.grades.model.BaseResourceType;
+import kimono.api.v2.grades.model.ExchangeQuery;
 
 /**
  * Exchange
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-09T14:17:24.690-06:00[America/Denver]")
-public class Exchange {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-03-12T13:22:44.738-06:00[America/Denver]")
+public class Exchange extends BaseResourceType {
+  public static final String SERIALIZED_NAME_QUERY = "query";
+  @SerializedName(SERIALIZED_NAME_QUERY)
+  private ExchangeQuery query = null;
+
+  public static final String SERIALIZED_NAME_STATE = "state";
+  @SerializedName(SERIALIZED_NAME_STATE)
+  private Integer state;
+
+  public static final String SERIALIZED_NAME_MAX_DATA_CONTENT_LENGTH = "max_data_content_length";
+  @SerializedName(SERIALIZED_NAME_MAX_DATA_CONTENT_LENGTH)
+  private Integer maxDataContentLength;
+
+  public static final String SERIALIZED_NAME_ERROR_COUNT = "error_count";
+  @SerializedName(SERIALIZED_NAME_ERROR_COUNT)
+  private Integer errorCount;
+
+  public Exchange query(ExchangeQuery query) {
+    this.query = query;
+    return this;
+  }
+
+   /**
+   * Get query
+   * @return query
+  **/
+  @ApiModelProperty(value = "")
+  public ExchangeQuery getQuery() {
+    return query;
+  }
+
+  public void setQuery(ExchangeQuery query) {
+    this.query = query;
+  }
+
+   /**
+   * Get state
+   * @return state
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getState() {
+    return state;
+  }
+
+   /**
+   * Get maxDataContentLength
+   * @return maxDataContentLength
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getMaxDataContentLength() {
+    return maxDataContentLength;
+  }
+
+   /**
+   * Get errorCount
+   * @return errorCount
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getErrorCount() {
+    return errorCount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -30,12 +102,17 @@ public class Exchange {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return true;
+    Exchange exchange = (Exchange) o;
+    return Objects.equals(this.query, exchange.query) &&
+        Objects.equals(this.state, exchange.state) &&
+        Objects.equals(this.maxDataContentLength, exchange.maxDataContentLength) &&
+        Objects.equals(this.errorCount, exchange.errorCount) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(query, state, maxDataContentLength, errorCount, super.hashCode());
   }
 
 
@@ -43,7 +120,11 @@ public class Exchange {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Exchange {\n");
-    
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    query: ").append(toIndentedString(query)).append("\n");
+    sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    maxDataContentLength: ").append(toIndentedString(maxDataContentLength)).append("\n");
+    sb.append("    errorCount: ").append(toIndentedString(errorCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

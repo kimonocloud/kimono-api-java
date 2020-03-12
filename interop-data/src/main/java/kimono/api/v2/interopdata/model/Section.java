@@ -24,16 +24,16 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import kimono.api.v2.interopdata.model.ObjectType;
-import kimono.api.v2.interopdata.model.OrgRefType;
-import kimono.api.v2.interopdata.model.PersonMembershipRefType;
-import kimono.api.v2.interopdata.model.RefType;
+import kimono.api.v2.interopdata.model.OrgSys;
+import kimono.api.v2.interopdata.model.PersonMembershipSys;
+import kimono.api.v2.interopdata.model.RefSys;
 import kimono.api.v2.interopdata.model.SysType;
-import kimono.api.v2.interopdata.model.TermRefType;
+import kimono.api.v2.interopdata.model.TermSys;
 
 /**
  * Section
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-09T14:17:25.210-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-03-12T13:22:44.287-06:00[America/Denver]")
 public class Section extends ObjectType {
   public static final String SERIALIZED_NAME_$_SYS = "$sys";
   @SerializedName(SERIALIZED_NAME_$_SYS)
@@ -53,23 +53,23 @@ public class Section extends ObjectType {
 
   public static final String SERIALIZED_NAME_$_TERMS = "$terms";
   @SerializedName(SERIALIZED_NAME_$_TERMS)
-  private java.util.List<TermRefType> $terms = null;
+  private java.util.List<TermSys> $terms = null;
 
   public static final String SERIALIZED_NAME_$_COURSE = "$course";
   @SerializedName(SERIALIZED_NAME_$_COURSE)
-  private RefType $course = null;
+  private RefSys $course = null;
 
   public static final String SERIALIZED_NAME_$_ORG = "$org";
   @SerializedName(SERIALIZED_NAME_$_ORG)
-  private OrgRefType $org = null;
+  private OrgSys $org = null;
 
   public static final String SERIALIZED_NAME_$_TEACHERS = "$teachers";
   @SerializedName(SERIALIZED_NAME_$_TEACHERS)
-  private java.util.List<PersonMembershipRefType> $teachers = null;
+  private java.util.List<PersonMembershipSys> $teachers = null;
 
   public static final String SERIALIZED_NAME_$_STUDENTS = "$students";
   @SerializedName(SERIALIZED_NAME_$_STUDENTS)
-  private java.util.List<PersonMembershipRefType> $students = null;
+  private java.util.List<PersonMembershipSys> $students = null;
 
   public Section $sys(SysType $sys) {
     this.$sys = $sys;
@@ -121,11 +121,11 @@ public class Section extends ObjectType {
    * @return $terms
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<TermRefType> get$Terms() {
+  public java.util.List<TermSys> get$Terms() {
     return $terms;
   }
 
-  public Section $course(RefType $course) {
+  public Section $course(RefSys $course) {
     this.$course = $course;
     return this;
   }
@@ -135,15 +135,15 @@ public class Section extends ObjectType {
    * @return $course
   **/
   @ApiModelProperty(value = "")
-  public RefType get$Course() {
+  public RefSys get$Course() {
     return $course;
   }
 
-  public void set$Course(RefType $course) {
+  public void set$Course(RefSys $course) {
     this.$course = $course;
   }
 
-  public Section $org(OrgRefType $org) {
+  public Section $org(OrgSys $org) {
     this.$org = $org;
     return this;
   }
@@ -153,11 +153,11 @@ public class Section extends ObjectType {
    * @return $org
   **/
   @ApiModelProperty(value = "")
-  public OrgRefType get$Org() {
+  public OrgSys get$Org() {
     return $org;
   }
 
-  public void set$Org(OrgRefType $org) {
+  public void set$Org(OrgSys $org) {
     this.$org = $org;
   }
 
@@ -166,7 +166,7 @@ public class Section extends ObjectType {
    * @return $teachers
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<PersonMembershipRefType> get$Teachers() {
+  public java.util.List<PersonMembershipSys> get$Teachers() {
     return $teachers;
   }
 
@@ -175,7 +175,7 @@ public class Section extends ObjectType {
    * @return $students
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<PersonMembershipRefType> get$Students() {
+  public java.util.List<PersonMembershipSys> get$Students() {
     return $students;
   }
 

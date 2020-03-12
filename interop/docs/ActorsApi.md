@@ -26,10 +26,9 @@ Get a list of actors installed in Interop Clouds for accounts visible to you. Th
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure HTTP basic authorization: Vendor
-HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
-Vendor.setUsername("YOUR USERNAME");
-Vendor.setPassword("YOUR PASSWORD");
+// Configure OAuth2 access token for authorization: Actor
+OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
+Actor.setAccessToken("YOUR ACCESS TOKEN");
 
 ActorsApi apiInstance = new ActorsApi();
 Integer page = 56; // Integer | Specify the page number (defaults to 0)
@@ -56,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Vendor](../README.md#Vendor)
+[Actor](../README.md#Actor)
 
 ### HTTP request headers
 

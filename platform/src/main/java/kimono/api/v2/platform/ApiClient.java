@@ -57,7 +57,7 @@ import kimono.api.v2.platform.auth.OAuthFlow;
 
 public class ApiClient {
 
-    private String basePath = "https://api.us2.kimonocloud.com/v2/platform";
+    private String basePath = "https://api.us2.kimonocloud.com";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
@@ -85,7 +85,38 @@ public class ApiClient {
         init();
 
         // Setup authentications (key: authentication name, value: authentication).
-        authentications.put("Vendor", new HttpBasicAuth());
+        authentications.put("Actor", new OAuth());
+        // Prevent the authentications from being modified.
+        authentications = Collections.unmodifiableMap(authentications);
+    }
+    
+    /*
+     * Constructor for ApiClient to support access token retry on 401/403 configured with client ID
+     */
+    public ApiClient(String clientId) {
+        this(clientId, null, null);
+    }
+
+    /*
+     * Constructor for ApiClient to support access token retry on 401/403 configured with client ID and additional parameters
+     */
+    public ApiClient(String clientId, Map<String, String> parameters) {
+        this(clientId, null, parameters);
+    }
+
+    /*
+     * Constructor for ApiClient to support access token retry on 401/403 configured with client ID, secret, and additional parameters
+     */
+    public ApiClient(String clientId, String clientSecret, Map<String, String> parameters) {
+        init();
+
+        RetryingOAuth retryingOAuth = new RetryingOAuth("https://api.us2.kimonocloud.com/oauth/token", clientId, OAuthFlow.application, clientSecret, parameters);
+        authentications.put(
+                "Actor",
+                retryingOAuth
+        );
+        httpClient.interceptors().add(retryingOAuth);
+
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
@@ -116,7 +147,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://api.us2.kimonocloud.com/v2/platform
+     * @param basePath Base path of the URL (e.g https://api.us2.kimonocloud.com
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {

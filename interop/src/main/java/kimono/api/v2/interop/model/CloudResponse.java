@@ -30,7 +30,7 @@ import kimono.api.v2.interop.model.SingleObjectResponseType;
 /**
  * CloudResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-09T14:17:24.861-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-03-12T13:22:43.907-06:00[America/Denver]")
 public class CloudResponse extends SingleObjectResponseType {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
