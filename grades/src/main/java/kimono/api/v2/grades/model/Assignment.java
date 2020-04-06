@@ -27,12 +27,13 @@ import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import kimono.api.v2.grades.model.AssignmentScore;
 import kimono.api.v2.grades.model.AssignmentSys;
+import kimono.api.v2.grades.model.GradesCategoryRefType;
 import kimono.api.v2.grades.model.GradesRefType;
 
 /**
  * Assignment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-03-12T13:22:44.738-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-06T14:46:48.453-06:00[America/Denver]")
 public class Assignment {
   public static final String SERIALIZED_NAME_$_SYS = "$sys";
   @SerializedName(SERIALIZED_NAME_$_SYS)
@@ -44,7 +45,7 @@ public class Assignment {
 
   public static final String SERIALIZED_NAME_$_CATEGORY = "$category";
   @SerializedName(SERIALIZED_NAME_$_CATEGORY)
-  private GradesRefType $category = null;
+  private GradesCategoryRefType $category = null;
 
   public static final String SERIALIZED_NAME_$_TERM = "$term";
   @SerializedName(SERIALIZED_NAME_$_TERM)
@@ -114,7 +115,7 @@ public class Assignment {
     this.$section = $section;
   }
 
-  public Assignment $category(GradesRefType $category) {
+  public Assignment $category(GradesCategoryRefType $category) {
     this.$category = $category;
     return this;
   }
@@ -124,11 +125,11 @@ public class Assignment {
    * @return $category
   **/
   @ApiModelProperty(value = "")
-  public GradesRefType get$Category() {
+  public GradesCategoryRefType get$Category() {
     return $category;
   }
 
-  public void set$Category(GradesRefType $category) {
+  public void set$Category(GradesCategoryRefType $category) {
     this.$category = $category;
   }
 

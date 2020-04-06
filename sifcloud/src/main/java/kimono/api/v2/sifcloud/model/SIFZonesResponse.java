@@ -30,7 +30,7 @@ import kimono.api.v2.sifcloud.model.SIFZone;
 /**
  * SIFZonesResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-03-12T13:22:44.944-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-06T14:46:48.615-06:00[America/Denver]")
 public class SIFZonesResponse extends PagedDataResponseType {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)

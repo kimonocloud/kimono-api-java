@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **$sys** | [**AssignmentSys**](AssignmentSys.md) |  |  [optional]
 **$section** | [**GradesRefType**](GradesRefType.md) |  |  [optional]
-**$category** | [**GradesRefType**](GradesRefType.md) |  |  [optional]
+**$category** | [**GradesCategoryRefType**](GradesCategoryRefType.md) |  |  [optional]
 **$term** | [**GradesRefType**](GradesRefType.md) |  |  [optional]
 **name** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]

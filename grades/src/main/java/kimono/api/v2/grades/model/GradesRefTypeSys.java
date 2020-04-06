@@ -28,16 +28,8 @@ import java.time.OffsetDateTime;
 /**
  * GradesRefTypeSys
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-03-12T13:22:44.738-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-06T14:46:48.453-06:00[America/Denver]")
 public class GradesRefTypeSys {
-  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
-  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  private OffsetDateTime updatedAt;
-
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  private OffsetDateTime createdAt;
-
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private java.util.UUID id;
@@ -50,23 +42,13 @@ public class GradesRefTypeSys {
   @SerializedName(SERIALIZED_NAME_APP_ID)
   private java.util.Map<String, String> appId = null;
 
-   /**
-   * Get updatedAt
-   * @return updatedAt
-  **/
-  @ApiModelProperty(value = "")
-  public OffsetDateTime getUpdatedAt() {
-    return updatedAt;
-  }
+  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  private OffsetDateTime createdAt;
 
-   /**
-   * Get createdAt
-   * @return createdAt
-  **/
-  @ApiModelProperty(value = "")
-  public OffsetDateTime getCreatedAt() {
-    return createdAt;
-  }
+  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
+  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  private OffsetDateTime updatedAt;
 
   public GradesRefTypeSys id(java.util.UUID id) {
     this.id = id;
@@ -138,6 +120,24 @@ public class GradesRefTypeSys {
     this.appId = appId;
   }
 
+   /**
+   * Get createdAt
+   * @return createdAt
+  **/
+  @ApiModelProperty(value = "")
+  public OffsetDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+   /**
+   * Get updatedAt
+   * @return updatedAt
+  **/
+  @ApiModelProperty(value = "")
+  public OffsetDateTime getUpdatedAt() {
+    return updatedAt;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -148,16 +148,16 @@ public class GradesRefTypeSys {
       return false;
     }
     GradesRefTypeSys gradesRefTypeSys = (GradesRefTypeSys) o;
-    return Objects.equals(this.updatedAt, gradesRefTypeSys.updatedAt) &&
-        Objects.equals(this.createdAt, gradesRefTypeSys.createdAt) &&
-        Objects.equals(this.id, gradesRefTypeSys.id) &&
+    return Objects.equals(this.id, gradesRefTypeSys.id) &&
         Objects.equals(this.sourceId, gradesRefTypeSys.sourceId) &&
-        Objects.equals(this.appId, gradesRefTypeSys.appId);
+        Objects.equals(this.appId, gradesRefTypeSys.appId) &&
+        Objects.equals(this.createdAt, gradesRefTypeSys.createdAt) &&
+        Objects.equals(this.updatedAt, gradesRefTypeSys.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(updatedAt, createdAt, id, sourceId, appId);
+    return Objects.hash(id, sourceId, appId, createdAt, updatedAt);
   }
 
 
@@ -166,11 +166,11 @@ public class GradesRefTypeSys {
     StringBuilder sb = new StringBuilder();
     sb.append("class GradesRefTypeSys {\n");
     
-    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    sourceId: ").append(toIndentedString(sourceId)).append("\n");
     sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

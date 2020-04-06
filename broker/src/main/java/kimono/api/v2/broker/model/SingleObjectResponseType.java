@@ -28,7 +28,7 @@ import kimono.api.v2.broker.model.ErrorType;
 /**
  * SingleObjectResponseType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-03-12T13:22:43.429-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-06T14:46:47.172-06:00[America/Denver]")
 public class SingleObjectResponseType {
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)

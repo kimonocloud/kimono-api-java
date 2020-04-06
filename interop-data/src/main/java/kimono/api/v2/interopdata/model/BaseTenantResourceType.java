@@ -29,7 +29,7 @@ import kimono.api.v2.interopdata.model.BaseAccountResourceType;
 /**
  * BaseTenantResourceType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-03-12T13:22:44.287-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-06T14:46:48.030-06:00[America/Denver]")
 public class BaseTenantResourceType extends BaseAccountResourceType {
   public static final String SERIALIZED_NAME_TENANT_ID = "tenant_id";
   @SerializedName(SERIALIZED_NAME_TENANT_ID)

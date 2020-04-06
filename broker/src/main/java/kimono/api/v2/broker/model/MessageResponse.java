@@ -30,7 +30,7 @@ import kimono.api.v2.broker.model.SingleObjectResponseType;
 /**
  * MessageResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-03-12T13:22:43.429-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-06T14:46:47.172-06:00[America/Denver]")
 public class MessageResponse extends SingleObjectResponseType {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)

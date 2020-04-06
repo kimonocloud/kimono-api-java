@@ -1,6 +1,6 @@
 /*
- * Interop Data API
- * Interop Data APIs provide access to the data objects and events from Interop Cloud repositories and Integration repositories
+ * Grades Exchange API
+ * Use the Grades Exchange APIs to implement a Grades Producer or Grades Consumer client application and to manage Exchanges between producers and consumers.
  *
  * OpenAPI spec version: 2.0
  * 
@@ -11,7 +11,7 @@
  */
 
 
-package kimono.api.v2.interopdata.model;
+package kimono.api.v2.grades.model;
 
 import java.util.Objects;
 import java.util.Arrays;
@@ -23,18 +23,40 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import kimono.api.v2.interopdata.model.OrgMembershipRefType;
+import kimono.api.v2.grades.model.GradesRefTypeSys;
 
 /**
- * OrgMembershipSys
+ * GradesCategoryRefType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-06T14:46:48.030-06:00[America/Denver]")
-public class OrgMembershipSys {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-06T14:46:48.453-06:00[America/Denver]")
+public class GradesCategoryRefType {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
+
   public static final String SERIALIZED_NAME_$_SYS = "$sys";
   @SerializedName(SERIALIZED_NAME_$_SYS)
-  private OrgMembershipRefType $sys = null;
+  private GradesRefTypeSys $sys = null;
 
-  public OrgMembershipSys $sys(OrgMembershipRefType $sys) {
+  public GradesCategoryRefType name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @ApiModelProperty(value = "")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public GradesCategoryRefType $sys(GradesRefTypeSys $sys) {
     this.$sys = $sys;
     return this;
   }
@@ -44,11 +66,11 @@ public class OrgMembershipSys {
    * @return $sys
   **/
   @ApiModelProperty(value = "")
-  public OrgMembershipRefType get$Sys() {
+  public GradesRefTypeSys get$Sys() {
     return $sys;
   }
 
-  public void set$Sys(OrgMembershipRefType $sys) {
+  public void set$Sys(GradesRefTypeSys $sys) {
     this.$sys = $sys;
   }
 
@@ -61,21 +83,23 @@ public class OrgMembershipSys {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrgMembershipSys orgMembershipSys = (OrgMembershipSys) o;
-    return Objects.equals(this.$sys, orgMembershipSys.$sys);
+    GradesCategoryRefType gradesCategoryRefType = (GradesCategoryRefType) o;
+    return Objects.equals(this.name, gradesCategoryRefType.name) &&
+        Objects.equals(this.$sys, gradesCategoryRefType.$sys);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash($sys);
+    return Objects.hash(name, $sys);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrgMembershipSys {\n");
+    sb.append("class GradesCategoryRefType {\n");
     
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    $sys: ").append(toIndentedString($sys)).append("\n");
     sb.append("}");
     return sb.toString();

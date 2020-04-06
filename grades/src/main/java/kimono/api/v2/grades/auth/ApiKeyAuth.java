@@ -18,7 +18,7 @@ import kimono.api.v2.grades.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-03-12T13:22:44.738-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-06T14:46:48.453-06:00[America/Denver]")
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;
