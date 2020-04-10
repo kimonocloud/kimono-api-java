@@ -30,7 +30,7 @@ import kimono.api.v2.grades.model.GradesRefType;
 /**
  * AssignmentScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-10T10:16:28.234-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-10T14:18:38.018-06:00[America/Denver]")
 public class AssignmentScore {
   public static final String SERIALIZED_NAME_$_PERSON = "$person";
   @SerializedName(SERIALIZED_NAME_$_PERSON)

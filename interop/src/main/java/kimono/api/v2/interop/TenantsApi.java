@@ -1199,7 +1199,7 @@ public class TenantsApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] { "Actor" };
+        String[] localVarAuthNames = new String[] { "Vendor" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 

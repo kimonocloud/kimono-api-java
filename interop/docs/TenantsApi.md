@@ -490,9 +490,10 @@ Get a list of &#x60;TenantInfo&#x60; representing your licensed and authorized I
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure OAuth2 access token for authorization: Actor
-OAuth Actor = (OAuth) defaultClient.getAuthentication("Actor");
-Actor.setAccessToken("YOUR ACCESS TOKEN");
+// Configure HTTP basic authorization: Vendor
+HttpBasicAuth Vendor = (HttpBasicAuth) defaultClient.getAuthentication("Vendor");
+Vendor.setUsername("YOUR USERNAME");
+Vendor.setPassword("YOUR PASSWORD");
 
 TenantsApi apiInstance = new TenantsApi();
 java.util.List<java.util.UUID> accounts = Arrays.asList(); // java.util.List<java.util.UUID> | Optionally restrict the returned list of tenants to only those for the specified Accounts.
@@ -523,7 +524,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Actor](../README.md#Actor)
+[Vendor](../README.md#Vendor)
 
 ### HTTP request headers
 

@@ -28,7 +28,7 @@ import kimono.oneroster.v1p1.model.AcademicSession;
 /**
  * AcademicSessionResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-10T10:16:28.565-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-10T14:18:38.309-06:00[America/Denver]")
 public class AcademicSessionResponse {
   public static final String SERIALIZED_NAME_ACADEMIC_SESSION = "academicSession";
   @SerializedName(SERIALIZED_NAME_ACADEMIC_SESSION)

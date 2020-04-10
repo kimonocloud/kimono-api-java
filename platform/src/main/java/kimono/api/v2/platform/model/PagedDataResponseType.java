@@ -28,7 +28,7 @@ import kimono.api.v2.platform.model.PagedDataResponseTypePaging;
 /**
  * PagedDataResponseType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-10T10:16:27.086-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-10T14:18:37.040-06:00[America/Denver]")
 public class PagedDataResponseType {
   public static final String SERIALIZED_NAME_PAGING = "paging";
   @SerializedName(SERIALIZED_NAME_PAGING)

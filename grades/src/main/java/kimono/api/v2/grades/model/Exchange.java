@@ -30,7 +30,7 @@ import kimono.api.v2.grades.model.ExchangeQuery;
 /**
  * Exchange
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-10T10:16:28.234-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-10T14:18:38.018-06:00[America/Denver]")
 public class Exchange extends BaseResourceType {
   public static final String SERIALIZED_NAME_QUERY = "query";
   @SerializedName(SERIALIZED_NAME_QUERY)

@@ -86,6 +86,7 @@ public class ApiClient {
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications.put("Actor", new OAuth());
+        authentications.put("Vendor", new HttpBasicAuth());
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
@@ -130,7 +131,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("OpenAPI-Generator/2.0.21/java");
+        setUserAgent("OpenAPI-Generator/2.0.23/java");
 
         authentications = new HashMap<String, Authentication>();
     }
