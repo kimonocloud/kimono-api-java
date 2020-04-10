@@ -13,7 +13,7 @@
 
 package kimono.api.v2.sifcloud;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-06T14:46:48.615-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-10T10:16:28.440-06:00[America/Denver]")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 

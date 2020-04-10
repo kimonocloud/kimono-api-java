@@ -13,7 +13,7 @@
 
 package kimono.api.v2.broker;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-06T14:46:47.172-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-10T10:16:26.732-06:00[America/Denver]")
 public class Pair {
     private String name = "";
     private String value = "";

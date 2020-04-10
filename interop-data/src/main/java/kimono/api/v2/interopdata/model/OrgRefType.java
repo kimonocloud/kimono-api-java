@@ -28,7 +28,7 @@ import kimono.api.v2.interopdata.model.RefType;
 /**
  * OrgRefType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-06T14:46:48.030-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-10T10:16:27.757-06:00[America/Denver]")
 public class OrgRefType extends RefType {
   public static final String SERIALIZED_NAME_ORG_TYPE = "org_type";
   @SerializedName(SERIALIZED_NAME_ORG_TYPE)

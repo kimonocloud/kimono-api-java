@@ -28,7 +28,7 @@ import kimono.oneroster.v1p1.model.Course;
 /**
  * CourseResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-06T14:46:48.729-06:00[America/Denver]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-04-10T10:16:28.565-06:00[America/Denver]")
 public class CourseResponse {
   public static final String SERIALIZED_NAME_COURSE = "course";
   @SerializedName(SERIALIZED_NAME_COURSE)
